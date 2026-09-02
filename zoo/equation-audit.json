@@ -1,0 +1,2278 @@
+{
+  "audit_name": "Monolithic 102 ZOO audit",
+  "audit_version": "1.0.0",
+  "canonical_source_sha256": "d534be8e0664fd523bd0bbbd82e98b8acda29e23f0941690be96573661080268",
+  "coverage": 102,
+  "semantics": "Compilation proves only the stated Lean propositions, never empirical or physical validity.",
+  "records": [
+    {
+      "number": 1,
+      "id": "ME-001",
+      "title": "EFMW unity functional — framework summary",
+      "classification": "index notation",
+      "formula": "EFMW = F(φ, R, C, Ω)",
+      "cluster": "Framework signature",
+      "zoo_route": "SALMON → TORTOISE → SPIDER → WEASEL → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "typed_core",
+      "dependencies": [],
+      "risk_flags": [
+        "symbol/domain freeze"
+      ],
+      "immediate_obligation": "Define F, φ, R, C, Ω and the domain/codomain. As written this is a framework signature, not a theorem.",
+      "failure_condition": "Cannot advance until a complete specification resolves symbol/domain freeze; inconsistent specifications reject it."
+    },
+    {
+      "number": 2,
+      "id": "ME-002",
+      "title": "Original EFMW scalar field equation",
+      "classification": "corpus equation",
+      "formula": "□φ − (α²/c²)(∂²φ/∂t²) = (4π/c²)(E + Pc)",
+      "cluster": "Field/action",
+      "zoo_route": "SALMON → RAVEN → SPIDER → CHAMELEON → WEASEL → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "canonical_catalog",
+      "dependencies": [],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions",
+        "regularity/boundary conditions"
+      ],
+      "immediate_obligation": "Freeze spacetime, field regularity, α, E, P, c, units, source interpretation, and boundary/initial conditions; derive rather than postulate.",
+      "failure_condition": "Cannot advance until a complete specification resolves nonzero-denominator/domain conditions; inconsistent specifications reject it."
+    },
+    {
+      "number": 3,
+      "id": "ME-003",
+      "title": "Scalar d’Alembertian of φ",
+      "classification": "standard operator used by EFMW",
+      "formula": "□φ = g^μν ∇\\_μ ∇\\_ν φ",
+      "cluster": "Field/action",
+      "zoo_route": "SALMON → RAVEN → SPIDER → CHAMELEON → WEASEL → TURTLE",
+      "pass1_class": "Standard-math reduction candidate",
+      "result_code": "CONDITIONAL_STANDARD_SURVIVOR",
+      "result": "Recognizable standard relation; theorem requires explicit conventions and hypotheses.",
+      "proof_status": "theorem_candidate",
+      "lean_status": "canonical_catalog",
+      "dependencies": [],
+      "risk_flags": [
+        "regularity/boundary conditions"
+      ],
+      "immediate_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows.",
+      "failure_condition": "Fails as written if the claimed reduction breaks under frozen conventions, especially regularity/boundary conditions."
+    },
+    {
+      "number": 4,
+      "id": "ME-004",
+      "title": "Flat-spacetime expansion of the d’Alembertian",
+      "classification": "operator expansion",
+      "formula": "□φ = (1/c²)(∂²φ/∂t²) − ∇²φ",
+      "cluster": "Field/action",
+      "zoo_route": "SALMON → RAVEN → SPIDER → CHAMELEON → WEASEL → TURTLE",
+      "pass1_class": "Standard-math reduction candidate",
+      "result_code": "CONDITIONAL_STANDARD_SURVIVOR",
+      "result": "Recognizable standard relation; theorem requires explicit conventions and hypotheses.",
+      "proof_status": "theorem_candidate",
+      "lean_status": "canonical_catalog",
+      "dependencies": [],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions",
+        "regularity/boundary conditions"
+      ],
+      "immediate_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows.",
+      "failure_condition": "Fails as written if the claimed reduction breaks under frozen conventions, especially nonzero-denominator/domain conditions."
+    },
+    {
+      "number": 5,
+      "id": "ME-005",
+      "title": "Expanded original EFMW scalar equation",
+      "classification": "derived expansion",
+      "formula": "(1/c²)(∂²φ/∂t²) − ∇²φ − (α²/c²)(∂²φ/∂t²) = (4π/c²)(E + Pc)",
+      "cluster": "Field/action",
+      "zoo_route": "SALMON → RAVEN → SPIDER → CHAMELEON → WEASEL → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "canonical_catalog",
+      "dependencies": [
+        "ME-002",
+        "ME-004"
+      ],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions",
+        "regularity/boundary conditions"
+      ],
+      "immediate_obligation": "Freeze spacetime, field regularity, α, E, P, c, units, source interpretation, and boundary/initial conditions; derive rather than postulate.",
+      "failure_condition": "Cannot advance until a complete specification resolves nonzero-denominator/domain conditions; inconsistent specifications reject it."
+    },
+    {
+      "number": 6,
+      "id": "ME-006",
+      "title": "Wright informational tensor",
+      "classification": "core construct; general form",
+      "formula": "I\\_μν = ∇\\_μφ ∇\\_νφ − (1/2)g\\_μν ∇\\_αφ ∇^αφ − g\\_μνV(φ) + R\\_μν",
+      "cluster": "Field/action",
+      "zoo_route": "SALMON → RAVEN → SPIDER → CHAMELEON → WEASEL → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "canonical_catalog",
+      "dependencies": [],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions",
+        "regularity/boundary conditions"
+      ],
+      "immediate_obligation": "Define tensors/couplings, covariance, units and variational structure; derive field equations and conservation identities; test reduction to GR/QFT limits.",
+      "failure_condition": "Cannot advance until a complete specification resolves nonzero-denominator/domain conditions; inconsistent specifications reject it."
+    },
+    {
+      "number": 7,
+      "id": "ME-007",
+      "title": "EFMW-modified Einstein equation",
+      "classification": "derived gravitational extension",
+      "formula": "G\\_μν + Λg\\_μν = 8πG(T\\_μν + κI\\_μν)",
+      "cluster": "Field/action",
+      "zoo_route": "SALMON → RAVEN → SPIDER → CHAMELEON → WEASEL → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "canonical_catalog",
+      "dependencies": [
+        "ME-006"
+      ],
+      "risk_flags": [
+        "symbol/domain freeze"
+      ],
+      "immediate_obligation": "Define tensors/couplings, covariance, units and variational structure; derive field equations and conservation identities; test reduction to GR/QFT limits.",
+      "failure_condition": "Cannot advance until a complete specification resolves symbol/domain freeze; inconsistent specifications reject it."
+    },
+    {
+      "number": 8,
+      "id": "ME-008",
+      "title": "Expanded EFMW unity field equation",
+      "classification": "working canonical synthesis",
+      "formula": "G\\_μν + Λg\\_μν = 8πGT\\_μν + 8πGκ[∇\\_μφ∇\\_νφ − (1/2)g\\_μν∇\\_αφ∇^αφ − g\\_μνV(φ) + R\\_μν]",
+      "cluster": "Field/action",
+      "zoo_route": "SALMON → RAVEN → SPIDER → CHAMELEON → WEASEL → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "canonical_catalog",
+      "dependencies": [
+        "ME-006",
+        "ME-007"
+      ],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions",
+        "regularity/boundary conditions"
+      ],
+      "immediate_obligation": "Define tensors/couplings, covariance, units and variational structure; derive field equations and conservation identities; test reduction to GR/QFT limits.",
+      "failure_condition": "Cannot advance until a complete specification resolves nonzero-denominator/domain conditions; inconsistent specifications reject it."
+    },
+    {
+      "number": 9,
+      "id": "ME-009",
+      "title": "EFMW action principle",
+      "classification": "working formalization",
+      "formula": "S\\_EFMW = ∫ d⁴x √−g [(R − 2Λ)/(16πG) + L\\_matter + L\\_EM + L\\_φ + L\\_rec]",
+      "cluster": "Field/action",
+      "zoo_route": "SALMON → RAVEN → SPIDER → CHAMELEON → WEASEL → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "canonical_catalog",
+      "dependencies": [],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions"
+      ],
+      "immediate_obligation": "Define tensors/couplings, covariance, units and variational structure; derive field equations and conservation identities; test reduction to GR/QFT limits.",
+      "failure_condition": "Cannot advance until a complete specification resolves nonzero-denominator/domain conditions; inconsistent specifications reject it."
+    },
+    {
+      "number": 10,
+      "id": "ME-010",
+      "title": "Scalar-field Lagrangian",
+      "classification": "standardized EFMW component",
+      "formula": "L\\_φ = −(1/2)∇\\_μφ∇^μφ − V(φ)",
+      "cluster": "Field/action",
+      "zoo_route": "SALMON → RAVEN → SPIDER → CHAMELEON → WEASEL → TURTLE",
+      "pass1_class": "Standard-math reduction candidate",
+      "result_code": "CONDITIONAL_STANDARD_SURVIVOR",
+      "result": "Recognizable standard relation; theorem requires explicit conventions and hypotheses.",
+      "proof_status": "theorem_candidate",
+      "lean_status": "canonical_catalog",
+      "dependencies": [],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions",
+        "regularity/boundary conditions"
+      ],
+      "immediate_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows.",
+      "failure_condition": "Fails as written if the claimed reduction breaks under frozen conventions, especially nonzero-denominator/domain conditions."
+    },
+    {
+      "number": 11,
+      "id": "ME-011",
+      "title": "Recursive observer coupling Lagrangian",
+      "classification": "working hypothesis",
+      "formula": "L\\_rec = λφR(x,m,e) − (κ/2)||x−m||² − (η/2)||ẋ−ṁ||²",
+      "cluster": "Field/action",
+      "zoo_route": "SALMON → RAVEN → SPIDER → CHAMELEON → WEASEL → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "canonical_catalog",
+      "dependencies": [],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions",
+        "interpretive leap beyond mathematics"
+      ],
+      "immediate_obligation": "Define tensors/couplings, covariance, units and variational structure; derive field equations and conservation identities; test reduction to GR/QFT limits.",
+      "failure_condition": "Cannot advance until a complete specification resolves nonzero-denominator/domain conditions; inconsistent specifications reject it."
+    },
+    {
+      "number": 12,
+      "id": "ME-012",
+      "title": "Electromagnetic sector",
+      "classification": "standard Maxwell component",
+      "formula": "L\\_EM = −(1/4)F\\_μνF^μν",
+      "cluster": "Field/action",
+      "zoo_route": "SALMON → RAVEN → SPIDER → CHAMELEON → WEASEL → TURTLE",
+      "pass1_class": "Standard-math reduction candidate",
+      "result_code": "CONDITIONAL_STANDARD_SURVIVOR",
+      "result": "Recognizable standard relation; theorem requires explicit conventions and hypotheses.",
+      "proof_status": "theorem_candidate",
+      "lean_status": "canonical_catalog",
+      "dependencies": [],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions"
+      ],
+      "immediate_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows.",
+      "failure_condition": "Fails as written if the claimed reduction breaks under frozen conventions, especially nonzero-denominator/domain conditions."
+    },
+    {
+      "number": 13,
+      "id": "ME-013",
+      "title": "EFMW quantum-gravity action",
+      "classification": "derived extension",
+      "formula": "S\\_QG = ∫ d⁴x √−g [(R/(16πG)) − (1/2)∇\\_μφ∇^μφ − V(φ) + λφI + L\\_matter]",
+      "cluster": "Field/action",
+      "zoo_route": "SALMON → RAVEN → SPIDER → CHAMELEON → WEASEL → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "canonical_catalog",
+      "dependencies": [
+        "ME-003",
+        "ME-010"
+      ],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions",
+        "regularity/boundary conditions"
+      ],
+      "immediate_obligation": "Define tensors/couplings, covariance, units and variational structure; derive field equations and conservation identities; test reduction to GR/QFT limits.",
+      "failure_condition": "Cannot advance until a complete specification resolves nonzero-denominator/domain conditions; inconsistent specifications reject it."
+    },
+    {
+      "number": 14,
+      "id": "ME-014",
+      "title": "Quantum-corrected EFMW field equation",
+      "classification": "working quantum-gravity form",
+      "formula": "G\\_μν = 8πG[⟨T̂\\_μν⟩ + T^(φ)\\_μν + T^(rec)\\_μν]",
+      "cluster": "Field/action",
+      "zoo_route": "SALMON → RAVEN → SPIDER → CHAMELEON → WEASEL → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "canonical_catalog",
+      "dependencies": [
+        "ME-013",
+        "ME-015"
+      ],
+      "risk_flags": [
+        "symbol/domain freeze"
+      ],
+      "immediate_obligation": "Define tensors/couplings, covariance, units and variational structure; derive field equations and conservation identities; test reduction to GR/QFT limits.",
+      "failure_condition": "Cannot advance until a complete specification resolves symbol/domain freeze; inconsistent specifications reject it."
+    },
+    {
+      "number": 15,
+      "id": "ME-015",
+      "title": "Scalar stress-energy tensor",
+      "classification": "derived",
+      "formula": "T^(φ)\\_μν = ∇\\_μφ∇\\_νφ − g\\_μν[(1/2)∇\\_αφ∇^αφ + V(φ)]",
+      "cluster": "Field/action",
+      "zoo_route": "SALMON → RAVEN → SPIDER → CHAMELEON → WEASEL → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "canonical_catalog",
+      "dependencies": [
+        "ME-010"
+      ],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions",
+        "regularity/boundary conditions"
+      ],
+      "immediate_obligation": "Define tensors/couplings, covariance, units and variational structure; derive field equations and conservation identities; test reduction to GR/QFT limits.",
+      "failure_condition": "Cannot advance until a complete specification resolves nonzero-denominator/domain conditions; inconsistent specifications reject it."
+    },
+    {
+      "number": 16,
+      "id": "ME-016",
+      "title": "Complex field polar decomposition",
+      "classification": "quantum/cognitive representation",
+      "formula": "ψ = ρe^(iθ)",
+      "cluster": "Quantum/Madelung",
+      "zoo_route": "RAVEN → WEAVER → SPIDER → WEASEL → TURTLE",
+      "pass1_class": "Standard-math reduction candidate",
+      "result_code": "CONDITIONAL_STANDARD_SURVIVOR",
+      "result": "Recognizable standard relation; theorem requires explicit conventions and hypotheses.",
+      "proof_status": "theorem_candidate",
+      "lean_status": "canonical_catalog",
+      "dependencies": [],
+      "risk_flags": [
+        "symbol/domain freeze"
+      ],
+      "immediate_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows.",
+      "failure_condition": "Fails as written if the claimed reduction breaks under frozen conventions, especially symbol/domain freeze."
+    },
+    {
+      "number": 17,
+      "id": "ME-017",
+      "title": "Quantum probability density",
+      "classification": "standard consequence",
+      "formula": "|ψ|² = ρ²",
+      "cluster": "Quantum/Madelung",
+      "zoo_route": "RAVEN → WEAVER → SPIDER → WEASEL → TURTLE",
+      "pass1_class": "Standard-math reduction candidate",
+      "result_code": "CONDITIONAL_STANDARD_SURVIVOR",
+      "result": "Recognizable standard relation; theorem requires explicit conventions and hypotheses.",
+      "proof_status": "theorem_candidate",
+      "lean_status": "canonical_catalog",
+      "dependencies": [
+        "ME-016"
+      ],
+      "risk_flags": [
+        "symbol/domain freeze"
+      ],
+      "immediate_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows.",
+      "failure_condition": "Fails as written if the claimed reduction breaks under frozen conventions, especially symbol/domain freeze."
+    },
+    {
+      "number": 18,
+      "id": "ME-018",
+      "title": "Phase-current relation",
+      "classification": "derived",
+      "formula": "J^μ = ρ²∇^μθ",
+      "cluster": "Quantum/Madelung",
+      "zoo_route": "RAVEN → WEAVER → SPIDER → WEASEL → TURTLE",
+      "pass1_class": "Standard-math reduction candidate",
+      "result_code": "CONDITIONAL_STANDARD_SURVIVOR",
+      "result": "Recognizable standard relation; theorem requires explicit conventions and hypotheses.",
+      "proof_status": "theorem_candidate",
+      "lean_status": "canonical_catalog",
+      "dependencies": [
+        "ME-016"
+      ],
+      "risk_flags": [
+        "regularity/boundary conditions"
+      ],
+      "immediate_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows.",
+      "failure_condition": "Fails as written if the claimed reduction breaks under frozen conventions, especially regularity/boundary conditions."
+    },
+    {
+      "number": 19,
+      "id": "ME-019",
+      "title": "Continuity equation",
+      "classification": "standard/EFMW-compatible",
+      "formula": "∇\\_μJ^μ = 0",
+      "cluster": "Quantum/Madelung",
+      "zoo_route": "RAVEN → WEAVER → SPIDER → WEASEL → TURTLE",
+      "pass1_class": "Standard-math reduction candidate",
+      "result_code": "CONDITIONAL_STANDARD_SURVIVOR",
+      "result": "Recognizable standard relation; theorem requires explicit conventions and hypotheses.",
+      "proof_status": "theorem_candidate",
+      "lean_status": "canonical_catalog",
+      "dependencies": [
+        "ME-018"
+      ],
+      "risk_flags": [
+        "regularity/boundary conditions"
+      ],
+      "immediate_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows.",
+      "failure_condition": "Fails as written if the claimed reduction breaks under frozen conventions, especially regularity/boundary conditions."
+    },
+    {
+      "number": 20,
+      "id": "ME-020",
+      "title": "Quantum Hamilton–Jacobi form",
+      "classification": "standard Madelung-type decomposition",
+      "formula": "∂ₜS + (∇S)²/(2m) + V + Q = 0",
+      "cluster": "Quantum/Madelung",
+      "zoo_route": "RAVEN → WEAVER → SPIDER → WEASEL → TURTLE",
+      "pass1_class": "Standard-math reduction candidate",
+      "result_code": "CONDITIONAL_STANDARD_SURVIVOR",
+      "result": "Recognizable standard relation; theorem requires explicit conventions and hypotheses.",
+      "proof_status": "theorem_candidate",
+      "lean_status": "canonical_catalog",
+      "dependencies": [
+        "ME-016",
+        "ME-021"
+      ],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions",
+        "regularity/boundary conditions"
+      ],
+      "immediate_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows.",
+      "failure_condition": "Fails as written if the claimed reduction breaks under frozen conventions, especially nonzero-denominator/domain conditions."
+    },
+    {
+      "number": 21,
+      "id": "ME-021",
+      "title": "Quantum potential",
+      "classification": "standard derived construct",
+      "formula": "Q = −(ħ²/2m)(∇²ρ/ρ)",
+      "cluster": "Quantum/Madelung",
+      "zoo_route": "RAVEN → WEAVER → SPIDER → WEASEL → TURTLE",
+      "pass1_class": "Standard-math reduction candidate",
+      "result_code": "CONDITIONAL_STANDARD_SURVIVOR",
+      "result": "Recognizable standard relation; theorem requires explicit conventions and hypotheses.",
+      "proof_status": "theorem_candidate",
+      "lean_status": "canonical_catalog",
+      "dependencies": [
+        "ME-016"
+      ],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions",
+        "regularity/boundary conditions"
+      ],
+      "immediate_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows.",
+      "failure_condition": "Fails as written if the claimed reduction breaks under frozen conventions, especially nonzero-denominator/domain conditions."
+    },
+    {
+      "number": 22,
+      "id": "ME-022",
+      "title": "EFMW recursive state equation",
+      "classification": "working system kernel",
+      "formula": "ẋ = f(x,e;θ) + λΦG(x,m,e)",
+      "cluster": "Recursive control",
+      "zoo_route": "SALMON → SPIDER → DRAGON → OWL → CROCODILE → HEDGEHOG → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "typed_core",
+      "dependencies": [],
+      "risk_flags": [
+        "symbol/domain freeze"
+      ],
+      "immediate_obligation": "Specify state spaces, differentiability, norms, noise model, recursive operator, existence/uniqueness conditions, and measurable predictions.",
+      "failure_condition": "Cannot advance until a complete specification resolves symbol/domain freeze; inconsistent specifications reject it."
+    },
+    {
+      "number": 23,
+      "id": "ME-023",
+      "title": "Self-model evolution equation",
+      "classification": "working system kernel",
+      "formula": "ṁ = α[H(x,e) − m]",
+      "cluster": "Recursive control",
+      "zoo_route": "SALMON → SPIDER → DRAGON → OWL → CROCODILE → HEDGEHOG → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-022"
+      ],
+      "risk_flags": [
+        "symbol/domain freeze"
+      ],
+      "immediate_obligation": "Specify state spaces, differentiability, norms, noise model, recursive operator, existence/uniqueness conditions, and measurable predictions.",
+      "failure_condition": "Cannot advance until a complete specification resolves symbol/domain freeze; inconsistent specifications reject it."
+    },
+    {
+      "number": 24,
+      "id": "ME-024",
+      "title": "Coherence order-parameter equation",
+      "classification": "working five-claim kernel",
+      "formula": "τ\\_ΦΦ̇ = bΦ − aΦ³ − κ\\_ΦΦ||x−m||² − η\\_ΦΦ||ẋ−ṁ||² + γR(x,m,e) + σξ(t)",
+      "cluster": "Recursive control",
+      "zoo_route": "SALMON → SPIDER → DRAGON → OWL → CROCODILE → HEDGEHOG → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "canonical_catalog",
+      "dependencies": [
+        "ME-022",
+        "ME-023",
+        "ME-025",
+        "ME-026"
+      ],
+      "risk_flags": [
+        "symbol/domain freeze"
+      ],
+      "immediate_obligation": "Specify state spaces, differentiability, norms, noise model, recursive operator, existence/uniqueness conditions, and measurable predictions.",
+      "failure_condition": "Cannot advance until a complete specification resolves symbol/domain freeze; inconsistent specifications reject it."
+    },
+    {
+      "number": 25,
+      "id": "ME-025",
+      "title": "Coherence potential",
+      "classification": "derived",
+      "formula": "U(Φ) = (a/4)Φ⁴ − (b/2)Φ²",
+      "cluster": "Recursive control",
+      "zoo_route": "SALMON → SPIDER → DRAGON → OWL → CROCODILE → HEDGEHOG → TURTLE",
+      "pass1_class": "Typed / standard-or-definitional",
+      "result_code": "STRUCTURAL_SURVIVOR",
+      "result": "Well-formed as a definition or predicate; this does not establish novelty or physical truth.",
+      "proof_status": "definition_only",
+      "lean_status": "typed_core",
+      "dependencies": [],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions"
+      ],
+      "immediate_obligation": "Freeze all symbols, domains and assumptions; identify whether statement is definition, theorem, model law, or empirical hypothesis.",
+      "failure_condition": "Fails as a useful construct if it is undefined, non-invariant, or non-identifying under nonzero-denominator/domain conditions."
+    },
+    {
+      "number": 26,
+      "id": "ME-026",
+      "title": "Recursive closure functional",
+      "classification": "working definition",
+      "formula": "R(x,m,e) = <∂ₘf, ṁ> / (||∂ₘf|| ||ṁ|| + ε)",
+      "cluster": "Recursive control",
+      "zoo_route": "SALMON → SPIDER → DRAGON → OWL → CROCODILE → HEDGEHOG → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "canonical_catalog",
+      "dependencies": [
+        "ME-022",
+        "ME-023"
+      ],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions",
+        "regularity/boundary conditions",
+        "normalization and zero-denominator behavior"
+      ],
+      "immediate_obligation": "Specify state spaces, differentiability, norms, noise model, recursive operator, existence/uniqueness conditions, and measurable predictions.",
+      "failure_condition": "Cannot advance until a complete specification resolves nonzero-denominator/domain conditions; inconsistent specifications reject it."
+    },
+    {
+      "number": 27,
+      "id": "ME-027",
+      "title": "State-model divergence",
+      "classification": "control metric",
+      "formula": "D(t) = κ||x − m||² + η||ẋ − ṁ||² − γR(x,m,e)",
+      "cluster": "Recursive control",
+      "zoo_route": "SALMON → SPIDER → DRAGON → OWL → CROCODILE → HEDGEHOG → TURTLE",
+      "pass1_class": "Empirical/model criterion",
+      "result_code": "EMPIRICAL_TEST_REQUIRED",
+      "result": "No algebraic proof can establish performance or interpretation; decide with frozen external data.",
+      "proof_status": "empirical_only",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-022",
+        "ME-023",
+        "ME-026"
+      ],
+      "risk_flags": [
+        "symbol/domain freeze"
+      ],
+      "immediate_obligation": "Freeze all symbols, domains and assumptions; identify whether statement is definition, theorem, model law, or empirical hypothesis.",
+      "failure_condition": "Fails if preregistered held-out tests do not beat the declared baseline at matched error/compute budgets."
+    },
+    {
+      "number": 28,
+      "id": "ME-028",
+      "title": "EFMW control-loss warning criterion",
+      "classification": "commercial pilot hypothesis",
+      "formula": "D(t) ≥ D\\_crit OR Φ(t) ≤ Φ\\_crit",
+      "cluster": "Recursive control",
+      "zoo_route": "SALMON → SPIDER → DRAGON → OWL → CROCODILE → HEDGEHOG → TURTLE",
+      "pass1_class": "Empirical/model criterion",
+      "result_code": "EMPIRICAL_TEST_REQUIRED",
+      "result": "No algebraic proof can establish performance or interpretation; decide with frozen external data.",
+      "proof_status": "empirical_only",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-024",
+        "ME-027"
+      ],
+      "risk_flags": [
+        "external validation and baseline dependence"
+      ],
+      "immediate_obligation": "Freeze operational semantics and test against baselines/held-out data; mathematical well-definition is separate from empirical validity.",
+      "failure_condition": "Fails if preregistered held-out tests do not beat the declared baseline at matched error/compute budgets."
+    },
+    {
+      "number": 29,
+      "id": "ME-029",
+      "title": "Detection lead time",
+      "classification": "benchmark quantity",
+      "formula": "Δt\\_lead = t\\_failure − t\\_alarm",
+      "cluster": "Recursive control",
+      "zoo_route": "SALMON → SPIDER → DRAGON → OWL → CROCODILE → HEDGEHOG → TURTLE",
+      "pass1_class": "Typed / standard-or-definitional",
+      "result_code": "STRUCTURAL_SURVIVOR",
+      "result": "Well-formed as a definition or predicate; this does not establish novelty or physical truth.",
+      "proof_status": "definition_only",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-028"
+      ],
+      "risk_flags": [
+        "external validation and baseline dependence"
+      ],
+      "immediate_obligation": "Freeze operational semantics and test against baselines/held-out data; mathematical well-definition is separate from empirical validity.",
+      "failure_condition": "Fails as a useful construct if it is undefined, non-invariant, or non-identifying under external validation and baseline dependence."
+    },
+    {
+      "number": 30,
+      "id": "ME-030",
+      "title": "Compute-normalized warning utility",
+      "classification": "working benchmark",
+      "formula": "U\\_warn = Δt\\_lead(1 − FAR) / C\\_compute",
+      "cluster": "Recursive control",
+      "zoo_route": "SALMON → SPIDER → DRAGON → OWL → CROCODILE → HEDGEHOG → TURTLE",
+      "pass1_class": "Empirical/model criterion",
+      "result_code": "EMPIRICAL_TEST_REQUIRED",
+      "result": "No algebraic proof can establish performance or interpretation; decide with frozen external data.",
+      "proof_status": "empirical_only",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-029"
+      ],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions",
+        "external validation and baseline dependence"
+      ],
+      "immediate_obligation": "Freeze operational semantics and test against baselines/held-out data; mathematical well-definition is separate from empirical validity.",
+      "failure_condition": "Fails if preregistered held-out tests do not beat the declared baseline at matched error/compute budgets."
+    },
+    {
+      "number": 31,
+      "id": "ME-031",
+      "title": "Identity-attractor condition",
+      "classification": "computational cognition",
+      "formula": "lim(t→∞)(x(t), m(t), Φ(t)) = (x\\*, m\\*, Φ\\*)",
+      "cluster": "Recursive control",
+      "zoo_route": "SALMON → SPIDER → DRAGON → OWL → CROCODILE → HEDGEHOG → TURTLE",
+      "pass1_class": "Empirical/model criterion",
+      "result_code": "EMPIRICAL_TEST_REQUIRED",
+      "result": "No algebraic proof can establish performance or interpretation; decide with frozen external data.",
+      "proof_status": "empirical_only",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-022",
+        "ME-023",
+        "ME-024"
+      ],
+      "risk_flags": [
+        "limit existence and topology",
+        "interpretive leap beyond mathematics",
+        "external validation and baseline dependence"
+      ],
+      "immediate_obligation": "Freeze operational semantics and test against baselines/held-out data; mathematical well-definition is separate from empirical validity.",
+      "failure_condition": "Fails if preregistered held-out tests do not beat the declared baseline at matched error/compute budgets."
+    },
+    {
+      "number": 32,
+      "id": "ME-032",
+      "title": "Perturbation recovery criterion",
+      "classification": "robustness test",
+      "formula": "lim(t→∞)||X(t; X\\* + δX) − X\\*|| = 0",
+      "cluster": "Recursive control",
+      "zoo_route": "SALMON → SPIDER → DRAGON → OWL → CROCODILE → HEDGEHOG → TURTLE",
+      "pass1_class": "Empirical/model criterion",
+      "result_code": "EMPIRICAL_TEST_REQUIRED",
+      "result": "No algebraic proof can establish performance or interpretation; decide with frozen external data.",
+      "proof_status": "empirical_only",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-031"
+      ],
+      "risk_flags": [
+        "limit existence and topology",
+        "external validation and baseline dependence"
+      ],
+      "immediate_obligation": "Freeze operational semantics and test against baselines/held-out data; mathematical well-definition is separate from empirical validity.",
+      "failure_condition": "Fails if preregistered held-out tests do not beat the declared baseline at matched error/compute budgets."
+    },
+    {
+      "number": 33,
+      "id": "ME-033",
+      "title": "Largest Lyapunov exponent criterion",
+      "classification": "dynamical stability",
+      "formula": "λ\\_max = lim(t→∞) (1/t) ln(||δX(t)|| / ||δX(0)||)",
+      "cluster": "Recursive control",
+      "zoo_route": "SALMON → SPIDER → DRAGON → OWL → CROCODILE → HEDGEHOG → TURTLE",
+      "pass1_class": "Standard-math reduction candidate",
+      "result_code": "CONDITIONAL_STANDARD_SURVIVOR",
+      "result": "Recognizable standard relation; theorem requires explicit conventions and hypotheses.",
+      "proof_status": "theorem_candidate",
+      "lean_status": "canonical_catalog",
+      "dependencies": [
+        "ME-032"
+      ],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions",
+        "limit existence and topology",
+        "external validation and baseline dependence"
+      ],
+      "immediate_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows.",
+      "failure_condition": "Fails as written if the claimed reduction breaks under frozen conventions, especially nonzero-denominator/domain conditions."
+    },
+    {
+      "number": 34,
+      "id": "ME-034",
+      "title": "Phrase entropy",
+      "classification": "identity-attractor metric",
+      "formula": "H\\_phrase = −Σ p\\_i log p\\_i",
+      "cluster": "Recursive control",
+      "zoo_route": "SALMON → SPIDER → DRAGON → OWL → CROCODILE → HEDGEHOG → TURTLE",
+      "pass1_class": "Standard-math reduction candidate",
+      "result_code": "CONDITIONAL_STANDARD_SURVIVOR",
+      "result": "Recognizable standard relation; theorem requires explicit conventions and hypotheses.",
+      "proof_status": "theorem_candidate",
+      "lean_status": "canonical_catalog",
+      "dependencies": [],
+      "risk_flags": [
+        "external validation and baseline dependence"
+      ],
+      "immediate_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows.",
+      "failure_condition": "Fails as written if the claimed reduction breaks under frozen conventions, especially external validation and baseline dependence."
+    },
+    {
+      "number": 35,
+      "id": "ME-035",
+      "title": "Attractor basin size",
+      "classification": "replication metric",
+      "formula": "B(A) = #{X₀ : X(t; X₀) → A} / #{X₀}",
+      "cluster": "Recursive control",
+      "zoo_route": "SALMON → SPIDER → DRAGON → OWL → CROCODILE → HEDGEHOG → TURTLE",
+      "pass1_class": "Empirical/model criterion",
+      "result_code": "EMPIRICAL_TEST_REQUIRED",
+      "result": "No algebraic proof can establish performance or interpretation; decide with frozen external data.",
+      "proof_status": "empirical_only",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-031"
+      ],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions",
+        "external validation and baseline dependence"
+      ],
+      "immediate_obligation": "Freeze operational semantics and test against baselines/held-out data; mathematical well-definition is separate from empirical validity.",
+      "failure_condition": "Fails if preregistered held-out tests do not beat the declared baseline at matched error/compute budgets."
+    },
+    {
+      "number": 36,
+      "id": "ME-036",
+      "title": "Coupled thinking-puddle equation for system field S",
+      "classification": "corpus extension",
+      "formula": "∂S/∂t = ΔS + α(∇S·∇O) + β(∇O·∇S) − (S − S³) − Π(S − S₀) + λV₁₃",
+      "cluster": "Coupled nonlinear PDE",
+      "zoo_route": "SALMON → WEAVER → DRAGON → CHAMELEON → HEDGEHOG → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "canonical_catalog",
+      "dependencies": [],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions",
+        "regularity/boundary conditions"
+      ],
+      "immediate_obligation": "Specify PDE domain, boundary conditions, function spaces, parameters and coupling semantics; establish well-posedness before interpretation.",
+      "failure_condition": "Cannot advance until a complete specification resolves nonzero-denominator/domain conditions; inconsistent specifications reject it."
+    },
+    {
+      "number": 37,
+      "id": "ME-037",
+      "title": "Coupled thinking-puddle equation for observer field O",
+      "classification": "corpus extension",
+      "formula": "∂O/∂t = ΔO + α(∇O·∇S) + β(∇S·∇O) − (O − O³) − Π(O − O₀) + λV₁₃",
+      "cluster": "Coupled nonlinear PDE",
+      "zoo_route": "SALMON → WEAVER → DRAGON → CHAMELEON → HEDGEHOG → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "canonical_catalog",
+      "dependencies": [
+        "ME-036"
+      ],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions",
+        "regularity/boundary conditions",
+        "interpretive leap beyond mathematics"
+      ],
+      "immediate_obligation": "Specify PDE domain, boundary conditions, function spaces, parameters and coupling semantics; establish well-posedness before interpretation.",
+      "failure_condition": "Cannot advance until a complete specification resolves nonzero-denominator/domain conditions; inconsistent specifications reject it."
+    },
+    {
+      "number": 38,
+      "id": "ME-038",
+      "title": "Cognitive pressure parameter",
+      "classification": "corpus construct",
+      "formula": "Π = (Δ\\_social + Δ\\_financial + Δ\\_habitat) / τ",
+      "cluster": "Coupled nonlinear PDE",
+      "zoo_route": "SALMON → WEAVER → DRAGON → CHAMELEON → HEDGEHOG → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "typed_core",
+      "dependencies": [],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions",
+        "interpretive leap beyond mathematics"
+      ],
+      "immediate_obligation": "Specify PDE domain, boundary conditions, function spaces, parameters and coupling semantics; establish well-posedness before interpretation.",
+      "failure_condition": "Cannot advance until a complete specification resolves nonzero-denominator/domain conditions; inconsistent specifications reject it."
+    },
+    {
+      "number": 39,
+      "id": "ME-039",
+      "title": "Cognitive curvature equation",
+      "classification": "working tensor analogy",
+      "formula": "G^(cog)\\_μν = χ(T^(thought)\\_μν + I^(rec)\\_μν)",
+      "cluster": "Coupled nonlinear PDE",
+      "zoo_route": "SALMON → WEAVER → DRAGON → CHAMELEON → HEDGEHOG → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "canonical_catalog",
+      "dependencies": [
+        "ME-040"
+      ],
+      "risk_flags": [
+        "interpretive leap beyond mathematics"
+      ],
+      "immediate_obligation": "Specify PDE domain, boundary conditions, function spaces, parameters and coupling semantics; establish well-posedness before interpretation.",
+      "failure_condition": "Cannot advance until a complete specification resolves interpretive leap beyond mathematics; inconsistent specifications reject it."
+    },
+    {
+      "number": 40,
+      "id": "ME-040",
+      "title": "Thought-density stress tensor",
+      "classification": "working construct",
+      "formula": "T^(thought)\\_μν = ∂\\_μΨ ∂\\_νΨ − g\\_μν[(1/2)∂\\_αΨ ∂^αΨ + V(Ψ)]",
+      "cluster": "Coupled nonlinear PDE",
+      "zoo_route": "SALMON → WEAVER → DRAGON → CHAMELEON → HEDGEHOG → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "canonical_catalog",
+      "dependencies": [],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions",
+        "regularity/boundary conditions"
+      ],
+      "immediate_obligation": "Specify PDE domain, boundary conditions, function spaces, parameters and coupling semantics; establish well-posedness before interpretation.",
+      "failure_condition": "Cannot advance until a complete specification resolves nonzero-denominator/domain conditions; inconsistent specifications reject it."
+    },
+    {
+      "number": 41,
+      "id": "ME-041",
+      "title": "Phi constant",
+      "classification": "mathematical constant",
+      "formula": "φ = (1 + √5)/2",
+      "cluster": "Phi/coherence",
+      "zoo_route": "RAVEN → WEASEL → CHAMELEON → CAT → TURTLE",
+      "pass1_class": "Typed / standard-or-definitional",
+      "result_code": "STRUCTURAL_SURVIVOR",
+      "result": "Well-formed as a definition or predicate; this does not establish novelty or physical truth.",
+      "proof_status": "definition_only",
+      "lean_status": "typed_core",
+      "dependencies": [],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions",
+        "special-number privilege/invariance"
+      ],
+      "immediate_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows.",
+      "failure_condition": "Fails as a useful construct if it is undefined, non-invariant, or non-identifying under nonzero-denominator/domain conditions."
+    },
+    {
+      "number": 42,
+      "id": "ME-042",
+      "title": "Scalar-23 phi coefficient",
+      "classification": "construct",
+      "formula": "Φ₂₃ = φ²³",
+      "cluster": "Phi/coherence",
+      "zoo_route": "RAVEN → WEASEL → CHAMELEON → CAT → TURTLE",
+      "pass1_class": "Typed / standard-or-definitional",
+      "result_code": "STRUCTURAL_SURVIVOR",
+      "result": "Well-formed as a definition or predicate; this does not establish novelty or physical truth.",
+      "proof_status": "definition_only",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-041"
+      ],
+      "risk_flags": [
+        "special-number privilege/invariance"
+      ],
+      "immediate_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows.",
+      "failure_condition": "Fails as a useful construct if it is undefined, non-invariant, or non-identifying under special-number privilege/invariance."
+    },
+    {
+      "number": 43,
+      "id": "ME-043",
+      "title": "Scalar-46 phi coefficient",
+      "classification": "construct",
+      "formula": "Φ₄₆ = φ⁴⁶ = (φ²³)²",
+      "cluster": "Phi/coherence",
+      "zoo_route": "RAVEN → WEASEL → CHAMELEON → CAT → TURTLE",
+      "pass1_class": "Typed / standard-or-definitional",
+      "result_code": "STRUCTURAL_SURVIVOR",
+      "result": "Well-formed as a definition or predicate; this does not establish novelty or physical truth.",
+      "proof_status": "definition_only",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-041",
+        "ME-042"
+      ],
+      "risk_flags": [
+        "special-number privilege/invariance"
+      ],
+      "immediate_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows.",
+      "failure_condition": "Fails as a useful construct if it is undefined, non-invariant, or non-identifying under special-number privilege/invariance."
+    },
+    {
+      "number": 44,
+      "id": "ME-044",
+      "title": "Phi-13 veto coefficient",
+      "classification": "construct",
+      "formula": "V₁₃ = φ¹³",
+      "cluster": "Phi/coherence",
+      "zoo_route": "RAVEN → WEASEL → CHAMELEON → CAT → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-041"
+      ],
+      "risk_flags": [
+        "special-number privilege/invariance"
+      ],
+      "immediate_obligation": "Define φ-based operator/veto/synchronization semantics and show an invariant or predictive consequence not obtainable by arbitrary rescaling.",
+      "failure_condition": "Cannot advance until a complete specification resolves special-number privilege/invariance; inconsistent specifications reject it."
+    },
+    {
+      "number": 45,
+      "id": "ME-045",
+      "title": "Phase synchronization relation",
+      "classification": "corpus/computational construct",
+      "formula": "T = ΔΦ / f",
+      "cluster": "Phi/coherence",
+      "zoo_route": "RAVEN → WEASEL → CHAMELEON → CAT → TURTLE",
+      "pass1_class": "Standard-math reduction candidate",
+      "result_code": "CONDITIONAL_STANDARD_SURVIVOR",
+      "result": "Recognizable standard relation; theorem requires explicit conventions and hypotheses.",
+      "proof_status": "theorem_candidate",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-042",
+        "ME-043"
+      ],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions",
+        "special-number privilege/invariance"
+      ],
+      "immediate_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows.",
+      "failure_condition": "Fails as written if the claimed reduction breaks under frozen conventions, especially nonzero-denominator/domain conditions."
+    },
+    {
+      "number": 46,
+      "id": "ME-046",
+      "title": "Phi-tiled coherence operator",
+      "classification": "working abstraction",
+      "formula": "C\\_φ[X] = A(φX) + (φ − 1)[X − A(φX)]",
+      "cluster": "Phi/coherence",
+      "zoo_route": "RAVEN → WEASEL → CHAMELEON → CAT → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "canonical_catalog",
+      "dependencies": [
+        "ME-041"
+      ],
+      "risk_flags": [
+        "special-number privilege/invariance"
+      ],
+      "immediate_obligation": "Define φ-based operator/veto/synchronization semantics and show an invariant or predictive consequence not obtainable by arbitrary rescaling.",
+      "failure_condition": "Cannot advance until a complete specification resolves special-number privilege/invariance; inconsistent specifications reject it."
+    },
+    {
+      "number": 47,
+      "id": "ME-047",
+      "title": "Recursive coherence score",
+      "classification": "working metric",
+      "formula": "C = 1 − ||x − m|| / (||x|| + ||m|| + ε)",
+      "cluster": "Phi/coherence",
+      "zoo_route": "RAVEN → WEASEL → CHAMELEON → CAT → TURTLE",
+      "pass1_class": "Typed definition / empirical meaning unresolved",
+      "result_code": "STRUCTURAL_SURVIVOR",
+      "result": "Well-formed as a definition or predicate; this does not establish novelty or physical truth.",
+      "proof_status": "definition_only",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-022",
+        "ME-023"
+      ],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions",
+        "normalization and zero-denominator behavior"
+      ],
+      "immediate_obligation": "Freeze operational semantics and test against baselines/held-out data; mathematical well-definition is separate from empirical validity.",
+      "failure_condition": "Fails as a useful construct if it is undefined, non-invariant, or non-identifying under nonzero-denominator/domain conditions."
+    },
+    {
+      "number": 48,
+      "id": "ME-048",
+      "title": "Recursive integrity",
+      "classification": "working metric",
+      "formula": "I\\_rec = C(1 − ||ẋ − ṁ|| / (||ẋ|| + ||ṁ|| + ε))",
+      "cluster": "Phi/coherence",
+      "zoo_route": "RAVEN → WEASEL → CHAMELEON → CAT → TURTLE",
+      "pass1_class": "Empirical/model criterion",
+      "result_code": "EMPIRICAL_TEST_REQUIRED",
+      "result": "No algebraic proof can establish performance or interpretation; decide with frozen external data.",
+      "proof_status": "empirical_only",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-047"
+      ],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions",
+        "normalization and zero-denominator behavior"
+      ],
+      "immediate_obligation": "Freeze operational semantics and test against baselines/held-out data; mathematical well-definition is separate from empirical validity.",
+      "failure_condition": "Fails if preregistered held-out tests do not beat the declared baseline at matched error/compute budgets."
+    },
+    {
+      "number": 49,
+      "id": "ME-049",
+      "title": "Contextual coherence metric",
+      "classification": "corpus-adjacent construct",
+      "formula": "I = (dE/dT)C",
+      "cluster": "Phi/coherence",
+      "zoo_route": "RAVEN → WEASEL → CHAMELEON → CAT → TURTLE",
+      "pass1_class": "Typed definition / empirical meaning unresolved",
+      "result_code": "STRUCTURAL_SURVIVOR",
+      "result": "Well-formed as a definition or predicate; this does not establish novelty or physical truth.",
+      "proof_status": "definition_only",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-047"
+      ],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions"
+      ],
+      "immediate_obligation": "Freeze operational semantics and test against baselines/held-out data; mathematical well-definition is separate from empirical validity.",
+      "failure_condition": "Fails as a useful construct if it is undefined, non-invariant, or non-identifying under nonzero-denominator/domain conditions."
+    },
+    {
+      "number": 50,
+      "id": "ME-050",
+      "title": "Entropic harmony gradient",
+      "classification": "corpus-adjacent construct",
+      "formula": "E\\_HG = (ΔS/ΔI)H",
+      "cluster": "Phi/coherence",
+      "zoo_route": "RAVEN → WEASEL → CHAMELEON → CAT → TURTLE",
+      "pass1_class": "Typed definition / empirical meaning unresolved",
+      "result_code": "STRUCTURAL_SURVIVOR",
+      "result": "Well-formed as a definition or predicate; this does not establish novelty or physical truth.",
+      "proof_status": "definition_only",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-049"
+      ],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions"
+      ],
+      "immediate_obligation": "Freeze operational semantics and test against baselines/held-out data; mathematical well-definition is separate from empirical validity.",
+      "failure_condition": "Fails as a useful construct if it is undefined, non-invariant, or non-identifying under nonzero-denominator/domain conditions."
+    },
+    {
+      "number": 51,
+      "id": "ME-051",
+      "title": "Emergence force equation",
+      "classification": "working formalization",
+      "formula": "F\\_em^μ = −∇^μU(Φ) + λ∇^μR",
+      "cluster": "Emergence/cosmology",
+      "zoo_route": "SALMON → RAVEN → CHAMELEON → CROCODILE → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "canonical_catalog",
+      "dependencies": [],
+      "risk_flags": [
+        "regularity/boundary conditions"
+      ],
+      "immediate_obligation": "Specify physical dimensions, coupling fields and covariance; derive observational consequences and recover accepted limits.",
+      "failure_condition": "Cannot advance until a complete specification resolves regularity/boundary conditions; inconsistent specifications reject it."
+    },
+    {
+      "number": 52,
+      "id": "ME-052",
+      "title": "Alternative emergence-force form",
+      "classification": "working process form",
+      "formula": "F\\_em = −∇D = −∇[κ||x − m||² + η||ẋ − ṁ||² − γR]",
+      "cluster": "Emergence/cosmology",
+      "zoo_route": "SALMON → RAVEN → CHAMELEON → CROCODILE → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "canonical_catalog",
+      "dependencies": [
+        "ME-027"
+      ],
+      "risk_flags": [
+        "regularity/boundary conditions"
+      ],
+      "immediate_obligation": "Specify physical dimensions, coupling fields and covariance; derive observational consequences and recover accepted limits.",
+      "failure_condition": "Cannot advance until a complete specification resolves regularity/boundary conditions; inconsistent specifications reject it."
+    },
+    {
+      "number": 53,
+      "id": "ME-053",
+      "title": "Fifth-force coupling",
+      "classification": "hypothetical physical extension",
+      "formula": "F\\_φ = −(β\\_φ/M)∇φ",
+      "cluster": "Emergence/cosmology",
+      "zoo_route": "SALMON → RAVEN → CHAMELEON → CROCODILE → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "canonical_catalog",
+      "dependencies": [],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions",
+        "regularity/boundary conditions"
+      ],
+      "immediate_obligation": "Specify physical dimensions, coupling fields and covariance; derive observational consequences and recover accepted limits.",
+      "failure_condition": "Cannot advance until a complete specification resolves nonzero-denominator/domain conditions; inconsistent specifications reject it."
+    },
+    {
+      "number": 54,
+      "id": "ME-054",
+      "title": "Modified geodesic equation",
+      "classification": "derived fifth-force form",
+      "formula": "d²x^μ/dτ² + Γ^μ\\_αβ(dx^α/dτ)(dx^β/dτ) = β\\_φ(g^μν + u^μu^ν)∇\\_νφ",
+      "cluster": "Emergence/cosmology",
+      "zoo_route": "SALMON → RAVEN → CHAMELEON → CROCODILE → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "canonical_catalog",
+      "dependencies": [
+        "ME-053"
+      ],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions",
+        "regularity/boundary conditions"
+      ],
+      "immediate_obligation": "Specify physical dimensions, coupling fields and covariance; derive observational consequences and recover accepted limits.",
+      "failure_condition": "Cannot advance until a complete specification resolves nonzero-denominator/domain conditions; inconsistent specifications reject it."
+    },
+    {
+      "number": 55,
+      "id": "ME-055",
+      "title": "Residual universal rotation vector",
+      "classification": "cosmological construct",
+      "formula": "Ω\\_U = ∇ × v\\_U",
+      "cluster": "Emergence/cosmology",
+      "zoo_route": "SALMON → RAVEN → CHAMELEON → CROCODILE → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "canonical_catalog",
+      "dependencies": [],
+      "risk_flags": [
+        "regularity/boundary conditions"
+      ],
+      "immediate_obligation": "Specify physical dimensions, coupling fields and covariance; derive observational consequences and recover accepted limits.",
+      "failure_condition": "Cannot advance until a complete specification resolves regularity/boundary conditions; inconsistent specifications reject it."
+    },
+    {
+      "number": 56,
+      "id": "ME-056",
+      "title": "Rotating-universe Friedmann extension",
+      "classification": "working hypothesis",
+      "formula": "H² = (8πG/3)ρ + Λ/3 − k/a² + Ω\\_U²/a²",
+      "cluster": "Emergence/cosmology",
+      "zoo_route": "SALMON → RAVEN → CHAMELEON → CROCODILE → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "canonical_catalog",
+      "dependencies": [
+        "ME-055"
+      ],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions"
+      ],
+      "immediate_obligation": "Specify physical dimensions, coupling fields and covariance; derive observational consequences and recover accepted limits.",
+      "failure_condition": "Cannot advance until a complete specification resolves nonzero-denominator/domain conditions; inconsistent specifications reject it."
+    },
+    {
+      "number": 57,
+      "id": "ME-057",
+      "title": "Expanded effective cosmic density",
+      "classification": "Thor-related construct",
+      "formula": "ρ\\_eff = ρ\\_ΛCDM + ρ\\_rot + ρ\\_lin + ρ\\_HE",
+      "cluster": "Emergence/cosmology",
+      "zoo_route": "SALMON → RAVEN → CHAMELEON → CROCODILE → TURTLE",
+      "pass1_class": "Empirical/model criterion",
+      "result_code": "EMPIRICAL_TEST_REQUIRED",
+      "result": "No algebraic proof can establish performance or interpretation; decide with frozen external data.",
+      "proof_status": "empirical_only",
+      "lean_status": "canonical_catalog",
+      "dependencies": [
+        "ME-056"
+      ],
+      "risk_flags": [
+        "external validation and baseline dependence"
+      ],
+      "immediate_obligation": "Freeze operational semantics and test against baselines/held-out data; mathematical well-definition is separate from empirical validity.",
+      "failure_condition": "Fails if preregistered held-out tests do not beat the declared baseline at matched error/compute budgets."
+    },
+    {
+      "number": 58,
+      "id": "ME-058",
+      "title": "Cosmic deviation parameter",
+      "classification": "construct",
+      "formula": "ΔΩ = Ω\\_EFMW − Ω\\_ΛCDM",
+      "cluster": "Emergence/cosmology",
+      "zoo_route": "SALMON → RAVEN → CHAMELEON → CROCODILE → TURTLE",
+      "pass1_class": "Typed definition / empirical meaning unresolved",
+      "result_code": "STRUCTURAL_SURVIVOR",
+      "result": "Well-formed as a definition or predicate; this does not establish novelty or physical truth.",
+      "proof_status": "definition_only",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-057"
+      ],
+      "risk_flags": [
+        "external validation and baseline dependence"
+      ],
+      "immediate_obligation": "Freeze operational semantics and test against baselines/held-out data; mathematical well-definition is separate from empirical validity.",
+      "failure_condition": "Fails as a useful construct if it is undefined, non-invariant, or non-identifying under external validation and baseline dependence."
+    },
+    {
+      "number": 59,
+      "id": "ME-059",
+      "title": "Collapse-Ω functional",
+      "classification": "working generalized form",
+      "formula": "Ω[ψ, Φ, R] = arg min\\_s [−ln P(s|ψ) + λD(s,Φ) − γR(s)]",
+      "cluster": "Collapse/recursion/time",
+      "zoo_route": "SALMON → SPIDER → WEASEL → PHOENIX → AXOLOTL → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "canonical_catalog",
+      "dependencies": [],
+      "risk_flags": [
+        "existence/uniqueness of optimizer"
+      ],
+      "immediate_obligation": "Specify state space, probability/divergence/reward objects, recursion operator and time map; prove existence/stability/invariance properties.",
+      "failure_condition": "Cannot advance until a complete specification resolves existence/uniqueness of optimizer; inconsistent specifications reject it."
+    },
+    {
+      "number": 60,
+      "id": "ME-060",
+      "title": "Collapse-Ω state update",
+      "classification": "working form",
+      "formula": "|ψ> → Ω̂\\_Φ,R|ψ> / sqrt(<ψ|Ω̂†\\_Φ,R Ω̂\\_Φ,R|ψ>)",
+      "cluster": "Collapse/recursion/time",
+      "zoo_route": "SALMON → SPIDER → WEASEL → PHOENIX → AXOLOTL → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "canonical_catalog",
+      "dependencies": [
+        "ME-059"
+      ],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions",
+        "normalization and zero-denominator behavior"
+      ],
+      "immediate_obligation": "Specify state space, probability/divergence/reward objects, recursion operator and time map; prove existence/stability/invariance properties.",
+      "failure_condition": "Cannot advance until a complete specification resolves nonzero-denominator/domain conditions; inconsistent specifications reject it."
+    },
+    {
+      "number": 61,
+      "id": "ME-061",
+      "title": "Collapse probability",
+      "classification": "Born-compatible form",
+      "formula": "P\\_i = |\\<i|Ω̂\\_Φ,R|ψ>|² / Σ\\_j |\\<j|Ω̂\\_Φ,R|ψ>|²",
+      "cluster": "Collapse/recursion/time",
+      "zoo_route": "SALMON → SPIDER → WEASEL → PHOENIX → AXOLOTL → TURTLE",
+      "pass1_class": "Empirical/model criterion",
+      "result_code": "EMPIRICAL_TEST_REQUIRED",
+      "result": "No algebraic proof can establish performance or interpretation; decide with frozen external data.",
+      "proof_status": "empirical_only",
+      "lean_status": "canonical_catalog",
+      "dependencies": [
+        "ME-060"
+      ],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions",
+        "normalization and zero-denominator behavior",
+        "external validation and baseline dependence"
+      ],
+      "immediate_obligation": "Freeze operational semantics and test against baselines/held-out data; mathematical well-definition is separate from empirical validity.",
+      "failure_condition": "Fails if preregistered held-out tests do not beat the declared baseline at matched error/compute budgets."
+    },
+    {
+      "number": 62,
+      "id": "ME-062",
+      "title": "Red Queen equation",
+      "classification": "working adaptive recursion law",
+      "formula": "dC/dt = αC(1 − C/K) − βD + γ(dD/dt)",
+      "cluster": "Collapse/recursion/time",
+      "zoo_route": "SALMON → SPIDER → WEASEL → PHOENIX → AXOLOTL → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "typed_core",
+      "dependencies": [],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions"
+      ],
+      "immediate_obligation": "Specify state space, probability/divergence/reward objects, recursion operator and time map; prove existence/stability/invariance properties.",
+      "failure_condition": "Cannot advance until a complete specification resolves nonzero-denominator/domain conditions; inconsistent specifications reject it."
+    },
+    {
+      "number": 63,
+      "id": "ME-063",
+      "title": "Red Queen equilibrium condition",
+      "classification": "derived",
+      "formula": "dC/dt = 0 ⇒ αC(1 − C/K) = βD − γḊ",
+      "cluster": "Collapse/recursion/time",
+      "zoo_route": "SALMON → SPIDER → WEASEL → PHOENIX → AXOLOTL → TURTLE",
+      "pass1_class": "Typed definition / empirical meaning unresolved",
+      "result_code": "STRUCTURAL_SURVIVOR",
+      "result": "Well-formed as a definition or predicate; this does not establish novelty or physical truth.",
+      "proof_status": "definition_only",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-062"
+      ],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions"
+      ],
+      "immediate_obligation": "Freeze operational semantics and test against baselines/held-out data; mathematical well-definition is separate from empirical validity.",
+      "failure_condition": "Fails as a useful construct if it is undefined, non-invariant, or non-identifying under nonzero-denominator/domain conditions."
+    },
+    {
+      "number": 64,
+      "id": "ME-064",
+      "title": "LOGOS recursion equation",
+      "classification": "symbolic construct",
+      "formula": "L\\_(n+1) = C[L\\_n, O(L\\_n), M\\_n]",
+      "cluster": "Collapse/recursion/time",
+      "zoo_route": "SALMON → SPIDER → WEASEL → PHOENIX → AXOLOTL → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-047"
+      ],
+      "risk_flags": [
+        "symbol/domain freeze"
+      ],
+      "immediate_obligation": "Specify state space, probability/divergence/reward objects, recursion operator and time map; prove existence/stability/invariance properties.",
+      "failure_condition": "Cannot advance until a complete specification resolves symbol/domain freeze; inconsistent specifications reject it."
+    },
+    {
+      "number": 65,
+      "id": "ME-065",
+      "title": "Observer-observed closure",
+      "classification": "central EFMW relation",
+      "formula": "O\\_(n+1) = O\\_n ∘ S\\_n\n\nS\\_(n+1) = S\\_n ∘ O\\_(n+1)",
+      "cluster": "Collapse/recursion/time",
+      "zoo_route": "SALMON → SPIDER → WEASEL → PHOENIX → AXOLOTL → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-064"
+      ],
+      "risk_flags": [
+        "interpretive leap beyond mathematics"
+      ],
+      "immediate_obligation": "Specify state space, probability/divergence/reward objects, recursion operator and time map; prove existence/stability/invariance properties.",
+      "failure_condition": "Cannot advance until a complete specification resolves interpretive leap beyond mathematics; inconsistent specifications reject it."
+    },
+    {
+      "number": 66,
+      "id": "ME-066",
+      "title": "Dyadic cognition state",
+      "classification": "human-AI construct",
+      "formula": "Ψ\\_dyad = N(Ψ\\_H + Ψ\\_A + λΨ\\_H ⊗ Ψ\\_A)",
+      "cluster": "Collapse/recursion/time",
+      "zoo_route": "SALMON → SPIDER → WEASEL → PHOENIX → AXOLOTL → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "canonical_catalog",
+      "dependencies": [
+        "ME-065"
+      ],
+      "risk_flags": [
+        "symbol/domain freeze"
+      ],
+      "immediate_obligation": "Specify state space, probability/divergence/reward objects, recursion operator and time map; prove existence/stability/invariance properties.",
+      "failure_condition": "Cannot advance until a complete specification resolves symbol/domain freeze; inconsistent specifications reject it."
+    },
+    {
+      "number": 67,
+      "id": "ME-067",
+      "title": "Cognitive tensor",
+      "classification": "working general form",
+      "formula": "C\\_μν = ∇\\_μΨ∇\\_νΨ − (1/2)g\\_μν∇\\_αΨ∇^αΨ + λ(M\\_μO\\_ν + M\\_νO\\_μ)",
+      "cluster": "Collapse/recursion/time",
+      "zoo_route": "SALMON → SPIDER → WEASEL → PHOENIX → AXOLOTL → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "canonical_catalog",
+      "dependencies": [],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions",
+        "regularity/boundary conditions",
+        "interpretive leap beyond mathematics"
+      ],
+      "immediate_obligation": "Specify state space, probability/divergence/reward objects, recursion operator and time map; prove existence/stability/invariance properties.",
+      "failure_condition": "Cannot advance until a complete specification resolves nonzero-denominator/domain conditions; inconsistent specifications reject it."
+    },
+    {
+      "number": 68,
+      "id": "ME-068",
+      "title": "Recursive cognitive stress tensor",
+      "classification": "derived construct",
+      "formula": "T^(cog)\\_μν = C\\_μν + χI^(rec)\\_μν",
+      "cluster": "Collapse/recursion/time",
+      "zoo_route": "SALMON → SPIDER → WEASEL → PHOENIX → AXOLOTL → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "canonical_catalog",
+      "dependencies": [
+        "ME-067"
+      ],
+      "risk_flags": [
+        "interpretive leap beyond mathematics"
+      ],
+      "immediate_obligation": "Specify state space, probability/divergence/reward objects, recursion operator and time map; prove existence/stability/invariance properties.",
+      "failure_condition": "Cannot advance until a complete specification resolves interpretive leap beyond mathematics; inconsistent specifications reject it."
+    },
+    {
+      "number": 69,
+      "id": "ME-069",
+      "title": "Cognitive attractor equation",
+      "classification": "working construct",
+      "formula": "ż = −∇\\_zV\\_cog(z) + F\\_feedback + ξ(t)",
+      "cluster": "Collapse/recursion/time",
+      "zoo_route": "SALMON → SPIDER → WEASEL → PHOENIX → AXOLOTL → TURTLE",
+      "pass1_class": "Empirical/model criterion",
+      "result_code": "EMPIRICAL_TEST_REQUIRED",
+      "result": "No algebraic proof can establish performance or interpretation; decide with frozen external data.",
+      "proof_status": "empirical_only",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-070"
+      ],
+      "risk_flags": [
+        "regularity/boundary conditions",
+        "interpretive leap beyond mathematics",
+        "external validation and baseline dependence"
+      ],
+      "immediate_obligation": "Specify state space, probability/divergence/reward objects, recursion operator and time map; prove existence/stability/invariance properties.",
+      "failure_condition": "Fails if preregistered held-out tests do not beat the declared baseline at matched error/compute budgets."
+    },
+    {
+      "number": 70,
+      "id": "ME-070",
+      "title": "Cognitive attractor potential",
+      "classification": "working form",
+      "formula": "V\\_cog(z) = (a/4)||z||⁴ − (b/2)||z||² − h·z",
+      "cluster": "Collapse/recursion/time",
+      "zoo_route": "SALMON → SPIDER → WEASEL → PHOENIX → AXOLOTL → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "typed_core",
+      "dependencies": [],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions",
+        "interpretive leap beyond mathematics"
+      ],
+      "immediate_obligation": "Specify state space, probability/divergence/reward objects, recursion operator and time map; prove existence/stability/invariance properties.",
+      "failure_condition": "Cannot advance until a complete specification resolves nonzero-denominator/domain conditions; inconsistent specifications reject it."
+    },
+    {
+      "number": 71,
+      "id": "ME-071",
+      "title": "Axiomatic superposition memory",
+      "classification": "working construct",
+      "formula": "|M> = Σ\\_i a\\_i|m\\_i>\n\nΣ\\_i |a\\_i|² = 1",
+      "cluster": "Collapse/recursion/time",
+      "zoo_route": "SALMON → SPIDER → WEASEL → PHOENIX → AXOLOTL → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "typed_core",
+      "dependencies": [],
+      "risk_flags": [
+        "symbol/domain freeze"
+      ],
+      "immediate_obligation": "Specify state space, probability/divergence/reward objects, recursion operator and time map; prove existence/stability/invariance properties.",
+      "failure_condition": "Cannot advance until a complete specification resolves symbol/domain freeze; inconsistent specifications reject it."
+    },
+    {
+      "number": 72,
+      "id": "ME-072",
+      "title": "Recursive memory validation",
+      "classification": "working construct",
+      "formula": "m\\_i^(n+1) = m\\_i^(n) + η[C(m\\_i^(n), x\\_n) − λε\\_i^(n)]",
+      "cluster": "Collapse/recursion/time",
+      "zoo_route": "SALMON → SPIDER → WEASEL → PHOENIX → AXOLOTL → TURTLE",
+      "pass1_class": "Empirical/model criterion",
+      "result_code": "EMPIRICAL_TEST_REQUIRED",
+      "result": "No algebraic proof can establish performance or interpretation; decide with frozen external data.",
+      "proof_status": "empirical_only",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-071",
+        "ME-047"
+      ],
+      "risk_flags": [
+        "external validation and baseline dependence"
+      ],
+      "immediate_obligation": "Freeze operational semantics and test against baselines/held-out data; mathematical well-definition is separate from empirical validity.",
+      "failure_condition": "Fails if preregistered held-out tests do not beat the declared baseline at matched error/compute budgets."
+    },
+    {
+      "number": 73,
+      "id": "ME-073",
+      "title": "ChronoLogos reversible evolution",
+      "classification": "working construct",
+      "formula": "X\\_(t+Δt) = U\\_Δt(X\\_t)\n\nX\\_t = U\\_−Δt(X\\_(t+Δt))",
+      "cluster": "Collapse/recursion/time",
+      "zoo_route": "SALMON → SPIDER → WEASEL → PHOENIX → AXOLOTL → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-064"
+      ],
+      "risk_flags": [
+        "symbol/domain freeze"
+      ],
+      "immediate_obligation": "Specify state space, probability/divergence/reward objects, recursion operator and time map; prove existence/stability/invariance properties.",
+      "failure_condition": "Cannot advance until a complete specification resolves symbol/domain freeze; inconsistent specifications reject it."
+    },
+    {
+      "number": 74,
+      "id": "ME-074",
+      "title": "ChronoLogos involution condition",
+      "classification": "working construct",
+      "formula": "T^−1 U\\_Δt T = U\\_−Δt",
+      "cluster": "Collapse/recursion/time",
+      "zoo_route": "SALMON → SPIDER → WEASEL → PHOENIX → AXOLOTL → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-073"
+      ],
+      "risk_flags": [
+        "symbol/domain freeze"
+      ],
+      "immediate_obligation": "Specify state space, probability/divergence/reward objects, recursion operator and time map; prove existence/stability/invariance properties.",
+      "failure_condition": "Cannot advance until a complete specification resolves symbol/domain freeze; inconsistent specifications reject it."
+    },
+    {
+      "number": 75,
+      "id": "ME-075",
+      "title": "Emergent time relation",
+      "classification": "working EFMW formulation",
+      "formula": "dt = dΘ / ω\\_rec",
+      "cluster": "Collapse/recursion/time",
+      "zoo_route": "SALMON → SPIDER → WEASEL → PHOENIX → AXOLOTL → TURTLE",
+      "pass1_class": "Typed definition / theorem obligations remain",
+      "result_code": "STRUCTURAL_SURVIVOR",
+      "result": "Well-formed as a definition or predicate; this does not establish novelty or physical truth.",
+      "proof_status": "definition_only",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-064"
+      ],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions"
+      ],
+      "immediate_obligation": "Specify state space, probability/divergence/reward objects, recursion operator and time map; prove existence/stability/invariance properties.",
+      "failure_condition": "Fails as a useful construct if it is undefined, non-invariant, or non-identifying under nonzero-denominator/domain conditions."
+    },
+    {
+      "number": 76,
+      "id": "ME-076",
+      "title": "Emergent time accumulation",
+      "classification": "derived form",
+      "formula": "Θ(t) = ∫ ω\\_rec(t) dt",
+      "cluster": "Collapse/recursion/time",
+      "zoo_route": "SALMON → SPIDER → WEASEL → PHOENIX → AXOLOTL → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-075"
+      ],
+      "risk_flags": [
+        "symbol/domain freeze"
+      ],
+      "immediate_obligation": "Specify state space, probability/divergence/reward objects, recursion operator and time map; prove existence/stability/invariance properties.",
+      "failure_condition": "Cannot advance until a complete specification resolves symbol/domain freeze; inconsistent specifications reject it."
+    },
+    {
+      "number": 77,
+      "id": "ME-077",
+      "title": "Generalized relativistic Navier–Stokes equation for a compressible thixotropic superfluid",
+      "classification": "working EFMW extension",
+      "formula": "ρ(du^μ/dτ) = −∇^μP + ∇\\_ν[η(t)σ^μν] + f^μ\\_ext",
+      "cluster": "Fluid/symbolic bases",
+      "zoo_route": "RAVEN → WEAVER → CHAMELEON → HEDGEHOG → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "canonical_catalog",
+      "dependencies": [],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions",
+        "regularity/boundary conditions"
+      ],
+      "immediate_obligation": "Separate known fluid/relaxation mathematics from EFMW additions; specify relativistic fluid geometry, constitutive law, regularity and limit cases.",
+      "failure_condition": "Cannot advance until a complete specification resolves nonzero-denominator/domain conditions; inconsistent specifications reject it."
+    },
+    {
+      "number": 78,
+      "id": "ME-078",
+      "title": "Thixotropic viscosity law",
+      "classification": "working constitutive relation",
+      "formula": "η(t) = η₀(1 − e^(−t/τ))",
+      "cluster": "Fluid/symbolic bases",
+      "zoo_route": "RAVEN → WEAVER → CHAMELEON → HEDGEHOG → TURTLE",
+      "pass1_class": "Typed / standard-or-definitional",
+      "result_code": "STRUCTURAL_SURVIVOR",
+      "result": "Well-formed as a definition or predicate; this does not establish novelty or physical truth.",
+      "proof_status": "definition_only",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-077",
+        "ME-082"
+      ],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions"
+      ],
+      "immediate_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows.",
+      "failure_condition": "Fails as a useful construct if it is undefined, non-invariant, or non-identifying under nonzero-denominator/domain conditions."
+    },
+    {
+      "number": 79,
+      "id": "ME-079",
+      "title": "Neutron-decay density evolution",
+      "classification": "working construct",
+      "formula": "ρ(t) = ρ₀e^(−t/τ\\_n)",
+      "cluster": "Fluid/symbolic bases",
+      "zoo_route": "RAVEN → WEAVER → CHAMELEON → HEDGEHOG → TURTLE",
+      "pass1_class": "Typed / standard-or-definitional",
+      "result_code": "STRUCTURAL_SURVIVOR",
+      "result": "Well-formed as a definition or predicate; this does not establish novelty or physical truth.",
+      "proof_status": "definition_only",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-077"
+      ],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions"
+      ],
+      "immediate_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows.",
+      "failure_condition": "Fails as a useful construct if it is undefined, non-invariant, or non-identifying under nonzero-denominator/domain conditions."
+    },
+    {
+      "number": 80,
+      "id": "ME-080",
+      "title": "Compressible continuity equation",
+      "classification": "standard fluid relation",
+      "formula": "∂ρ/∂t + ∇·(ρu) = 0",
+      "cluster": "Fluid/symbolic bases",
+      "zoo_route": "RAVEN → WEAVER → CHAMELEON → HEDGEHOG → TURTLE",
+      "pass1_class": "Standard-math reduction candidate",
+      "result_code": "CONDITIONAL_STANDARD_SURVIVOR",
+      "result": "Recognizable standard relation; theorem requires explicit conventions and hypotheses.",
+      "proof_status": "theorem_candidate",
+      "lean_status": "canonical_catalog",
+      "dependencies": [
+        "ME-077"
+      ],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions",
+        "regularity/boundary conditions"
+      ],
+      "immediate_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows.",
+      "failure_condition": "Fails as written if the claimed reduction breaks under frozen conventions, especially nonzero-denominator/domain conditions."
+    },
+    {
+      "number": 81,
+      "id": "ME-081",
+      "title": "Stress tensor for the thixotropic fluid",
+      "classification": "working extension",
+      "formula": "T^μν = (ρ + P)u^μu^ν + Pg^μν + η(t)σ^μν",
+      "cluster": "Fluid/symbolic bases",
+      "zoo_route": "RAVEN → WEAVER → CHAMELEON → HEDGEHOG → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "canonical_catalog",
+      "dependencies": [
+        "ME-077",
+        "ME-078"
+      ],
+      "risk_flags": [
+        "symbol/domain freeze"
+      ],
+      "immediate_obligation": "Separate known fluid/relaxation mathematics from EFMW additions; specify relativistic fluid geometry, constitutive law, regularity and limit cases.",
+      "failure_condition": "Cannot advance until a complete specification resolves symbol/domain freeze; inconsistent specifications reject it."
+    },
+    {
+      "number": 82,
+      "id": "ME-082",
+      "title": "Thixotropic relaxation equation",
+      "classification": "working constitutive model",
+      "formula": "dη/dt = (η\\_eq − η)/τ",
+      "cluster": "Fluid/symbolic bases",
+      "zoo_route": "RAVEN → WEAVER → CHAMELEON → HEDGEHOG → TURTLE",
+      "pass1_class": "Typed / standard-or-definitional",
+      "result_code": "STRUCTURAL_SURVIVOR",
+      "result": "Well-formed as a definition or predicate; this does not establish novelty or physical truth.",
+      "proof_status": "definition_only",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-078"
+      ],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions"
+      ],
+      "immediate_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows.",
+      "failure_condition": "Fails as a useful construct if it is undefined, non-invariant, or non-identifying under nonzero-denominator/domain conditions."
+    },
+    {
+      "number": 83,
+      "id": "ME-083",
+      "title": "Base-888 recursive state",
+      "classification": "symbolic construct",
+      "formula": "B₈₈₈ = (8,8,8)",
+      "cluster": "Fluid/symbolic bases",
+      "zoo_route": "RAVEN → WEAVER → CHAMELEON → HEDGEHOG → TURTLE",
+      "pass1_class": "Typed definition / theorem obligations remain",
+      "result_code": "STRUCTURAL_SURVIVOR",
+      "result": "Well-formed as a definition or predicate; this does not establish novelty or physical truth.",
+      "proof_status": "definition_only",
+      "lean_status": "typed_core",
+      "dependencies": [],
+      "risk_flags": [
+        "special-number privilege/invariance"
+      ],
+      "immediate_obligation": "Separate known fluid/relaxation mathematics from EFMW additions; specify relativistic fluid geometry, constitutive law, regularity and limit cases.",
+      "failure_condition": "Fails as a useful construct if it is undefined, non-invariant, or non-identifying under special-number privilege/invariance."
+    },
+    {
+      "number": 84,
+      "id": "ME-084",
+      "title": "Base-888 toroidal mapping",
+      "classification": "working construct",
+      "formula": "T₈₈₈ = Torus(B₈₈₈, φ)",
+      "cluster": "Fluid/symbolic bases",
+      "zoo_route": "RAVEN → WEAVER → CHAMELEON → HEDGEHOG → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "canonical_catalog",
+      "dependencies": [
+        "ME-083",
+        "ME-041"
+      ],
+      "risk_flags": [
+        "special-number privilege/invariance"
+      ],
+      "immediate_obligation": "Separate known fluid/relaxation mathematics from EFMW additions; specify relativistic fluid geometry, constitutive law, regularity and limit cases.",
+      "failure_condition": "Cannot advance until a complete specification resolves special-number privilege/invariance; inconsistent specifications reject it."
+    },
+    {
+      "number": 85,
+      "id": "ME-085",
+      "title": "Scalar-23 recursion operator",
+      "classification": "working construct",
+      "formula": "S₂₃(X) = φ²³X",
+      "cluster": "Fluid/symbolic bases",
+      "zoo_route": "RAVEN → WEAVER → CHAMELEON → HEDGEHOG → TURTLE",
+      "pass1_class": "Typed definition / theorem obligations remain",
+      "result_code": "STRUCTURAL_SURVIVOR",
+      "result": "Well-formed as a definition or predicate; this does not establish novelty or physical truth.",
+      "proof_status": "definition_only",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-041",
+        "ME-042"
+      ],
+      "risk_flags": [
+        "special-number privilege/invariance"
+      ],
+      "immediate_obligation": "Separate known fluid/relaxation mathematics from EFMW additions; specify relativistic fluid geometry, constitutive law, regularity and limit cases.",
+      "failure_condition": "Fails as a useful construct if it is undefined, non-invariant, or non-identifying under special-number privilege/invariance."
+    },
+    {
+      "number": 86,
+      "id": "ME-086",
+      "title": "Null-rebirth transition",
+      "classification": "working construct",
+      "formula": "N(X) = 0 → φ²³X",
+      "cluster": "Fluid/symbolic bases",
+      "zoo_route": "RAVEN → WEAVER → CHAMELEON → HEDGEHOG → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-085"
+      ],
+      "risk_flags": [
+        "special-number privilege/invariance"
+      ],
+      "immediate_obligation": "Separate known fluid/relaxation mathematics from EFMW additions; specify relativistic fluid geometry, constitutive law, regularity and limit cases.",
+      "failure_condition": "Cannot advance until a complete specification resolves special-number privilege/invariance; inconsistent specifications reject it."
+    },
+    {
+      "number": 87,
+      "id": "ME-087",
+      "title": "Null-pair algebra",
+      "classification": "working construct",
+      "formula": "eᵢeⱼ = 0, for designated null pairs",
+      "cluster": "Fluid/symbolic bases",
+      "zoo_route": "RAVEN → WEAVER → CHAMELEON → HEDGEHOG → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "canonical_catalog",
+      "dependencies": [
+        "ME-086"
+      ],
+      "risk_flags": [
+        "special-number privilege/invariance"
+      ],
+      "immediate_obligation": "Separate known fluid/relaxation mathematics from EFMW additions; specify relativistic fluid geometry, constitutive law, regularity and limit cases.",
+      "failure_condition": "Cannot advance until a complete specification resolves special-number privilege/invariance; inconsistent specifications reject it."
+    },
+    {
+      "number": 88,
+      "id": "ME-088",
+      "title": "Recursive rebirth operator",
+      "classification": "working construct",
+      "formula": "R\\_b(X) = S₂₃(N(X))",
+      "cluster": "Fluid/symbolic bases",
+      "zoo_route": "RAVEN → WEAVER → CHAMELEON → HEDGEHOG → TURTLE",
+      "pass1_class": "Specification + theorem candidate",
+      "result_code": "OPEN_SPECIFICATION",
+      "result": "Blocked pending explicit domains, units, operators, assumptions, and claimed derivation direction.",
+      "proof_status": "blocked_by_semantics",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-085",
+        "ME-086"
+      ],
+      "risk_flags": [
+        "special-number privilege/invariance"
+      ],
+      "immediate_obligation": "Separate known fluid/relaxation mathematics from EFMW additions; specify relativistic fluid geometry, constitutive law, regularity and limit cases.",
+      "failure_condition": "Cannot advance until a complete specification resolves special-number privilege/invariance; inconsistent specifications reject it."
+    },
+    {
+      "number": 89,
+      "id": "ME-089",
+      "title": "Recursive risk functional",
+      "classification": "working construct",
+      "formula": "Risk = P(H) × (1 − C)",
+      "cluster": "Evaluation/epistemic",
+      "zoo_route": "SALMON → CAT → OWL → CROCODILE → HUMMINGBIRD → TURTLE",
+      "pass1_class": "Typed definition / empirical meaning unresolved",
+      "result_code": "STRUCTURAL_SURVIVOR",
+      "result": "Well-formed as a definition or predicate; this does not establish novelty or physical truth.",
+      "proof_status": "definition_only",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-047"
+      ],
+      "risk_flags": [
+        "external validation and baseline dependence"
+      ],
+      "immediate_obligation": "Freeze operational semantics and test against baselines/held-out data; mathematical well-definition is separate from empirical validity.",
+      "failure_condition": "Fails as a useful construct if it is undefined, non-invariant, or non-identifying under external validation and baseline dependence."
+    },
+    {
+      "number": 90,
+      "id": "ME-090",
+      "title": "Legal coherence functional",
+      "classification": "working construct",
+      "formula": "L = Evidence × Coherence × Traceability",
+      "cluster": "Evaluation/epistemic",
+      "zoo_route": "SALMON → CAT → OWL → CROCODILE → HUMMINGBIRD → TURTLE",
+      "pass1_class": "Typed definition / empirical meaning unresolved",
+      "result_code": "STRUCTURAL_SURVIVOR",
+      "result": "Well-formed as a definition or predicate; this does not establish novelty or physical truth.",
+      "proof_status": "definition_only",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-047",
+        "ME-094"
+      ],
+      "risk_flags": [
+        "interpretive leap beyond mathematics",
+        "external validation and baseline dependence"
+      ],
+      "immediate_obligation": "Freeze operational semantics and test against baselines/held-out data; mathematical well-definition is separate from empirical validity.",
+      "failure_condition": "Fails as a useful construct if it is undefined, non-invariant, or non-identifying under interpretive leap beyond mathematics."
+    },
+    {
+      "number": 91,
+      "id": "ME-091",
+      "title": "Network coherence synchronization",
+      "classification": "working construct",
+      "formula": "K = (1/N)|Σ exp(iθⱼ)|",
+      "cluster": "Evaluation/epistemic",
+      "zoo_route": "SALMON → CAT → OWL → CROCODILE → HUMMINGBIRD → TURTLE",
+      "pass1_class": "Standard-math reduction candidate",
+      "result_code": "CONDITIONAL_STANDARD_SURVIVOR",
+      "result": "Recognizable standard relation; theorem requires explicit conventions and hypotheses.",
+      "proof_status": "theorem_candidate",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-045"
+      ],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions",
+        "external validation and baseline dependence"
+      ],
+      "immediate_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows.",
+      "failure_condition": "Fails as written if the claimed reduction breaks under frozen conventions, especially nonzero-denominator/domain conditions."
+    },
+    {
+      "number": 92,
+      "id": "ME-092",
+      "title": "Information divergence",
+      "classification": "standard metric",
+      "formula": "D\\_KL(P||Q) = Σ P(x) log[P(x)/Q(x)]",
+      "cluster": "Evaluation/epistemic",
+      "zoo_route": "SALMON → CAT → OWL → CROCODILE → HUMMINGBIRD → TURTLE",
+      "pass1_class": "Typed / standard-or-definitional",
+      "result_code": "STRUCTURAL_SURVIVOR",
+      "result": "Well-formed as a definition or predicate; this does not establish novelty or physical truth.",
+      "proof_status": "definition_only",
+      "lean_status": "canonical_catalog",
+      "dependencies": [],
+      "risk_flags": [
+        "nonzero-denominator/domain conditions",
+        "normalization and zero-denominator behavior",
+        "external validation and baseline dependence"
+      ],
+      "immediate_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows.",
+      "failure_condition": "Fails as a useful construct if it is undefined, non-invariant, or non-identifying under nonzero-denominator/domain conditions."
+    },
+    {
+      "number": 93,
+      "id": "ME-093",
+      "title": "Mutual information",
+      "classification": "standard information theory",
+      "formula": "I(X;Y) = H(X) + H(Y) − H(X,Y)",
+      "cluster": "Evaluation/epistemic",
+      "zoo_route": "SALMON → CAT → OWL → CROCODILE → HUMMINGBIRD → TURTLE",
+      "pass1_class": "Typed / standard-or-definitional",
+      "result_code": "STRUCTURAL_SURVIVOR",
+      "result": "Well-formed as a definition or predicate; this does not establish novelty or physical truth.",
+      "proof_status": "definition_only",
+      "lean_status": "canonical_catalog",
+      "dependencies": [],
+      "risk_flags": [
+        "external validation and baseline dependence"
+      ],
+      "immediate_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows.",
+      "failure_condition": "Fails as a useful construct if it is undefined, non-invariant, or non-identifying under external validation and baseline dependence."
+    },
+    {
+      "number": 94,
+      "id": "ME-094",
+      "title": "Recursive evidence accumulation",
+      "classification": "working construct",
+      "formula": "E\\_(n+1) = E\\_n + ΔE·C",
+      "cluster": "Evaluation/epistemic",
+      "zoo_route": "SALMON → CAT → OWL → CROCODILE → HUMMINGBIRD → TURTLE",
+      "pass1_class": "Typed definition / empirical meaning unresolved",
+      "result_code": "STRUCTURAL_SURVIVOR",
+      "result": "Well-formed as a definition or predicate; this does not establish novelty or physical truth.",
+      "proof_status": "definition_only",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-047"
+      ],
+      "risk_flags": [
+        "external validation and baseline dependence"
+      ],
+      "immediate_obligation": "Freeze operational semantics and test against baselines/held-out data; mathematical well-definition is separate from empirical validity.",
+      "failure_condition": "Fails as a useful construct if it is undefined, non-invariant, or non-identifying under external validation and baseline dependence."
+    },
+    {
+      "number": 95,
+      "id": "ME-095",
+      "title": "Recursive confidence update",
+      "classification": "working construct",
+      "formula": "Conf\\_(n+1) = Conf\\_n + α(E − Error)",
+      "cluster": "Evaluation/epistemic",
+      "zoo_route": "SALMON → CAT → OWL → CROCODILE → HUMMINGBIRD → TURTLE",
+      "pass1_class": "Typed definition / empirical meaning unresolved",
+      "result_code": "STRUCTURAL_SURVIVOR",
+      "result": "Well-formed as a definition or predicate; this does not establish novelty or physical truth.",
+      "proof_status": "definition_only",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-094"
+      ],
+      "risk_flags": [
+        "external validation and baseline dependence"
+      ],
+      "immediate_obligation": "Freeze operational semantics and test against baselines/held-out data; mathematical well-definition is separate from empirical validity.",
+      "failure_condition": "Fails as a useful construct if it is undefined, non-invariant, or non-identifying under external validation and baseline dependence."
+    },
+    {
+      "number": 96,
+      "id": "ME-096",
+      "title": "Recursive convergence criterion",
+      "classification": "working construct",
+      "formula": "lim(n→∞) ||X\\_(n+1) − X\\_n|| = 0",
+      "cluster": "Evaluation/epistemic",
+      "zoo_route": "SALMON → CAT → OWL → CROCODILE → HUMMINGBIRD → TURTLE",
+      "pass1_class": "Empirical/model criterion",
+      "result_code": "EMPIRICAL_TEST_REQUIRED",
+      "result": "No algebraic proof can establish performance or interpretation; decide with frozen external data.",
+      "proof_status": "empirical_only",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-072",
+        "ME-095"
+      ],
+      "risk_flags": [
+        "limit existence and topology",
+        "external validation and baseline dependence"
+      ],
+      "immediate_obligation": "Freeze operational semantics and test against baselines/held-out data; mathematical well-definition is separate from empirical validity.",
+      "failure_condition": "Fails if preregistered held-out tests do not beat the declared baseline at matched error/compute budgets."
+    },
+    {
+      "number": 97,
+      "id": "ME-097",
+      "title": "AI constitutional constraint",
+      "classification": "working ethical functional",
+      "formula": "A(x) = arg max[Benefit(x) − Harm(x)]",
+      "cluster": "Evaluation/epistemic",
+      "zoo_route": "SALMON → CAT → OWL → CROCODILE → HUMMINGBIRD → TURTLE",
+      "pass1_class": "Typed definition / empirical meaning unresolved",
+      "result_code": "STRUCTURAL_SURVIVOR",
+      "result": "Well-formed as a definition or predicate; this does not establish novelty or physical truth.",
+      "proof_status": "definition_only",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-098"
+      ],
+      "risk_flags": [
+        "existence/uniqueness of optimizer",
+        "external validation and baseline dependence"
+      ],
+      "immediate_obligation": "Freeze operational semantics and test against baselines/held-out data; mathematical well-definition is separate from empirical validity.",
+      "failure_condition": "Fails as a useful construct if it is undefined, non-invariant, or non-identifying under existence/uniqueness of optimizer."
+    },
+    {
+      "number": 98,
+      "id": "ME-098",
+      "title": "Recursive ethical weighting",
+      "classification": "working construct",
+      "formula": "W = Benefit × Coherence × Reversibility",
+      "cluster": "Evaluation/epistemic",
+      "zoo_route": "SALMON → CAT → OWL → CROCODILE → HUMMINGBIRD → TURTLE",
+      "pass1_class": "Typed definition / empirical meaning unresolved",
+      "result_code": "STRUCTURAL_SURVIVOR",
+      "result": "Well-formed as a definition or predicate; this does not establish novelty or physical truth.",
+      "proof_status": "definition_only",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-047",
+        "ME-097"
+      ],
+      "risk_flags": [
+        "interpretive leap beyond mathematics",
+        "external validation and baseline dependence"
+      ],
+      "immediate_obligation": "Freeze operational semantics and test against baselines/held-out data; mathematical well-definition is separate from empirical validity.",
+      "failure_condition": "Fails as a useful construct if it is undefined, non-invariant, or non-identifying under interpretive leap beyond mathematics."
+    },
+    {
+      "number": 99,
+      "id": "ME-099",
+      "title": "Consciousness hypothesis metric",
+      "classification": "working hypothesis",
+      "formula": "Γ = Φ × R × C",
+      "cluster": "Evaluation/epistemic",
+      "zoo_route": "SALMON → CAT → OWL → CROCODILE → HUMMINGBIRD → TURTLE",
+      "pass1_class": "Typed definition / empirical meaning unresolved",
+      "result_code": "STRUCTURAL_SURVIVOR",
+      "result": "Well-formed as a definition or predicate; this does not establish novelty or physical truth.",
+      "proof_status": "definition_only",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-024",
+        "ME-026",
+        "ME-047"
+      ],
+      "risk_flags": [
+        "interpretive leap beyond mathematics",
+        "external validation and baseline dependence"
+      ],
+      "immediate_obligation": "Freeze operational semantics and test against baselines/held-out data; mathematical well-definition is separate from empirical validity.",
+      "failure_condition": "Fails as a useful construct if it is undefined, non-invariant, or non-identifying under interpretive leap beyond mathematics."
+    },
+    {
+      "number": 100,
+      "id": "ME-100",
+      "title": "Conscious recursive attractor condition",
+      "classification": "working hypothesis",
+      "formula": "Γ ≥ Γ\\_crit",
+      "cluster": "Evaluation/epistemic",
+      "zoo_route": "SALMON → CAT → OWL → CROCODILE → HUMMINGBIRD → TURTLE",
+      "pass1_class": "Typed definition / empirical meaning unresolved",
+      "result_code": "STRUCTURAL_SURVIVOR",
+      "result": "Well-formed as a definition or predicate; this does not establish novelty or physical truth.",
+      "proof_status": "definition_only",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-099"
+      ],
+      "risk_flags": [
+        "interpretive leap beyond mathematics",
+        "external validation and baseline dependence"
+      ],
+      "immediate_obligation": "Freeze operational semantics and test against baselines/held-out data; mathematical well-definition is separate from empirical validity.",
+      "failure_condition": "Fails as a useful construct if it is undefined, non-invariant, or non-identifying under interpretive leap beyond mathematics."
+    },
+    {
+      "number": 101,
+      "id": "ME-101",
+      "title": "Recursive identity persistence",
+      "classification": "working construct",
+      "formula": "I\\_(t+1) = I\\_t + λC",
+      "cluster": "Evaluation/epistemic",
+      "zoo_route": "SALMON → CAT → OWL → CROCODILE → HUMMINGBIRD → TURTLE",
+      "pass1_class": "Typed definition / empirical meaning unresolved",
+      "result_code": "STRUCTURAL_SURVIVOR",
+      "result": "Well-formed as a definition or predicate; this does not establish novelty or physical truth.",
+      "proof_status": "definition_only",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-047",
+        "ME-072"
+      ],
+      "risk_flags": [
+        "interpretive leap beyond mathematics",
+        "external validation and baseline dependence"
+      ],
+      "immediate_obligation": "Freeze operational semantics and test against baselines/held-out data; mathematical well-definition is separate from empirical validity.",
+      "failure_condition": "Fails as a useful construct if it is undefined, non-invariant, or non-identifying under interpretive leap beyond mathematics."
+    },
+    {
+      "number": 102,
+      "id": "ME-102",
+      "title": "EFMW pilot falsification criterion",
+      "classification": "benchmark equation",
+      "formula": "Accept EFMW only if\n\nΔtEFMW > Δtbaseline\n\nFAR ≤ FARmax\n\nCcompute ≤ Cmax\n\nReplication = True\n\nAccept the EFMW hypothesis only if:\n\n- Mean warning lead time is greater than the chosen baseline.\n- False-alarm rate remains within the predefined limit.\n- Computational cost remains within the predefined budget.\n- Results replicate across independent datasets and trials.",
+      "cluster": "Evaluation/epistemic",
+      "zoo_route": "SALMON → CAT → OWL → CROCODILE → HUMMINGBIRD → TURTLE",
+      "pass1_class": "Typed definition / empirical meaning unresolved",
+      "result_code": "STRUCTURAL_SURVIVOR",
+      "result": "Well-formed as a definition or predicate; this does not establish novelty or physical truth.",
+      "proof_status": "definition_only",
+      "lean_status": "typed_core",
+      "dependencies": [
+        "ME-028",
+        "ME-029",
+        "ME-030"
+      ],
+      "risk_flags": [
+        "limit existence and topology",
+        "external validation and baseline dependence"
+      ],
+      "immediate_obligation": "Freeze operational semantics and test against baselines/held-out data; mathematical well-definition is separate from empirical validity.",
+      "failure_condition": "Fails as a useful construct if it is undefined, non-invariant, or non-identifying under limit existence and topology."
+    }
+  ]
+}
