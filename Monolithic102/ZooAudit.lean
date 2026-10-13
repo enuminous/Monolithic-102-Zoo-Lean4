@@ -108,6 +108,6 @@ def zooAudit : Array AuditSpec := #[
   { number := 102, canonicalId := "ME-102", disposition := ZooDisposition.structuralSurvivor, proofBoundary := ProofBoundary.definitionOnly, typedCore := true, dependencies := [28, 29, 30] },
 ]
 
-theorem zooAudit_count : zooAudit.size = 102 := by native_decide
+theorem zooAudit_count : zooAudit.size = 102 := by decide
 
 end Monolithic102
