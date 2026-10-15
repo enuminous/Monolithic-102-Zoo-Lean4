@@ -400,26 +400,26 @@ This definition does not assert a maximum over directions. -/
 def finiteTimeRate {E : Type*} [NormedAddCommGroup E] (v : ℝ → E) (t : ℝ) : ℝ :=
   Real.log (‖v t‖ / ‖v 0‖) / t
 
-def HasDirectionalRate {E : Type*} [NormedAddCommGroup E] (v : ℝ → E) (λ : ℝ) : Prop :=
-  v 0 ≠ 0 ∧ Filter.Tendsto (finiteTimeRate v) Filter.atTop (nhds λ)
+def HasDirectionalRate {E : Type*} [NormedAddCommGroup E] (v : ℝ → E) (rate : ℝ) : Prop :=
+  v 0 ≠ 0 ∧ Filter.Tendsto (finiteTimeRate v) Filter.atTop (nhds rate)
 
 def exponentialOrbit {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-    (λ : ℝ) (v : E) (t : ℝ) : E := Real.exp (λ * t) • v
+    (rate : ℝ) (v : E) (t : ℝ) : E := Real.exp (rate * t) • v
 
 theorem exponential_rate {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-    (λ t : ℝ) (v : E) (hv : v ≠ 0) (ht : t ≠ 0) :
-    finiteTimeRate (exponentialOrbit λ v) t = λ := by
+    (rate t : ℝ) (v : E) (hv : v ≠ 0) (ht : t ≠ 0) :
+    finiteTimeRate (exponentialOrbit rate v) t = rate := by
   have hn : ‖v‖ ≠ 0 := norm_ne_zero_iff.mpr hv
   simp [finiteTimeRate, exponentialOrbit, norm_smul, Real.norm_eq_abs,
     abs_of_pos (Real.exp_pos _), hn, ht, Real.log_exp]
 
 theorem exponential_hasDirectionalRate
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-    (λ : ℝ) (v : E) (hv : v ≠ 0) : HasDirectionalRate (exponentialOrbit λ v) λ := by
+    (rate : ℝ) (v : E) (hv : v ≠ 0) : HasDirectionalRate (exponentialOrbit rate v) rate := by
   refine ⟨by simpa [exponentialOrbit] using hv, ?_⟩
   apply Filter.Tendsto.congr' _ tendsto_const_nhds
   filter_upwards [Filter.eventually_gt_atTop (0 : ℝ)] with t ht
-  exact (exponential_rate λ t v hv (ne_of_gt ht)).symm
+  exact (exponential_rate rate t v hv (ne_of_gt ht)).symm
 
 def diagonalFlow (a b t : ℝ) (v : ℝ × ℝ) : ℝ × ℝ :=
   (Real.exp (a * t) * v.1, Real.exp (b * t) * v.2)
