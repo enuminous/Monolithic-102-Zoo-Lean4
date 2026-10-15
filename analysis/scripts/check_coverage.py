@@ -17,14 +17,25 @@ assert len(entries) == 49
 formulas = {e["id"]: e["formula"] for e in canonical["equations"]}
 source = (HERE / "CatalogueAnalysis.lean").read_text()
 models = []
+partials = []
+open_entries = []
 for e in entries:
     assert e["formula"] == formulas[e["id"]]
-    assert e["status"] in {"open", "analytic_model"}
+    assert e["status"] in {"open", "analytic_model", "partial_specialization"}
     if e["status"] == "analytic_model":
         models.append(e["id"])
+    elif e["status"] == "partial_specialization":
+        partials.append(e["id"])
+    else:
+        open_entries.append(e["id"])
+    if e["status"] in {"analytic_model", "partial_specialization"}:
         for kind in ["definition", "theorem"]:
             name = e[kind].split(".")[-1]
             assert re.search(r"\b(?:def|theorem) " + re.escape(name) + r"\b", source), e
 assert models == [f"ME-{i:03d}" for i in [2, 4, 5, 16, 17, 26, 33, 34, 46, 57, 59, 60, 61, 92, 93]]
-print("Canonical source unchanged; 49 entries tracked, 15 explicit analytic models, 34 open.")
-print("The analytic models have the restrictions in COVERAGE.md; this is not a full-semantics count.")
+assert partials == ["ME-003"]
+assert len(open_entries) == 33
+me003 = next(e for e in entries if e["id"] == "ME-003")
+assert me003["general_covariant_status"] == "open"
+print("Canonical source unchanged; 49 entries tracked, 15 analytic models, one partial specialization, 33 without new analytic work.")
+print("ME-003 remains open for a complete covariant formalization; the flat theorem does not validate a physical interpretation.")

@@ -40,9 +40,11 @@ physical theory.**
 
 The compile-checked typed core represents 53 equations at a discrete or
 structural level. The remaining 49 are preserved in the canonical Lean catalog. A separate
-[real and complex analysis package](analysis/COVERAGE.md) now gives 15 of those
-entries explicit analytic models, with stated restrictions and 34 still open.
-This is not a claim that all 15 have complete physical or operator semantics.
+[real and complex analysis package](analysis/COVERAGE.md) gives 15 entries
+explicit analytic models and adds a partial flat-Minkowski specialization of
+ME-003. The other 33 have no new analytic treatment, and ME-003 remains open
+for a complete covariant formalization. These results do not establish complete
+physical or operator semantics.
 
 ## Package map
 

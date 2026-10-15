@@ -29,6 +29,32 @@ def laplacian (f : Spacetime → ℝ) (x : Spacetime) : ℝ :=
 /-- ME-004: flat (+---) convention, with a nonzero speed in the solution domain. -/
 def box (c : ℝ) (f : Spacetime → ℝ) (x : Spacetime) : ℝ :=
   second 0 f x / c ^ 2 - laplacian f x
+/-- In physical-time Cartesian coordinates, x⁰ = t and x¹,x²,x³ are
+spatial coordinates. This is the inverse metric for the frozen (+---)
+convention; the covariant metric is diag(c², -1, -1, -1). -/
+def minkowskiInverseMetric (c : ℝ) (μ ν : Fin 4) : ℝ :=
+  if μ = ν then if μ = 0 then 1 / c ^ 2 else -1 else 0
+/-- The Cartesian Christoffel symbols vanish in this flat specialization. -/
+def minkowskiChristoffel (_k _μ _ν : Fin 4) : ℝ := 0
+/-- The scalar Hessian component
+∇_μ∇_ν f = ∂_μ(∂_ν f) - Γ^λ_μν ∂_λ f. -/
+def scalarCovariantHessian (f : Spacetime → ℝ) (μ ν : Fin 4)
+    (x : Spacetime) : ℝ :=
+  partialD μ (partialD ν f) x -
+    ∑ k : Fin 4, minkowskiChristoffel k μ ν * partialD k f x
+/-- ME-003's explicit scalar metric contraction on flat Minkowski spacetime. -/
+def minkowskiCovariantBox (c : ℝ) (f : Spacetime → ℝ)
+    (x : Spacetime) : ℝ :=
+  ∑ μ : Fin 4, ∑ ν : Fin 4,
+    minkowskiInverseMetric c μ ν * scalarCovariantHessian f μ ν x
+/-- Under C² regularity and nonzero speed, the flat ME-003 contraction is
+exactly the existing ME-004 operator. This states no curved-spacetime result. -/
+theorem minkowski_specialization_eq_box (c : ℝ) (f : Spacetime → ℝ)
+    (x : Spacetime) (hc : c ≠ 0) (hf : ContDiff ℝ 2 f) :
+    minkowskiCovariantBox c f x = box c f x := by
+  simp [minkowskiCovariantBox, minkowskiInverseMetric, scalarCovariantHessian,
+    minkowskiChristoffel, box, laplacian, second, Fin.sum_univ_succ]
+  ring
 /-- ME-002 specialized to the explicitly stated flat ME-004 operator. -/
 def original (c α : ℝ) (f energy pressure : Spacetime → ℝ) (x : Spacetime) : ℝ :=
   box c f x - α ^ 2 / c ^ 2 * second 0 f x -

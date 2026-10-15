@@ -1,6 +1,6 @@
 {
   "canonical_sha256": "d534be8e0664fd523bd0bbbd82e98b8acda29e23f0941690be96573661080268",
-  "scope": "Explicit analytic models; no assertion of complete physical or implementation semantics",
+  "scope": "Explicit analytic models and scoped partial specializations; no assertion of complete physical or implementation semantics",
   "entries": [
     {
       "id": "ME-002",
@@ -13,8 +13,14 @@
     {
       "id": "ME-003",
       "formula": "□φ = g^μν ∇\\_μ ∇\\_ν φ",
-      "status": "open",
-      "source_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows."
+      "status": "partial_specialization",
+      "source_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows.",
+      "scope": "Flat Minkowski spacetime only",
+      "specialization": "Physical-time Cartesian coordinates with inverse metric diag(1/c², -1, -1, -1), vanishing Christoffel symbols, c ≠ 0, and a C² real scalar field.",
+      "definition": "MonolithicAnalysis.FlatScalar.minkowskiCovariantBox",
+      "theorem": "MonolithicAnalysis.FlatScalar.minkowski_specialization_eq_box",
+      "general_covariant_status": "open",
+      "remaining_obligation": "A complete covariant formalization remains open. Any curved-spacetime extension must first specify its manifold, Lorentzian metric, connection, and regularity assumptions."
     },
     {
       "id": "ME-004",
