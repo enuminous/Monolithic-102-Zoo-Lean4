@@ -1,3 +1,4 @@
+import Mathlib.Data.Finset.Max
 import Mathlib.Analysis.Calculus.ContDiff.Basic
 import Mathlib.Analysis.Complex.Exponential
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
@@ -174,4 +175,219 @@ theorem probability_sum {ι : Type*} [Fintype ι] (a : ι → ℂ)
   simp only [probability, ← Finset.sum_div]
   exact div_self (ne_of_gt hsum)
 end Born
+
+namespace Information
+
+/-- The nonnegative scalar remainder in Gibbs' inequality. -/
+def gibbsTerm (p q : ℝ) : ℝ := p * Real.log (p / q) - p + q
+
+theorem gibbsTerm_nonneg (p q : ℝ) (hp : 0 ≤ p) (hq : 0 ≤ q)
+    (hsupport : p ≠ 0 → q ≠ 0) : 0 ≤ gibbsTerm p q := by
+  by_cases hp0 : p = 0
+  · simpa [gibbsTerm, hp0] using hq
+  · have hp' : 0 < p := lt_of_le_of_ne hp (Ne.symm hp0)
+    have hq' : 0 < q := lt_of_le_of_ne hq (Ne.symm (hsupport hp0))
+    have hlog := Real.log_le_sub_one_of_pos (div_pos hq' hp')
+    have hm := mul_le_mul_of_nonneg_left hlog hp
+    rw [Real.log_div (ne_of_gt hq') hp0] at hm
+    rw [gibbsTerm, Real.log_div hp0 (ne_of_gt hq')]
+    have hc : p * (q / p) = q := mul_div_cancel₀ _ hp0
+    nlinarith
+
+theorem gibbsTerm_eq_zero_iff (p q : ℝ) (hp : 0 ≤ p) (hq : 0 ≤ q)
+    (hsupport : p ≠ 0 → q ≠ 0) : gibbsTerm p q = 0 ↔ p = q := by
+  constructor
+  · intro hz
+    by_cases hp0 : p = 0
+    · simp [gibbsTerm, hp0] at hz
+      exact hp0.trans hz.symm
+    · have hp' : 0 < p := lt_of_le_of_ne hp (Ne.symm hp0)
+      have hq' : 0 < q := lt_of_le_of_ne hq (Ne.symm (hsupport hp0))
+      by_contra hne
+      have hratio : q / p ≠ 1 := by
+        intro h
+        have he : q = p := (div_eq_one_iff_eq hp0).mp h
+        exact hne he.symm
+      have hlog := Real.log_lt_sub_one_of_pos (div_pos hq' hp') hratio
+      have hm := mul_lt_mul_of_pos_left hlog hp'
+      rw [Real.log_div (ne_of_gt hq') hp0] at hm
+      rw [gibbsTerm, Real.log_div hp0 (ne_of_gt hq')] at hz
+      have hc : p * (q / p) = q := mul_div_cancel₀ _ hp0
+      nlinarith
+  · rintro rfl
+    by_cases hp0 : p = 0 <;> simp [gibbsTerm, hp0]
+
+theorem sum_gibbsTerm {ι : Type*} [Fintype ι] (p q : ι → ℝ)
+    (hps : ∑ i, p i = 1) (hqs : ∑ i, q i = 1) :
+    ∑ i, gibbsTerm (p i) (q i) = kl p q := by
+  simp [gibbsTerm, kl, Finset.sum_add_distrib, Finset.sum_sub_distrib, hps, hqs]
+
+/-- Zero reference mass is allowed exactly where the source mass is zero.
+Positive source mass over zero reference mass is excluded, not assigned
+the spurious finite value obtained from totalized real logarithms. -/
+theorem kl_nonneg_of_support {ι : Type*} [Fintype ι] (p q : ι → ℝ)
+    (hp : ∀ i, 0 ≤ p i) (hq : ∀ i, 0 ≤ q i)
+    (hsupport : ∀ i, p i ≠ 0 → q i ≠ 0)
+    (hps : ∑ i, p i = 1) (hqs : ∑ i, q i = 1) : 0 ≤ kl p q := by
+  rw [← sum_gibbsTerm p q hps hqs]
+  exact Finset.sum_nonneg fun i _ => gibbsTerm_nonneg _ _ (hp i) (hq i) (hsupport i)
+
+theorem kl_eq_zero_iff {ι : Type*} [Fintype ι] (p q : ι → ℝ)
+    (hp : ∀ i, 0 ≤ p i) (hq : ∀ i, 0 ≤ q i)
+    (hsupport : ∀ i, p i ≠ 0 → q i ≠ 0)
+    (hps : ∑ i, p i = 1) (hqs : ∑ i, q i = 1) :
+    kl p q = 0 ↔ p = q := by
+  constructor
+  · intro hz
+    have hs : (∑ i, gibbsTerm (p i) (q i)) = 0 := by
+      rw [sum_gibbsTerm p q hps hqs, hz]
+    have he := (Finset.sum_eq_zero_iff_of_nonneg
+      (fun i _ => gibbsTerm_nonneg _ _ (hp i) (hq i) (hsupport i))).mp hs
+    funext i
+    exact (gibbsTerm_eq_zero_iff _ _ (hp i) (hq i) (hsupport i)).mp
+      (he i (Finset.mem_univ _))
+  · rintro rfl
+    exact kl_self p
+
+def marginalLeft {ι κ : Type*} [Fintype ι] [Fintype κ]
+    (p : ι × κ → ℝ) (i : ι) : ℝ := ∑ j, p (i, j)
+def marginalRight {ι κ : Type*} [Fintype ι] [Fintype κ]
+    (p : ι × κ → ℝ) (j : κ) : ℝ := ∑ i, p (i, j)
+def marginalProduct {ι κ : Type*} [Fintype ι] [Fintype κ]
+    (p : ι × κ → ℝ) (z : ι × κ) : ℝ := marginalLeft p z.1 * marginalRight p z.2
+
+theorem marginalProduct_nonneg {ι κ : Type*} [Fintype ι] [Fintype κ]
+    (p : ι × κ → ℝ) (hp : ∀ z, 0 ≤ p z) (z : ι × κ) :
+    0 ≤ marginalProduct p z :=
+  mul_nonneg (Finset.sum_nonneg fun j _ => hp (z.1, j))
+    (Finset.sum_nonneg fun i _ => hp (i, z.2))
+
+theorem marginalProduct_support {ι κ : Type*} [Fintype ι] [Fintype κ]
+    (p : ι × κ → ℝ) (hp : ∀ z, 0 ≤ p z) (z : ι × κ) (hz : p z ≠ 0) :
+    marginalProduct p z ≠ 0 := by
+  have hz' : 0 < p z := lt_of_le_of_ne (hp z) (Ne.symm hz)
+  have hl : p z ≤ marginalLeft p z.1 :=
+    Finset.single_le_sum (fun j _ => hp (z.1, j)) (Finset.mem_univ z.2)
+  have hr : p z ≤ marginalRight p z.2 :=
+    Finset.single_le_sum (fun i _ => hp (i, z.2)) (Finset.mem_univ z.1)
+  exact ne_of_gt (mul_pos (hz'.trans_le hl) (hz'.trans_le hr))
+
+theorem marginalProduct_sum {ι κ : Type*} [Fintype ι] [Fintype κ]
+    (p : ι × κ → ℝ) (hps : ∑ z, p z = 1) :
+    ∑ z, marginalProduct p z = 1 := by
+  have hl : ∑ i, marginalLeft p i = 1 := by
+    simpa [marginalLeft, Fintype.sum_prod_type] using hps
+  have hr : ∑ j, marginalRight p j = 1 := by
+    simp only [marginalRight]
+    rw [Finset.sum_comm]
+    simpa [Fintype.sum_prod_type] using hps
+  simp only [marginalProduct, Fintype.sum_prod_type, ← Finset.mul_sum, hr, mul_one]
+  exact hl
+
+/-- Shannon's identity with zero-mass cells and zero marginals included. -/
+theorem mutualInformation_eq_kl {ι κ : Type*} [Fintype ι] [Fintype κ]
+    (p : ι × κ → ℝ) (hp : ∀ z, 0 ≤ p z) :
+    mutualInformation p = kl p (marginalProduct p) := by
+  have hterm (z : ι × κ) :
+      p z * Real.log (p z / marginalProduct p z) =
+        p z * Real.log (p z) - p z * Real.log (marginalLeft p z.1) -
+          p z * Real.log (marginalRight p z.2) := by
+    by_cases hz : p z = 0
+    · simp [hz]
+    · have hprod := marginalProduct_support p hp z hz
+      have hl : marginalLeft p z.1 ≠ 0 := (mul_ne_zero_iff.mp hprod).1
+      have hr : marginalRight p z.2 ≠ 0 := (mul_ne_zero_iff.mp hprod).2
+      rw [Real.log_div hz hprod, marginalProduct, Real.log_mul hl hr]
+      ring
+  have hl :
+      ∑ z : ι × κ, p z * Real.log (marginalLeft p z.1) =
+        ∑ i, marginalLeft p i * Real.log (marginalLeft p i) := by
+    rw [Fintype.sum_prod_type]
+    simp only [← Finset.sum_mul, marginalLeft]
+  have hr :
+      ∑ z : ι × κ, p z * Real.log (marginalRight p z.2) =
+        ∑ j, marginalRight p j * Real.log (marginalRight p j) := by
+    rw [Fintype.sum_prod_type, Finset.sum_comm]
+    simp only [← Finset.sum_mul, marginalRight]
+  unfold kl
+  simp_rw [hterm, Finset.sum_sub_distrib]
+  rw [hl, hr]
+  unfold mutualInformation entropy marginalLeft marginalRight
+  ring
+
+theorem mutualInformation_nonneg {ι κ : Type*} [Fintype ι] [Fintype κ]
+    (p : ι × κ → ℝ) (hp : ∀ z, 0 ≤ p z) (hps : ∑ z, p z = 1) :
+    0 ≤ mutualInformation p := by
+  rw [mutualInformation_eq_kl p hp]
+  exact kl_nonneg_of_support p (marginalProduct p) hp (marginalProduct_nonneg p hp)
+    (marginalProduct_support p hp) hps (marginalProduct_sum p hps)
+
+/-- A finite joint distribution has zero mutual information exactly when
+it factors into its two marginals (independence). -/
+theorem mutualInformation_zero_iff_independent {ι κ : Type*} [Fintype ι] [Fintype κ]
+    (p : ι × κ → ℝ) (hp : ∀ z, 0 ≤ p z) (hps : ∑ z, p z = 1) :
+    mutualInformation p = 0 ↔ p = marginalProduct p := by
+  rw [mutualInformation_eq_kl p hp]
+  exact kl_eq_zero_iff p (marginalProduct p) hp (marginalProduct_nonneg p hp)
+    (marginalProduct_support p hp) hps (marginalProduct_sum p hps)
+end Information
+
+namespace FiniteSelection
+/-- ME-059 on a nonempty finite state space, with an explicitly positive
+probability distribution. The chosen divergence and reward are input data. -/
+structure Model (S : Type*) [Fintype S] where
+  probability : S → ℝ
+  positive : ∀ s, 0 < probability s
+  normalized : ∑ s, probability s = 1
+  divergence : S → ℝ
+  reward : S → ℝ
+  lambda : ℝ
+  gamma : ℝ
+
+def cost {S : Type*} [Fintype S] (m : Model S) (s : S) : ℝ :=
+  -Real.log (m.probability s) + m.lambda * m.divergence s - m.gamma * m.reward s
+
+def minimizers {S : Type*} [Fintype S] (m : Model S) : Set S :=
+  {s | ∀ t, cost m s ≤ cost m t}
+
+theorem minimizer_exists {S : Type*} [Fintype S] [Nonempty S] (m : Model S) :
+    (minimizers m).Nonempty := by
+  obtain ⟨s, _, hs⟩ := Finset.exists_min_image Finset.univ (cost m) Finset.univ_nonempty
+  exact ⟨s, fun t => hs t (Finset.mem_univ _)⟩
+
+/-- A strict gap greater than twice the uniform cost error preserves the
+unique optimizer. This is a stability claim with a quantitative hypothesis. -/
+theorem strict_margin_stability {S : Type*} (f g : S → ℝ) (s : S) (ε : ℝ)
+    (herr : ∀ t, |g t - f t| ≤ ε)
+    (hgap : ∀ t, t ≠ s → 2 * ε < f t - f s) :
+    ∀ t, t ≠ s → g s < g t := by
+  intro t ht
+  have hs := abs_le.mp (herr s)
+  have ht' := abs_le.mp (herr t)
+  have hg := hgap t ht
+  linarith
+
+theorem unique_minimizer_of_margin {S : Type*} [Fintype S] (m : Model S) (s : S)
+    (hmargin : ∀ t, t ≠ s → cost m s < cost m t) :
+    ∀ t, t ∈ minimizers m ↔ t = s := by
+  intro t
+  constructor
+  · intro ht
+    by_contra h
+    exact (not_lt_of_ge (ht s)) (hmargin t h)
+  · rintro rfl
+    intro t
+    by_cases h : t = s
+    · simp [h]
+    · exact (hmargin t h).le
+
+/-- Existence alone cannot justify a unique collapse outcome. -/
+theorem constant_cost_not_unique : ¬ ∃! s : Bool, ∀ t : Bool, (0 : ℝ) ≤ 0 := by
+  rintro ⟨s, _, hs⟩
+  have ht := hs true (fun _ => le_rfl)
+  have hf := hs false (fun _ => le_rfl)
+  have h : true = false := ht.trans hf.symm
+  cases h
+end FiniteSelection
+
 end MonolithicAnalysis
