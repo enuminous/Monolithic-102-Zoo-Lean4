@@ -41,20 +41,32 @@
     {
       "id": "ME-006",
       "formula": "I\\_μν = ∇\\_μφ ∇\\_νφ − (1/2)g\\_μν ∇\\_αφ ∇^αφ − g\\_μνV(φ) + R\\_μν",
-      "status": "open",
-      "source_obligation": "Define tensors/couplings, covariance, units and variational structure; derive field equations and conservation identities; test reduction to GR/QFT limits."
+      "status": "partial_specialization",
+      "source_obligation": "Define tensors/couplings, covariance, units and variational structure; derive field equations and conservation identities; test reduction to GR/QFT limits.",
+      "definition": "MonolithicAnalysis.TensorModels.information",
+      "theorem": "MonolithicAnalysis.TensorModels.information_eq_stress_add",
+      "scope": "Explicit coordinate, deterministic, or counterexample result; see SPECIFICATIONS.md.",
+      "remaining_obligation": "Define tensors/couplings, covariance, units and variational structure; derive field equations and conservation identities; test reduction to GR/QFT limits."
     },
     {
       "id": "ME-007",
       "formula": "G\\_μν + Λg\\_μν = 8πG(T\\_μν + κI\\_μν)",
-      "status": "open",
-      "source_obligation": "Define tensors/couplings, covariance, units and variational structure; derive field equations and conservation identities; test reduction to GR/QFT limits."
+      "status": "partial_specialization",
+      "source_obligation": "Define tensors/couplings, covariance, units and variational structure; derive field equations and conservation identities; test reduction to GR/QFT limits.",
+      "definition": "MonolithicAnalysis.TensorModels.compactResidual",
+      "theorem": "MonolithicAnalysis.TensorModels.einstein_residual_expansion",
+      "scope": "Explicit coordinate, deterministic, or counterexample result; see SPECIFICATIONS.md.",
+      "remaining_obligation": "Define tensors/couplings, covariance, units and variational structure; derive field equations and conservation identities; test reduction to GR/QFT limits."
     },
     {
       "id": "ME-008",
       "formula": "G\\_μν + Λg\\_μν = 8πGT\\_μν + 8πGκ[∇\\_μφ∇\\_νφ − (1/2)g\\_μν∇\\_αφ∇^αφ − g\\_μνV(φ) + R\\_μν]",
-      "status": "open",
-      "source_obligation": "Define tensors/couplings, covariance, units and variational structure; derive field equations and conservation identities; test reduction to GR/QFT limits."
+      "status": "partial_specialization",
+      "source_obligation": "Define tensors/couplings, covariance, units and variational structure; derive field equations and conservation identities; test reduction to GR/QFT limits.",
+      "definition": "MonolithicAnalysis.TensorModels.expandedResidual",
+      "theorem": "MonolithicAnalysis.TensorModels.einstein_residual_expansion",
+      "scope": "Explicit coordinate, deterministic, or counterexample result; see SPECIFICATIONS.md.",
+      "remaining_obligation": "Define tensors/couplings, covariance, units and variational structure; derive field equations and conservation identities; test reduction to GR/QFT limits."
     },
     {
       "id": "ME-009",
@@ -65,8 +77,12 @@
     {
       "id": "ME-010",
       "formula": "L\\_φ = −(1/2)∇\\_μφ∇^μφ − V(φ)",
-      "status": "open",
-      "source_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows."
+      "status": "partial_specialization",
+      "source_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows.",
+      "definition": "MonolithicAnalysis.TensorModels.scalarLagrangian",
+      "theorem": "MonolithicAnalysis.TensorModels.stress_eq_gradient_plus_metric_lagrangian",
+      "scope": "Explicit coordinate, deterministic, or counterexample result; see SPECIFICATIONS.md.",
+      "remaining_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows."
     },
     {
       "id": "ME-011",
@@ -77,8 +93,12 @@
     {
       "id": "ME-012",
       "formula": "L\\_EM = −(1/4)F\\_μνF^μν",
-      "status": "open",
-      "source_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows."
+      "status": "analytic_model",
+      "source_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows.",
+      "definition": "MonolithicAnalysis.Electromagnetism.lagrangian",
+      "theorem": "MonolithicAnalysis.Electromagnetism.lagrangian_eq_electric_sub_magnetic",
+      "scope": "Six real electromagnetic components; antisymmetric field tensor; Cartesian c=1, signature (+---); exact electric-minus-magnetic Lagrangian.",
+      "remaining_obligation": "No Maxwell field equation, gauge dynamics, or empirical interpretation follows from this algebraic equivalence."
     },
     {
       "id": "ME-013",
@@ -95,8 +115,12 @@
     {
       "id": "ME-015",
       "formula": "T^(φ)\\_μν = ∇\\_μφ∇\\_νφ − g\\_μν[(1/2)∇\\_αφ∇^αφ + V(φ)]",
-      "status": "open",
-      "source_obligation": "Define tensors/couplings, covariance, units and variational structure; derive field equations and conservation identities; test reduction to GR/QFT limits."
+      "status": "partial_specialization",
+      "source_obligation": "Define tensors/couplings, covariance, units and variational structure; derive field equations and conservation identities; test reduction to GR/QFT limits.",
+      "definition": "MonolithicAnalysis.TensorModels.scalarStress",
+      "theorem": "MonolithicAnalysis.TensorModels.stress_symmetric",
+      "scope": "Explicit coordinate, deterministic, or counterexample result; see SPECIFICATIONS.md.",
+      "remaining_obligation": "Define tensors/couplings, covariance, units and variational structure; derive field equations and conservation identities; test reduction to GR/QFT limits."
     },
     {
       "id": "ME-016",
@@ -141,8 +165,12 @@
     {
       "id": "ME-024",
       "formula": "τ\\_ΦΦ̇ = bΦ − aΦ³ − κ\\_ΦΦ||x−m||² − η\\_ΦΦ||ẋ−ṁ||² + γR(x,m,e) + σξ(t)",
-      "status": "open",
-      "source_obligation": "Specify state spaces, differentiability, norms, noise model, recursive operator, existence/uniqueness conditions, and measurable predictions."
+      "status": "partial_specialization",
+      "source_obligation": "Specify state spaces, differentiability, norms, noise model, recursive operator, existence/uniqueness conditions, and measurable predictions.",
+      "definition": "MonolithicAnalysis.Reaction.potential",
+      "theorem": "MonolithicAnalysis.Reaction.energy_dissipates",
+      "scope": "Explicit coordinate, deterministic, or counterexample result; see SPECIFICATIONS.md.",
+      "remaining_obligation": "Specify state spaces, differentiability, norms, noise model, recursive operator, existence/uniqueness conditions, and measurable predictions."
     },
     {
       "id": "ME-026",
@@ -171,14 +199,22 @@
     {
       "id": "ME-036",
       "formula": "∂S/∂t = ΔS + α(∇S·∇O) + β(∇O·∇S) − (S − S³) − Π(S − S₀) + λV₁₃",
-      "status": "open",
-      "source_obligation": "Specify PDE domain, boundary conditions, function spaces, parameters and coupling semantics; establish well-posedness before interpretation."
+      "status": "partial_specialization",
+      "source_obligation": "Specify PDE domain, boundary conditions, function spaces, parameters and coupling semantics; establish well-posedness before interpretation.",
+      "definition": "MonolithicAnalysis.Reaction.homogeneous",
+      "theorem": "MonolithicAnalysis.Reaction.reaction_grows_above_one",
+      "scope": "Explicit coordinate, deterministic, or counterexample result; see SPECIFICATIONS.md.",
+      "remaining_obligation": "Specify PDE domain, boundary conditions, function spaces, parameters and coupling semantics; establish well-posedness before interpretation."
     },
     {
       "id": "ME-037",
       "formula": "∂O/∂t = ΔO + α(∇O·∇S) + β(∇S·∇O) − (O − O³) − Π(O − O₀) + λV₁₃",
-      "status": "open",
-      "source_obligation": "Specify PDE domain, boundary conditions, function spaces, parameters and coupling semantics; establish well-posedness before interpretation."
+      "status": "partial_specialization",
+      "source_obligation": "Specify PDE domain, boundary conditions, function spaces, parameters and coupling semantics; establish well-posedness before interpretation.",
+      "definition": "MonolithicAnalysis.Reaction.homogeneous",
+      "theorem": "MonolithicAnalysis.Reaction.homogeneous_fixed_points",
+      "scope": "Explicit coordinate, deterministic, or counterexample result; see SPECIFICATIONS.md.",
+      "remaining_obligation": "Specify PDE domain, boundary conditions, function spaces, parameters and coupling semantics; establish well-posedness before interpretation."
     },
     {
       "id": "ME-039",
@@ -189,8 +225,12 @@
     {
       "id": "ME-040",
       "formula": "T^(thought)\\_μν = ∂\\_μΨ ∂\\_νΨ − g\\_μν[(1/2)∂\\_αΨ ∂^αΨ + V(Ψ)]",
-      "status": "open",
-      "source_obligation": "Specify PDE domain, boundary conditions, function spaces, parameters and coupling semantics; establish well-posedness before interpretation."
+      "status": "partial_specialization",
+      "source_obligation": "Specify PDE domain, boundary conditions, function spaces, parameters and coupling semantics; establish well-posedness before interpretation.",
+      "definition": "MonolithicAnalysis.TensorModels.scalarStress",
+      "theorem": "MonolithicAnalysis.TensorModels.stress_symmetric",
+      "scope": "Explicit coordinate, deterministic, or counterexample result; see SPECIFICATIONS.md.",
+      "remaining_obligation": "Specify PDE domain, boundary conditions, function spaces, parameters and coupling semantics; establish well-posedness before interpretation."
     },
     {
       "id": "ME-046",
@@ -203,26 +243,42 @@
     {
       "id": "ME-051",
       "formula": "F\\_em^μ = −∇^μU(Φ) + λ∇^μR",
-      "status": "open",
-      "source_obligation": "Specify physical dimensions, coupling fields and covariance; derive observational consequences and recover accepted limits."
+      "status": "partial_specialization",
+      "source_obligation": "Specify physical dimensions, coupling fields and covariance; derive observational consequences and recover accepted limits.",
+      "definition": "MonolithicAnalysis.Force.combinedPotential",
+      "theorem": "MonolithicAnalysis.Force.combined_potential_hasGradient",
+      "scope": "Explicit coordinate, deterministic, or counterexample result; see SPECIFICATIONS.md.",
+      "remaining_obligation": "Specify physical dimensions, coupling fields and covariance; derive observational consequences and recover accepted limits."
     },
     {
       "id": "ME-052",
       "formula": "F\\_em = −∇D = −∇[κ||x − m||² + η||ẋ − ṁ||² − γR]",
-      "status": "open",
-      "source_obligation": "Specify physical dimensions, coupling fields and covariance; derive observational consequences and recover accepted limits."
+      "status": "partial_specialization",
+      "source_obligation": "Specify physical dimensions, coupling fields and covariance; derive observational consequences and recover accepted limits.",
+      "definition": "MonolithicAnalysis.Force.discrepancy",
+      "theorem": "MonolithicAnalysis.Force.discrepancy_hasGradient",
+      "scope": "Explicit coordinate, deterministic, or counterexample result; see SPECIFICATIONS.md.",
+      "remaining_obligation": "Specify physical dimensions, coupling fields and covariance; derive observational consequences and recover accepted limits."
     },
     {
       "id": "ME-053",
       "formula": "F\\_φ = −(β\\_φ/M)∇φ",
-      "status": "open",
-      "source_obligation": "Specify physical dimensions, coupling fields and covariance; derive observational consequences and recover accepted limits."
+      "status": "partial_specialization",
+      "source_obligation": "Specify physical dimensions, coupling fields and covariance; derive observational consequences and recover accepted limits.",
+      "definition": "MonolithicAnalysis.Force.scaledPotential",
+      "theorem": "MonolithicAnalysis.Force.scaled_potential_hasGradient",
+      "scope": "Explicit coordinate, deterministic, or counterexample result; see SPECIFICATIONS.md.",
+      "remaining_obligation": "Specify physical dimensions, coupling fields and covariance; derive observational consequences and recover accepted limits."
     },
     {
       "id": "ME-054",
       "formula": "d²x^μ/dτ² + Γ^μ\\_αβ(dx^α/dτ)(dx^β/dτ) = β\\_φ(g^μν + u^μu^ν)∇\\_νφ",
-      "status": "open",
-      "source_obligation": "Specify physical dimensions, coupling fields and covariance; derive observational consequences and recover accepted limits."
+      "status": "partial_specialization",
+      "source_obligation": "Specify physical dimensions, coupling fields and covariance; derive observational consequences and recover accepted limits.",
+      "definition": "MonolithicAnalysis.SignChecks.projectedForce",
+      "theorem": "MonolithicAnalysis.SignChecks.plus_projector_not_orthogonal",
+      "scope": "Explicit coordinate, deterministic, or counterexample result; see SPECIFICATIONS.md.",
+      "remaining_obligation": "Specify physical dimensions, coupling fields and covariance; derive observational consequences and recover accepted limits."
     },
     {
       "id": "ME-055",
@@ -233,8 +289,12 @@
     {
       "id": "ME-056",
       "formula": "H² = (8πG/3)ρ + Λ/3 − k/a² + Ω\\_U²/a²",
-      "status": "open",
-      "source_obligation": "Specify physical dimensions, coupling fields and covariance; derive observational consequences and recover accepted limits."
+      "status": "partial_specialization",
+      "source_obligation": "Specify physical dimensions, coupling fields and covariance; derive observational consequences and recover accepted limits.",
+      "definition": "MonolithicAnalysis.Cosmology.rateSquared",
+      "theorem": "MonolithicAnalysis.Cosmology.real_rate_exists_iff",
+      "scope": "Explicit coordinate, deterministic, or counterexample result; see SPECIFICATIONS.md.",
+      "remaining_obligation": "Specify physical dimensions, coupling fields and covariance; derive observational consequences and recover accepted limits."
     },
     {
       "id": "ME-057",
@@ -271,20 +331,33 @@
     {
       "id": "ME-066",
       "formula": "Ψ\\_dyad = N(Ψ\\_H + Ψ\\_A + λΨ\\_H ⊗ Ψ\\_A)",
-      "status": "open",
-      "source_obligation": "Specify state space, probability/divergence/reward objects, recursion operator and time map; prove existence/stability/invariance properties."
+      "status": "analytic_model",
+      "source_obligation": "Specify state space, probability/divergence/reward objects, recursion operator and time map; prove existence/stability/invariance properties.",
+      "definition": "MonolithicAnalysis.Dyad.normalized",
+      "theorem": "MonolithicAnalysis.Dyad.normalized_squaredNorm",
+      "scope": "Finite complex direct-sum/Kronecker coordinates, nonzero raw state, squared-modulus normalization.",
+      "convention_source": "SPECIFICATIONS.md",
+      "remaining_obligation": "Specify state space, probability/divergence/reward objects, recursion operator and time map; prove existence/stability/invariance properties."
     },
     {
       "id": "ME-067",
       "formula": "C\\_μν = ∇\\_μΨ∇\\_νΨ − (1/2)g\\_μν∇\\_αΨ∇^αΨ + λ(M\\_μO\\_ν + M\\_νO\\_μ)",
-      "status": "open",
-      "source_obligation": "Specify state space, probability/divergence/reward objects, recursion operator and time map; prove existence/stability/invariance properties."
+      "status": "partial_specialization",
+      "source_obligation": "Specify state space, probability/divergence/reward objects, recursion operator and time map; prove existence/stability/invariance properties.",
+      "definition": "MonolithicAnalysis.TensorModels.cognition",
+      "theorem": "MonolithicAnalysis.TensorModels.cognition_symmetric",
+      "scope": "Explicit coordinate, deterministic, or counterexample result; see SPECIFICATIONS.md.",
+      "remaining_obligation": "Specify state space, probability/divergence/reward objects, recursion operator and time map; prove existence/stability/invariance properties."
     },
     {
       "id": "ME-068",
       "formula": "T^(cog)\\_μν = C\\_μν + χI^(rec)\\_μν",
-      "status": "open",
-      "source_obligation": "Specify state space, probability/divergence/reward objects, recursion operator and time map; prove existence/stability/invariance properties."
+      "status": "partial_specialization",
+      "source_obligation": "Specify state space, probability/divergence/reward objects, recursion operator and time map; prove existence/stability/invariance properties.",
+      "definition": "MonolithicAnalysis.TensorModels.coupledStress",
+      "theorem": "MonolithicAnalysis.TensorModels.coupled_symmetric",
+      "scope": "Explicit coordinate, deterministic, or counterexample result; see SPECIFICATIONS.md.",
+      "remaining_obligation": "Specify state space, probability/divergence/reward objects, recursion operator and time map; prove existence/stability/invariance properties."
     },
     {
       "id": "ME-077",
@@ -301,20 +374,34 @@
     {
       "id": "ME-081",
       "formula": "T^μν = (ρ + P)u^μu^ν + Pg^μν + η(t)σ^μν",
-      "status": "open",
-      "source_obligation": "Separate known fluid/relaxation mathematics from EFMW additions; specify relativistic fluid geometry, constitutive law, regularity and limit cases."
+      "status": "partial_specialization",
+      "source_obligation": "Separate known fluid/relaxation mathematics from EFMW additions; specify relativistic fluid geometry, constitutive law, regularity and limit cases.",
+      "definition": "MonolithicAnalysis.TensorModels.fluidStress",
+      "theorem": "MonolithicAnalysis.TensorModels.fluid_symmetric",
+      "scope": "Explicit coordinate, deterministic, or counterexample result; see SPECIFICATIONS.md.",
+      "remaining_obligation": "Separate known fluid/relaxation mathematics from EFMW additions; specify relativistic fluid geometry, constitutive law, regularity and limit cases."
     },
     {
       "id": "ME-084",
       "formula": "T₈₈₈ = Torus(B₈₈₈, φ)",
-      "status": "open",
-      "source_obligation": "Separate known fluid/relaxation mathematics from EFMW additions; specify relativistic fluid geometry, constitutive law, regularity and limit cases."
+      "status": "analytic_model",
+      "source_obligation": "Separate known fluid/relaxation mathematics from EFMW additions; specify relativistic fluid geometry, constitutive law, regularity and limit cases.",
+      "definition": "MonolithicAnalysis.Toroidal.base888",
+      "theorem": "MonolithicAnalysis.Toroidal.base888_injective",
+      "scope": "Authored torus: product of two unit circles, center (8,8,8), radii 8*phi and 8, phi>1; injective real-space map.",
+      "convention_source": "SPECIFICATIONS.md",
+      "remaining_obligation": "Separate known fluid/relaxation mathematics from EFMW additions; specify relativistic fluid geometry, constitutive law, regularity and limit cases."
     },
     {
       "id": "ME-087",
       "formula": "eᵢeⱼ = 0, for designated null pairs",
-      "status": "open",
-      "source_obligation": "Separate known fluid/relaxation mathematics from EFMW additions; specify relativistic fluid geometry, constitutive law, regularity and limit cases."
+      "status": "analytic_model",
+      "source_obligation": "Separate known fluid/relaxation mathematics from EFMW additions; specify relativistic fluid geometry, constitutive law, regularity and limit cases.",
+      "definition": "MonolithicAnalysis.NullPairs.basis",
+      "theorem": "MonolithicAnalysis.NullPairs.null_pair_iff",
+      "scope": "Real coordinate algebra with coordinatewise multiplication; exactly distinct standard basis vectors are null pairs.",
+      "convention_source": "SPECIFICATIONS.md",
+      "remaining_obligation": "Separate known fluid/relaxation mathematics from EFMW additions; specify relativistic fluid geometry, constitutive law, regularity and limit cases."
     },
     {
       "id": "ME-092",

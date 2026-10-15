@@ -1,6 +1,6 @@
 # Formalization status
 
-## Coverage
+## Root archive coverage
 
 - Canonical catalog: **102/102**
 - Lean namespace files: **102/102**
@@ -31,3 +31,11 @@ silently choosing physics on the author's behalf.
 `needsSpecification` and `openSpecification` are not failures of the archive.
 They are explicit proof obligations that prevent a source formula from being
 mistaken for a theorem.
+
+## Analytic overlay
+
+The separate [analysis ledger](analysis/COVERAGE.md) tracks the 49 root catalogue
+entries with 19 analytic models, 18 partial specializations/counterexamples and
+12 entries without new analytic work. The root archive counts above describe
+its unchanged discrete layer. They do not supersede the newer overlay or claim
+all source proof obligations are complete.

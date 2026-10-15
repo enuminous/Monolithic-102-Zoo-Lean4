@@ -1,17 +1,17 @@
 # Real and complex catalogue models
 
-This separate Lean 4.28 / Mathlib package gives **15 of the 49 catalogue-only
-entries explicit analytic models** and adds one **partial flat-Minkowski
-specialization** of ME-003. The root Lean 4.19 package and its 53
-discrete/structural entries are unchanged. ME-003's general covariant
-formalization remains open; the specialization does not supply curved-spacetime
-assumptions. The package does not certify the full scientific interpretation
-of any entry.
+This Lean 4.28 / Mathlib package tracks the 49 originally catalogue-only
+entries: **19 explicit analytic models**, **18 partial specializations or
+counterexample results**, and **12 without new analytic work**. The separate
+root Lean 4.19 package and its 53 discrete/structural entries remain unchanged.
+These categories are not a count of validated physical theories or fully
+completed source obligations.
 
-The canonical source SHA-256 and exact formulas are locked in `coverage.json`.
-The original per-equation obligations are retained there, including for the 33
-entries without new analytic work. `CatalogueAnalysis.lean` is the acceptance
-target. Read its hypotheses before applying a theorem.
+The canonical source SHA-256 and exact formulas remain locked in `coverage.json`.
+Original obligations are retained. `CatalogueAnalysis.lean` and
+`SpecifiedModels.lean` are the acceptance targets. The authored choices in
+[SPECIFICATIONS.md](SPECIFICATIONS.md) resolve previously missing mathematical
+definitions without attributing those choices to the historical source.
 
 | Entries | Fixed domain and mathematical result | Limits |
 |---|---|---|
@@ -34,32 +34,30 @@ The library does not import the separate EFMW-Lagrangian continuum package. Its
 uses a different frozen action and signature; its minus-sign variational result
 cannot silently replace the historical catalogue's equations.
 
-## Remaining specification and derivation work
+## Additional explicit models and partial results
 
-The 33 entries without new analytic work are:
+| Entries | Result | Scope |
+|---|---|---|
+| 012 | Antisymmetric electromagnetic tensor and the exact (electric² − magnetic²)/2 Lagrangian. | Flat Cartesian c=1, (+---); no Maxwell variation or dynamics. |
+| 066 | Disjoint human/AI/tensor blocks; exact squared-norm formula; nonzero states normalize to squared norm one. | Finite complex coordinates and a specified Kronecker tensor realization. |
+| 084 | Explicit centered torus map from a product of unit circles; injectivity for phi>1. | Authored center (8,8,8), radii 8*phi and 8; no claim that this is the uniquely intended source meaning. |
+| 087 | Nonzero standard basis idempotents; product zero exactly at distinct indices; partition of unity. | Real coordinate algebra with zero divisors. |
+| 006–008, 010, 015, 040, 067–068, 081 | Tensor symmetry, scalar-stress/Lagrangian relation, exact Einstein-residual expansion and decoupling. | Coordinate algebra only; arbitrary tensor inputs are not derived curvature or constitutive laws. |
+| 024 | Actual derivative of the quartic potential and its dissipation along the specified ODE. | Constant gaps/forcing, positive relaxation time, deterministic sector; no stochastic existence result. |
+| 036–037 | Homogeneous fixed points and positive growth above one. | Preserves the cubic sign; no unconditional damping or global PDE well-posedness is claimed. |
+| 051–053 | Actual Hilbert-space gradients of the stated potentials. | Independent position/velocity coordinates; nonzero mass is the intended physical domain. |
+| 054 | The plus-sign projector yields temporal force 2 for a unit rest vector/time gradient at beta=1. | A counterexample to orthogonal projection under (+---), not a silent sign repair. |
+| 056 | Rotation term is nonnegative; a real H exists iff the right side is nonnegative. | No sign selection or cosmological evolution theorem. |
 
-`006–015, 018–021, 024, 036–037, 039–040, 051–056,
-066–068, 077, 080–081, 084, 087`.
-
-ME-003 has a partial flat-space specialization; its complete covariant
-formalization remains open. The ledger preserves each original obligation. In particular:
-
-- Covariant tensors and action variations need a fixed Lorentzian geometry,
-  field spaces, boundary conditions and a consistent sign/unit convention.
-- Stochastic and nonlinear PDE claims need the noise law, solution notion,
-  regularity and initial/boundary data.
-- ME-059 now has a finite-state existence and stability model. Infinite domains and a physical selection or tie mechanism still need definitions.
-- ME-066 adds vectors and a tensor product from different spaces; embeddings
-  must be specified before that sum has a type.
-- ME-084 does not define `Torus(B888, φ)`. ME-087 needs the algebra, multiplication
-  table and exact designated null pairs. No Lean proof can select these meanings
-  on behalf of the source.
-
-Analytic models do not erase unresolved application obligations. In particular,
-the flat ME-002 model is not a curved-space formalization, and the ME-003
-specialization does not complete its general covariant treatment. The 15
-analytic models and the partial ME-003 specialization are not complete physical
-or operator semantics.
+The 12 entries without new analytic work are:
+`009, 011, 013–014, 018–021, 039, 055, 077, 080`.
+ME-003 still has only its flat specialization. Full curved-space covariance,
+action variation, physical units, nonlinear/stochastic well-posedness and
+implementation or empirical identification remain open where required by the
+source obligations. The [Wright's Law field package](https://github.com/enuminous/Wrights-Law/blob/main/formal/PeriodicField.lean)
+provides a separately specified periodic diffusion sector and constant-velocity
+continuity equation; those theorems are not duplicated or relabeled as proofs of
+all catalogue field equations.
 
 ## Verification
 
