@@ -391,6 +391,29 @@ theorem constant_cost_not_unique :
   have hf := hs false (fun _ => le_rfl)
   have h : true = false := ht.trans hf.symm
   cases h
+
+/-- A valid two-state probability model with nonnegative zero divergence and
+reward already has a tie; the ambiguity is inside ME-059's modeled domain. -/
+def symmetricModel : Model Bool where
+  probability := fun _ => 1 / 2
+  positive := by intro s; norm_num
+  normalized := by norm_num [Fintype.sum_bool]
+  divergence := fun _ => 0
+  reward := fun _ => 0
+  lambda := 0
+  gamma := 0
+
+theorem symmetricModel_all_minimizers (s : Bool) : s ∈ minimizers symmetricModel := by
+  intro t
+  simp [cost, symmetricModel]
+
+theorem symmetricModel_not_unique : ¬ ∃! s : Bool, s ∈ minimizers symmetricModel := by
+  rintro ⟨s, _, hs⟩
+  have ht := hs true (symmetricModel_all_minimizers true)
+  have hf := hs false (symmetricModel_all_minimizers false)
+  have h : true = false := ht.trans hf.symm
+  cases h
+
 end FiniteSelection
 
 
