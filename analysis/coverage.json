@@ -149,8 +149,10 @@
     {
       "id": "ME-033",
       "formula": "λ\\_max = lim(t→∞) (1/t) ln(||δX(t)|| / ||δX(0)||)",
-      "status": "open",
-      "source_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows."
+      "status": "analytic_model",
+      "source_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows.",
+      "definition": "MonolithicAnalysis.Lyapunov.finiteTimeRate",
+      "theorem": "MonolithicAnalysis.Lyapunov.directional_rate_need_not_be_maximal"
     },
     {
       "id": "ME-034",
@@ -239,8 +241,10 @@
     {
       "id": "ME-059",
       "formula": "Ω[ψ, Φ, R] = arg min\\_s [−ln P(s|ψ) + λD(s,Φ) − γR(s)]",
-      "status": "open",
-      "source_obligation": "Specify state space, probability/divergence/reward objects, recursion operator and time map; prove existence/stability/invariance properties."
+      "status": "analytic_model",
+      "source_obligation": "Specify state space, probability/divergence/reward objects, recursion operator and time map; prove existence/stability/invariance properties.",
+      "definition": "MonolithicAnalysis.FiniteSelection.minimizers",
+      "theorem": "MonolithicAnalysis.FiniteSelection.minimizer_exists"
     },
     {
       "id": "ME-060",
@@ -312,7 +316,7 @@
       "status": "analytic_model",
       "source_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows.",
       "definition": "MonolithicAnalysis.Information.kl",
-      "theorem": "MonolithicAnalysis.Information.kl_nonneg"
+      "theorem": "MonolithicAnalysis.Information.kl_eq_zero_iff"
     },
     {
       "id": "ME-093",
@@ -320,7 +324,7 @@
       "status": "analytic_model",
       "source_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows.",
       "definition": "MonolithicAnalysis.Information.mutualInformation",
-      "theorem": "MonolithicAnalysis.Information.mutualInformation_swap"
+      "theorem": "MonolithicAnalysis.Information.mutualInformation_zero_iff_independent"
     }
   ]
 }

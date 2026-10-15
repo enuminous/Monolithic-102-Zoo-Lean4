@@ -1,3 +1,4 @@
+import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 import Mathlib.Data.Finset.Max
 import Mathlib.Analysis.Calculus.ContDiff.Basic
 import Mathlib.Analysis.Complex.Exponential
@@ -375,19 +376,73 @@ theorem unique_minimizer_of_margin {S : Type*} [Fintype S] (m : Model S) (s : S)
   · intro ht
     by_contra h
     exact (not_lt_of_ge (ht s)) (hmargin t h)
-  · rintro rfl
+  · intro ht
+    subst t
     intro t
     by_cases h : t = s
     · simp [h]
     · exact (hmargin t h).le
 
 /-- Existence alone cannot justify a unique collapse outcome. -/
-theorem constant_cost_not_unique : ¬ ∃! s : Bool, ∀ t : Bool, (0 : ℝ) ≤ 0 := by
+theorem constant_cost_not_unique :
+    ¬ ∃! s : Bool, ∀ t : Bool, (fun _ : Bool => (0 : ℝ)) s ≤ (fun _ : Bool => (0 : ℝ)) t := by
   rintro ⟨s, _, hs⟩
   have ht := hs true (fun _ => le_rfl)
   have hf := hs false (fun _ => le_rfl)
   have h : true = false := ht.trans hf.symm
   cases h
 end FiniteSelection
+
+
+namespace Lyapunov
+/-- ME-033's logarithmic growth expression for one perturbation.
+This definition does not assert a maximum over directions. -/
+def finiteTimeRate {E : Type*} [NormedAddCommGroup E] (v : ℝ → E) (t : ℝ) : ℝ :=
+  Real.log (‖v t‖ / ‖v 0‖) / t
+
+def HasDirectionalRate {E : Type*} [NormedAddCommGroup E] (v : ℝ → E) (λ : ℝ) : Prop :=
+  v 0 ≠ 0 ∧ Filter.Tendsto (finiteTimeRate v) Filter.atTop (nhds λ)
+
+def exponentialOrbit {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+    (λ : ℝ) (v : E) (t : ℝ) : E := Real.exp (λ * t) • v
+
+theorem exponential_rate {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+    (λ t : ℝ) (v : E) (hv : v ≠ 0) (ht : t ≠ 0) :
+    finiteTimeRate (exponentialOrbit λ v) t = λ := by
+  have hn : ‖v‖ ≠ 0 := norm_ne_zero_iff.mpr hv
+  simp [finiteTimeRate, exponentialOrbit, norm_smul, Real.norm_eq_abs,
+    abs_of_pos (Real.exp_pos _), hn, ht, Real.log_exp]
+
+theorem exponential_hasDirectionalRate
+    {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+    (λ : ℝ) (v : E) (hv : v ≠ 0) : HasDirectionalRate (exponentialOrbit λ v) λ := by
+  refine ⟨by simpa [exponentialOrbit] using hv, ?_⟩
+  apply Filter.Tendsto.congr' _ tendsto_const_nhds
+  filter_upwards [Filter.eventually_gt_atTop (0 : ℝ)] with t ht
+  exact (exponential_rate λ t v hv (ne_of_gt ht)).symm
+
+def diagonalFlow (a b t : ℝ) (v : ℝ × ℝ) : ℝ × ℝ :=
+  (Real.exp (a * t) * v.1, Real.exp (b * t) * v.2)
+
+theorem diagonal_first_orbit (a b : ℝ) :
+    (fun t => diagonalFlow a b t (1, 0)) = exponentialOrbit a (1, 0) := by
+  funext t
+  simp [diagonalFlow, exponentialOrbit, Prod.smul_mk, smul_eq_mul]
+
+theorem diagonal_second_orbit (a b : ℝ) :
+    (fun t => diagonalFlow a b t (0, 1)) = exponentialOrbit b (0, 1) := by
+  funext t
+  simp [diagonalFlow, exponentialOrbit, Prod.smul_mk, smul_eq_mul]
+
+/-- One diagonal flow has unequal rates along its two coordinate directions.
+The rate along an arbitrary direction cannot be called the maximum. -/
+theorem directional_rate_need_not_be_maximal (a b t : ℝ) (hab : a < b) (ht : t ≠ 0) :
+    finiteTimeRate (fun τ => diagonalFlow a b τ (1, 0)) t <
+      finiteTimeRate (fun τ => diagonalFlow a b τ (0, 1)) t := by
+  rw [diagonal_first_orbit, diagonal_second_orbit,
+    exponential_rate a t (1, 0) (by simp) ht,
+    exponential_rate b t (0, 1) (by simp) ht]
+  exact hab
+end Lyapunov
 
 end MonolithicAnalysis

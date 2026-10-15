@@ -25,6 +25,6 @@ for e in entries:
         for kind in ["definition", "theorem"]:
             name = e[kind].split(".")[-1]
             assert re.search(r"\b(?:def|theorem) " + re.escape(name) + r"\b", source), e
-assert models == [f"ME-{i:03d}" for i in [2, 4, 5, 16, 17, 26, 34, 46, 57, 60, 61, 92, 93]]
-print("Canonical source unchanged; 49 entries tracked, 13 explicit analytic models, 36 open.")
+assert models == [f"ME-{i:03d}" for i in [2, 4, 5, 16, 17, 26, 33, 34, 46, 57, 59, 60, 61, 92, 93]]
+print("Canonical source unchanged; 49 entries tracked, 15 explicit analytic models, 34 open.")
 print("The analytic models have the restrictions in COVERAGE.md; this is not a full-semantics count.")
