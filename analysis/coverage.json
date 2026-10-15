@@ -1,0 +1,326 @@
+{
+  "canonical_sha256": "d534be8e0664fd523bd0bbbd82e98b8acda29e23f0941690be96573661080268",
+  "scope": "Explicit analytic models; no assertion of complete physical or implementation semantics",
+  "entries": [
+    {
+      "id": "ME-002",
+      "formula": "□φ − (α²/c²)(∂²φ/∂t²) = (4π/c²)(E + Pc)",
+      "status": "analytic_model",
+      "source_obligation": "Freeze spacetime, field regularity, α, E, P, c, units, source interpretation, and boundary/initial conditions; derive rather than postulate.",
+      "definition": "MonolithicAnalysis.FlatScalar.OriginalSolution",
+      "theorem": "MonolithicAnalysis.FlatScalar.solution_iff"
+    },
+    {
+      "id": "ME-003",
+      "formula": "□φ = g^μν ∇\\_μ ∇\\_ν φ",
+      "status": "open",
+      "source_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows."
+    },
+    {
+      "id": "ME-004",
+      "formula": "□φ = (1/c²)(∂²φ/∂t²) − ∇²φ",
+      "status": "analytic_model",
+      "source_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows.",
+      "definition": "MonolithicAnalysis.FlatScalar.box",
+      "theorem": "MonolithicAnalysis.FlatScalar.residual_eq"
+    },
+    {
+      "id": "ME-005",
+      "formula": "(1/c²)(∂²φ/∂t²) − ∇²φ − (α²/c²)(∂²φ/∂t²) = (4π/c²)(E + Pc)",
+      "status": "analytic_model",
+      "source_obligation": "Freeze spacetime, field regularity, α, E, P, c, units, source interpretation, and boundary/initial conditions; derive rather than postulate.",
+      "definition": "MonolithicAnalysis.FlatScalar.ExpandedSolution",
+      "theorem": "MonolithicAnalysis.FlatScalar.solution_iff"
+    },
+    {
+      "id": "ME-006",
+      "formula": "I\\_μν = ∇\\_μφ ∇\\_νφ − (1/2)g\\_μν ∇\\_αφ ∇^αφ − g\\_μνV(φ) + R\\_μν",
+      "status": "open",
+      "source_obligation": "Define tensors/couplings, covariance, units and variational structure; derive field equations and conservation identities; test reduction to GR/QFT limits."
+    },
+    {
+      "id": "ME-007",
+      "formula": "G\\_μν + Λg\\_μν = 8πG(T\\_μν + κI\\_μν)",
+      "status": "open",
+      "source_obligation": "Define tensors/couplings, covariance, units and variational structure; derive field equations and conservation identities; test reduction to GR/QFT limits."
+    },
+    {
+      "id": "ME-008",
+      "formula": "G\\_μν + Λg\\_μν = 8πGT\\_μν + 8πGκ[∇\\_μφ∇\\_νφ − (1/2)g\\_μν∇\\_αφ∇^αφ − g\\_μνV(φ) + R\\_μν]",
+      "status": "open",
+      "source_obligation": "Define tensors/couplings, covariance, units and variational structure; derive field equations and conservation identities; test reduction to GR/QFT limits."
+    },
+    {
+      "id": "ME-009",
+      "formula": "S\\_EFMW = ∫ d⁴x √−g [(R − 2Λ)/(16πG) + L\\_matter + L\\_EM + L\\_φ + L\\_rec]",
+      "status": "open",
+      "source_obligation": "Define tensors/couplings, covariance, units and variational structure; derive field equations and conservation identities; test reduction to GR/QFT limits."
+    },
+    {
+      "id": "ME-010",
+      "formula": "L\\_φ = −(1/2)∇\\_μφ∇^μφ − V(φ)",
+      "status": "open",
+      "source_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows."
+    },
+    {
+      "id": "ME-011",
+      "formula": "L\\_rec = λφR(x,m,e) − (κ/2)||x−m||² − (η/2)||ẋ−ṁ||²",
+      "status": "open",
+      "source_obligation": "Define tensors/couplings, covariance, units and variational structure; derive field equations and conservation identities; test reduction to GR/QFT limits."
+    },
+    {
+      "id": "ME-012",
+      "formula": "L\\_EM = −(1/4)F\\_μνF^μν",
+      "status": "open",
+      "source_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows."
+    },
+    {
+      "id": "ME-013",
+      "formula": "S\\_QG = ∫ d⁴x √−g [(R/(16πG)) − (1/2)∇\\_μφ∇^μφ − V(φ) + λφI + L\\_matter]",
+      "status": "open",
+      "source_obligation": "Define tensors/couplings, covariance, units and variational structure; derive field equations and conservation identities; test reduction to GR/QFT limits."
+    },
+    {
+      "id": "ME-014",
+      "formula": "G\\_μν = 8πG[⟨T̂\\_μν⟩ + T^(φ)\\_μν + T^(rec)\\_μν]",
+      "status": "open",
+      "source_obligation": "Define tensors/couplings, covariance, units and variational structure; derive field equations and conservation identities; test reduction to GR/QFT limits."
+    },
+    {
+      "id": "ME-015",
+      "formula": "T^(φ)\\_μν = ∇\\_μφ∇\\_νφ − g\\_μν[(1/2)∇\\_αφ∇^αφ + V(φ)]",
+      "status": "open",
+      "source_obligation": "Define tensors/couplings, covariance, units and variational structure; derive field equations and conservation identities; test reduction to GR/QFT limits."
+    },
+    {
+      "id": "ME-016",
+      "formula": "ψ = ρe^(iθ)",
+      "status": "analytic_model",
+      "source_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows.",
+      "definition": "MonolithicAnalysis.Polar.wave",
+      "theorem": "MonolithicAnalysis.Polar.norm_sq"
+    },
+    {
+      "id": "ME-017",
+      "formula": "|ψ|² = ρ²",
+      "status": "analytic_model",
+      "source_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows.",
+      "definition": "MonolithicAnalysis.Polar.wave",
+      "theorem": "MonolithicAnalysis.Polar.norm_sq"
+    },
+    {
+      "id": "ME-018",
+      "formula": "J^μ = ρ²∇^μθ",
+      "status": "open",
+      "source_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows."
+    },
+    {
+      "id": "ME-019",
+      "formula": "∇\\_μJ^μ = 0",
+      "status": "open",
+      "source_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows."
+    },
+    {
+      "id": "ME-020",
+      "formula": "∂ₜS + (∇S)²/(2m) + V + Q = 0",
+      "status": "open",
+      "source_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows."
+    },
+    {
+      "id": "ME-021",
+      "formula": "Q = −(ħ²/2m)(∇²ρ/ρ)",
+      "status": "open",
+      "source_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows."
+    },
+    {
+      "id": "ME-024",
+      "formula": "τ\\_ΦΦ̇ = bΦ − aΦ³ − κ\\_ΦΦ||x−m||² − η\\_ΦΦ||ẋ−ṁ||² + γR(x,m,e) + σξ(t)",
+      "status": "open",
+      "source_obligation": "Specify state spaces, differentiability, norms, noise model, recursive operator, existence/uniqueness conditions, and measurable predictions."
+    },
+    {
+      "id": "ME-026",
+      "formula": "R(x,m,e) = <∂ₘf, ṁ> / (||∂ₘf|| ||ṁ|| + ε)",
+      "status": "analytic_model",
+      "source_obligation": "Specify state spaces, differentiability, norms, noise model, recursive operator, existence/uniqueness conditions, and measurable predictions.",
+      "definition": "MonolithicAnalysis.Closure.value",
+      "theorem": "MonolithicAnalysis.Closure.abs_lt_one"
+    },
+    {
+      "id": "ME-033",
+      "formula": "λ\\_max = lim(t→∞) (1/t) ln(||δX(t)|| / ||δX(0)||)",
+      "status": "open",
+      "source_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows."
+    },
+    {
+      "id": "ME-034",
+      "formula": "H\\_phrase = −Σ p\\_i log p\\_i",
+      "status": "analytic_model",
+      "source_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows.",
+      "definition": "MonolithicAnalysis.Information.entropy",
+      "theorem": "MonolithicAnalysis.Information.entropy_nonneg"
+    },
+    {
+      "id": "ME-036",
+      "formula": "∂S/∂t = ΔS + α(∇S·∇O) + β(∇O·∇S) − (S − S³) − Π(S − S₀) + λV₁₃",
+      "status": "open",
+      "source_obligation": "Specify PDE domain, boundary conditions, function spaces, parameters and coupling semantics; establish well-posedness before interpretation."
+    },
+    {
+      "id": "ME-037",
+      "formula": "∂O/∂t = ΔO + α(∇O·∇S) + β(∇S·∇O) − (O − O³) − Π(O − O₀) + λV₁₃",
+      "status": "open",
+      "source_obligation": "Specify PDE domain, boundary conditions, function spaces, parameters and coupling semantics; establish well-posedness before interpretation."
+    },
+    {
+      "id": "ME-039",
+      "formula": "G^(cog)\\_μν = χ(T^(thought)\\_μν + I^(rec)\\_μν)",
+      "status": "open",
+      "source_obligation": "Specify PDE domain, boundary conditions, function spaces, parameters and coupling semantics; establish well-posedness before interpretation."
+    },
+    {
+      "id": "ME-040",
+      "formula": "T^(thought)\\_μν = ∂\\_μΨ ∂\\_νΨ − g\\_μν[(1/2)∂\\_αΨ ∂^αΨ + V(Ψ)]",
+      "status": "open",
+      "source_obligation": "Specify PDE domain, boundary conditions, function spaces, parameters and coupling semantics; establish well-posedness before interpretation."
+    },
+    {
+      "id": "ME-046",
+      "formula": "C\\_φ[X] = A(φX) + (φ − 1)[X − A(φX)]",
+      "status": "analytic_model",
+      "source_obligation": "Define φ-based operator/veto/synchronization semantics and show an invariant or predictive consequence not obtainable by arbitrary rescaling.",
+      "definition": "MonolithicAnalysis.Tiling.apply",
+      "theorem": "MonolithicAnalysis.Tiling.expansion"
+    },
+    {
+      "id": "ME-051",
+      "formula": "F\\_em^μ = −∇^μU(Φ) + λ∇^μR",
+      "status": "open",
+      "source_obligation": "Specify physical dimensions, coupling fields and covariance; derive observational consequences and recover accepted limits."
+    },
+    {
+      "id": "ME-052",
+      "formula": "F\\_em = −∇D = −∇[κ||x − m||² + η||ẋ − ṁ||² − γR]",
+      "status": "open",
+      "source_obligation": "Specify physical dimensions, coupling fields and covariance; derive observational consequences and recover accepted limits."
+    },
+    {
+      "id": "ME-053",
+      "formula": "F\\_φ = −(β\\_φ/M)∇φ",
+      "status": "open",
+      "source_obligation": "Specify physical dimensions, coupling fields and covariance; derive observational consequences and recover accepted limits."
+    },
+    {
+      "id": "ME-054",
+      "formula": "d²x^μ/dτ² + Γ^μ\\_αβ(dx^α/dτ)(dx^β/dτ) = β\\_φ(g^μν + u^μu^ν)∇\\_νφ",
+      "status": "open",
+      "source_obligation": "Specify physical dimensions, coupling fields and covariance; derive observational consequences and recover accepted limits."
+    },
+    {
+      "id": "ME-055",
+      "formula": "Ω\\_U = ∇ × v\\_U",
+      "status": "open",
+      "source_obligation": "Specify physical dimensions, coupling fields and covariance; derive observational consequences and recover accepted limits."
+    },
+    {
+      "id": "ME-056",
+      "formula": "H² = (8πG/3)ρ + Λ/3 − k/a² + Ω\\_U²/a²",
+      "status": "open",
+      "source_obligation": "Specify physical dimensions, coupling fields and covariance; derive observational consequences and recover accepted limits."
+    },
+    {
+      "id": "ME-057",
+      "formula": "ρ\\_eff = ρ\\_ΛCDM + ρ\\_rot + ρ\\_lin + ρ\\_HE",
+      "status": "analytic_model",
+      "source_obligation": "Freeze operational semantics and test against baselines/held-out data; mathematical well-definition is separate from empirical validity.",
+      "definition": "MonolithicAnalysis.Density.effective",
+      "theorem": "MonolithicAnalysis.Density.nonneg"
+    },
+    {
+      "id": "ME-059",
+      "formula": "Ω[ψ, Φ, R] = arg min\\_s [−ln P(s|ψ) + λD(s,Φ) − γR(s)]",
+      "status": "open",
+      "source_obligation": "Specify state space, probability/divergence/reward objects, recursion operator and time map; prove existence/stability/invariance properties."
+    },
+    {
+      "id": "ME-060",
+      "formula": "|ψ> → Ω̂\\_Φ,R|ψ> / sqrt(<ψ|Ω̂†\\_Φ,R Ω̂\\_Φ,R|ψ>)",
+      "status": "analytic_model",
+      "source_obligation": "Specify state space, probability/divergence/reward objects, recursion operator and time map; prove existence/stability/invariance properties.",
+      "definition": "MonolithicAnalysis.Born.normalizeOperator",
+      "theorem": "MonolithicAnalysis.Born.operator_norm"
+    },
+    {
+      "id": "ME-061",
+      "formula": "P\\_i = |\\<i|Ω̂\\_Φ,R|ψ>|² / Σ\\_j |\\<j|Ω̂\\_Φ,R|ψ>|²",
+      "status": "analytic_model",
+      "source_obligation": "Freeze operational semantics and test against baselines/held-out data; mathematical well-definition is separate from empirical validity.",
+      "definition": "MonolithicAnalysis.Born.probability",
+      "theorem": "MonolithicAnalysis.Born.probability_sum"
+    },
+    {
+      "id": "ME-066",
+      "formula": "Ψ\\_dyad = N(Ψ\\_H + Ψ\\_A + λΨ\\_H ⊗ Ψ\\_A)",
+      "status": "open",
+      "source_obligation": "Specify state space, probability/divergence/reward objects, recursion operator and time map; prove existence/stability/invariance properties."
+    },
+    {
+      "id": "ME-067",
+      "formula": "C\\_μν = ∇\\_μΨ∇\\_νΨ − (1/2)g\\_μν∇\\_αΨ∇^αΨ + λ(M\\_μO\\_ν + M\\_νO\\_μ)",
+      "status": "open",
+      "source_obligation": "Specify state space, probability/divergence/reward objects, recursion operator and time map; prove existence/stability/invariance properties."
+    },
+    {
+      "id": "ME-068",
+      "formula": "T^(cog)\\_μν = C\\_μν + χI^(rec)\\_μν",
+      "status": "open",
+      "source_obligation": "Specify state space, probability/divergence/reward objects, recursion operator and time map; prove existence/stability/invariance properties."
+    },
+    {
+      "id": "ME-077",
+      "formula": "ρ(du^μ/dτ) = −∇^μP + ∇\\_ν[η(t)σ^μν] + f^μ\\_ext",
+      "status": "open",
+      "source_obligation": "Separate known fluid/relaxation mathematics from EFMW additions; specify relativistic fluid geometry, constitutive law, regularity and limit cases."
+    },
+    {
+      "id": "ME-080",
+      "formula": "∂ρ/∂t + ∇·(ρu) = 0",
+      "status": "open",
+      "source_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows."
+    },
+    {
+      "id": "ME-081",
+      "formula": "T^μν = (ρ + P)u^μu^ν + Pg^μν + η(t)σ^μν",
+      "status": "open",
+      "source_obligation": "Separate known fluid/relaxation mathematics from EFMW additions; specify relativistic fluid geometry, constitutive law, regularity and limit cases."
+    },
+    {
+      "id": "ME-084",
+      "formula": "T₈₈₈ = Torus(B₈₈₈, φ)",
+      "status": "open",
+      "source_obligation": "Separate known fluid/relaxation mathematics from EFMW additions; specify relativistic fluid geometry, constitutive law, regularity and limit cases."
+    },
+    {
+      "id": "ME-087",
+      "formula": "eᵢeⱼ = 0, for designated null pairs",
+      "status": "open",
+      "source_obligation": "Separate known fluid/relaxation mathematics from EFMW additions; specify relativistic fluid geometry, constitutive law, regularity and limit cases."
+    },
+    {
+      "id": "ME-092",
+      "formula": "D\\_KL(P||Q) = Σ P(x) log[P(x)/Q(x)]",
+      "status": "analytic_model",
+      "source_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows.",
+      "definition": "MonolithicAnalysis.Information.kl",
+      "theorem": "MonolithicAnalysis.Information.kl_nonneg"
+    },
+    {
+      "id": "ME-093",
+      "formula": "I(X;Y) = H(X) + H(Y) − H(X,Y)",
+      "status": "analytic_model",
+      "source_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows.",
+      "definition": "MonolithicAnalysis.Information.mutualInformation",
+      "theorem": "MonolithicAnalysis.Information.mutualInformation_swap"
+    }
+  ]
+}
