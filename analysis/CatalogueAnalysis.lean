@@ -35,13 +35,13 @@ convention; the covariant metric is diag(c², -1, -1, -1). -/
 def minkowskiInverseMetric (c : ℝ) (μ ν : Fin 4) : ℝ :=
   if μ = ν then if μ = 0 then 1 / c ^ 2 else -1 else 0
 /-- The Cartesian Christoffel symbols vanish in this flat specialization. -/
-def minkowskiChristoffel (k μ ν : Fin 4) : ℝ := 0
+def minkowskiChristoffel (_k _μ _ν : Fin 4) : ℝ := 0
 /-- The scalar Hessian component
 ∇_μ∇_ν f = ∂_μ(∂_ν f) - Γ^λ_μν ∂_λ f. -/
 def scalarCovariantHessian (f : Spacetime → ℝ) (μ ν : Fin 4)
     (x : Spacetime) : ℝ :=
   partialD μ (partialD ν f) x -
-    ∑ k : Fin 4, minkowskiChristoffel k μ ν * partialD λ f x
+    ∑ k : Fin 4, minkowskiChristoffel k μ ν * partialD k f x
 /-- ME-003's explicit scalar metric contraction on flat Minkowski spacetime. -/
 def minkowskiCovariantBox (c : ℝ) (f : Spacetime → ℝ)
     (x : Spacetime) : ℝ :=
