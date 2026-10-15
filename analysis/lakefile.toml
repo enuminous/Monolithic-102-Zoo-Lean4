@@ -1,6 +1,6 @@
 name = "CatalogueAnalysis"
 version = "0.1.0"
-defaultTargets = ["CatalogueAnalysis", "SpecifiedModels"]
+defaultTargets = ["CatalogueAnalysis", "SpecifiedModels", "Madelung"]
 
 [[lean_lib]]
 name = "CatalogueAnalysis"
@@ -12,3 +12,6 @@ rev = "8f9d9cff6bd728b17a24e163c9402775d9e6a365"
 
 [[lean_lib]]
 name = "SpecifiedModels"
+
+[[lean_lib]]
+name = "Madelung"

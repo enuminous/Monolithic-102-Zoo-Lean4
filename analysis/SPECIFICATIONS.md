@@ -50,3 +50,32 @@ obligations and distinguishes models from partial coordinate specializations.
 - **ME-054:** test the displayed plus-sign projector under the already frozen
   (+---) metric. The rest-frame counterexample rules out orthogonality in that
   convention. A different signature or sign is a different specification.
+
+## Phase, current and Madelung targets (ME-018–021)
+
+Fix real amplitude and phase fields on one time and one spatial coordinate,
+with the explicitly stated first and second ordinary partial derivatives.
+Use the existing complex wave `rho * exp(i*theta)`; derivatives in the new
+theorems must be actual Mathlib derivatives, not independent formal symbols.
+
+- **ME-018:** identify each lower-index phase-current component
+  `rho^2 * partial(theta)` with `Im(conj(psi) * partial(psi))`. In the flat
+  (+−), c=1 convention, raising the spatial index changes its sign.
+- **ME-019:** derive `partial_t(rho^2*theta_t) -
+  partial_x(rho^2*theta_x) = 0` from the real-potential Klein–Gordon equation
+  `psi_tt - psi_xx + U*psi = 0`. This is a flat 1+1 specialization, with U
+  real. It does not assert arbitrary curved-space covariance.
+- **ME-020/021:** independently fix the Schrödinger equation
+  `i*hbar*psi_t + hbar^2/(2*m)*psi_xx - V*psi = 0`, with V real and
+  nonzero real hbar and mass. Set `S = hbar*theta`. At a nonzero amplitude,
+  prove equivalence to the Hamilton–Jacobi equation with
+  `Q = -(hbar^2/(2*m)) * rho_xx/rho` and the probability continuity equation
+  `partial_t(rho^2) + (hbar/m)*partial_x(rho^2*theta_x) = 0`.
+
+The relativistic current's temporal component is `rho^2*theta_t`; the
+Schrödinger probability density is `rho^2`. These are different objects.
+The targets do not identify them or infer either evolution from the polar
+identity alone. Zeros of the amplitude, global phase reconstruction, general
+manifolds, PDE existence, boundary conditions and empirical interpretations
+remain outside this specification. These are standard mathematical relations,
+with no EFMW-specific novelty claim.

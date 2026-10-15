@@ -141,26 +141,42 @@
     {
       "id": "ME-018",
       "formula": "J^μ = ρ²∇^μθ",
-      "status": "open",
-      "source_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows."
+      "status": "partial_specialization",
+      "source_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows.",
+      "definition": "MonolithicAnalysis.Madelung.relativisticCharge",
+      "theorem": "MonolithicAnalysis.Madelung.relativistic_current_components",
+      "scope": "Flat 1+1 Cartesian (+−), c=1; actual partial wave derivatives identify both raised phase-current components with the imaginary conjugate-wave product, with a minus sign for the spatial component.",
+      "remaining_obligation": "General curved geometry, higher-dimensional covariance, global phase reconstruction and any physical identification remain outside this specialization; no novelty claim is made."
     },
     {
       "id": "ME-019",
       "formula": "∇\\_μJ^μ = 0",
-      "status": "open",
-      "source_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows."
+      "status": "partial_specialization",
+      "source_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows.",
+      "definition": "MonolithicAnalysis.Madelung.relativisticDivergence",
+      "theorem": "MonolithicAnalysis.Madelung.kleinGordon_implies_current_conservation",
+      "scope": "Real-potential Klein–Gordon equation in flat 1+1 Cartesian (+−), c=1; actual second wave derivatives imply divergence-free phase current. Amplitude need not be nonzero for this identity.",
+      "remaining_obligation": "General covariant conservation, global phase reconstruction, PDE existence and physical interpretation remain open. The current is distinct from the Schrödinger probability current."
     },
     {
       "id": "ME-020",
       "formula": "∂ₜS + (∇S)²/(2m) + V + Q = 0",
-      "status": "open",
-      "source_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows."
+      "status": "partial_specialization",
+      "source_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows.",
+      "definition": "MonolithicAnalysis.Madelung.hamiltonJacobi",
+      "theorem": "MonolithicAnalysis.Madelung.schrodinger_iff_madelung",
+      "scope": "One spatial dimension; S=hbar*theta, real potential, nonzero amplitude, hbar and mass. Actual derivative factorization proves Schrödinger iff Hamilton–Jacobi and probability continuity; an everywhere version and plane-wave dispersion are also proved.",
+      "remaining_obligation": "Amplitude nodes, global phase reconstruction, arbitrary spatial dimensions, boundary conditions, PDE existence and empirical identification remain outside this specialization."
     },
     {
       "id": "ME-021",
       "formula": "Q = −(ħ²/2m)(∇²ρ/ρ)",
-      "status": "open",
-      "source_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows."
+      "status": "partial_specialization",
+      "source_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows.",
+      "definition": "MonolithicAnalysis.Madelung.quantumPotential",
+      "theorem": "MonolithicAnalysis.Madelung.schrodinger_factorization",
+      "scope": "One spatial dimension; Q uses the actual second amplitude derivative. The real Schrödinger residual factors as minus amplitude times the Hamilton–Jacobi residual; constant amplitude gives Q=0, and a zero-amplitude counterexample shows why division requires an exclusion.",
+      "remaining_obligation": "Behavior at amplitude nodes, global phase reconstruction, arbitrary manifolds or dimensions and a physical interpretation are not proved."
     },
     {
       "id": "ME-024",

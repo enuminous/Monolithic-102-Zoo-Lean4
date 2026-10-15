@@ -41,11 +41,14 @@ physical theory.**
 The compile-checked typed core represents 53 equations at a discrete or
 structural level. The remaining 49 are preserved in the canonical Lean catalog. A separate
 [real and complex analysis package](analysis/COVERAGE.md) now gives 19 entries
-explicit analytic models and 18 entries partial specializations or
-counterexample results. Twelve entries still have no new analytic treatment.
+explicit analytic models and 22 entries partial specializations or
+counterexample results. Eight entries still have no new analytic treatment.
 The [authored specifications](analysis/SPECIFICATIONS.md) resolve the dyad,
 torus and null-pair constructions explicitly. Full source obligations and
 physical/operator interpretations remain distinct from these results.
+The [phase-current and Madelung proofs](analysis/MADELUNG.md) derive actual wave
+derivatives, flat current conservation and the Schrödinger equivalence under
+explicit assumptions for ME-018–021.
 
 ## Package map
 

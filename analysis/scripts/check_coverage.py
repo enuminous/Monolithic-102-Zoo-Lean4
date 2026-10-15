@@ -4,6 +4,7 @@ import hashlib
 import json
 from pathlib import Path
 import re
+import tomllib
 
 HERE = Path(__file__).resolve().parents[1]
 ROOT = HERE.parent
@@ -15,7 +16,15 @@ entries = coverage["entries"]
 assert [e["id"] for e in entries] == [e["id"] for e in old["records"] if e["lean_status"] == "canonical_catalog"]
 assert len(entries) == 49
 formulas = {e["id"]: e["formula"] for e in canonical["equations"]}
-source = "\n".join((HERE / name).read_text() for name in ["CatalogueAnalysis.lean", "SpecifiedModels.lean"])
+modules = ["CatalogueAnalysis", "SpecifiedModels", "Madelung"]
+assert sorted(p.stem for p in HERE.glob("*.lean") if p.name != "Audit.lean") == sorted(modules)
+package = tomllib.loads((HERE / "lakefile.toml").read_text())
+assert sorted(package["defaultTargets"]) == sorted(modules)
+assert sorted(lib["name"] for lib in package["lean_lib"]) == sorted(modules)
+audit = (HERE / "Audit.lean").read_text()
+assert re.findall(r"^import (?!Lean$)(\w+)$", audit, re.M) == modules
+assert re.search(r"let modules : Array Name := #\[(.*?)\]", audit).group(1) == ", ".join("`" + m for m in modules)
+source = "\n".join((HERE / (name + ".lean")).read_text() for name in modules)
 models = []
 partials = []
 open_entries = []
@@ -33,9 +42,10 @@ for e in entries:
             name = e[kind].split(".")[-1]
             assert re.search(r"\b(?:def|theorem) " + re.escape(name) + r"\b", source), e
 assert models == [f"ME-{i:03d}" for i in [2, 4, 5, 12, 16, 17, 26, 33, 34, 46, 57, 59, 60, 61, 66, 84, 87, 92, 93]]
-assert partials == [f"ME-{i:03d}" for i in [3, 6, 7, 8, 10, 15, 24, 36, 37, 40, 51, 52, 53, 54, 56, 67, 68, 81]]
-assert len(open_entries) == 12
+assert partials == [f"ME-{i:03d}" for i in [3, 6, 7, 8, 10, 15, 18, 19, 20, 21, 24, 36, 37, 40, 51, 52, 53, 54, 56, 67, 68, 81]]
+assert open_entries == [f"ME-{i:03d}" for i in [9, 11, 13, 14, 39, 55, 77, 80]]
 me003 = next(e for e in entries if e["id"] == "ME-003")
 assert me003["general_covariant_status"] == "open"
-print("Canonical source unchanged; 49 entries tracked, 19 analytic models, 18 partial specializations, 12 without new analytic work.")
+print("Canonical source unchanged; 49 entries tracked, 19 analytic models, 22 partial specializations, 8 without new analytic work.")
+print("All three analytic modules are build targets and included in the declaration audit.")
 print("ME-003 remains open for a complete covariant formalization; the flat theorem does not validate a physical interpretation.")

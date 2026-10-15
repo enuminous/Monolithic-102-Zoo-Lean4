@@ -1,15 +1,15 @@
 # Real and complex catalogue models
 
 This Lean 4.28 / Mathlib package tracks the 49 originally catalogue-only
-entries: **19 explicit analytic models**, **18 partial specializations or
-counterexample results**, and **12 without new analytic work**. The separate
+entries: **19 explicit analytic models**, **22 partial specializations or
+counterexample results**, and **8 without new analytic work**. The separate
 root Lean 4.19 package and its 53 discrete/structural entries remain unchanged.
 These categories are not a count of validated physical theories or fully
 completed source obligations.
 
 The canonical source SHA-256 and exact formulas remain locked in `coverage.json`.
 Original obligations are retained. `CatalogueAnalysis.lean` and
-`SpecifiedModels.lean` are the acceptance targets. The authored choices in
+`SpecifiedModels.lean` and `Madelung.lean` are the acceptance targets. The authored choices in
 [SPECIFICATIONS.md](SPECIFICATIONS.md) resolve previously missing mathematical
 definitions without attributing those choices to the historical source.
 
@@ -17,7 +17,8 @@ definitions without attributing those choices to the historical source.
 |---|---|---|
 | 002, 004, 005 | Real C² scalar field on `Fin 4 → ℝ`, nonzero speed, signature (+---), actual Fréchet partial derivatives. Original and expanded solution predicates are equivalent. | Flat specialization; no curved metric, existence theorem, action derivation or physical source identification. The signs are preserved. |
 | 003 | Real C² scalar field in physical-time Cartesian coordinates; explicit inverse metric diag(1/c², −1, −1, −1), vanishing Christoffel symbols, and the full metric contraction. Theorem: this flat specialization equals the existing ME-004 operator. | Partial specialization only, with c ≠ 0. General curved-spacetime covariance remains open; no curved geometry is assumed or proved. |
-| 016, 017 | Real amplitude/phase, complex exponential; squared modulus equals amplitude squared. | No Schrödinger or Madelung dynamics follows. |
+| 016, 017 | Real amplitude/phase, complex exponential; squared modulus equals amplitude squared. | Dynamics does not follow from the polar identity alone; the separate ME-018–021 results state their evolution assumptions. |
+| 018–021 | Actual polar-wave derivatives, the flat Klein–Gordon phase current and its conservation, and Schrödinger–Madelung equivalence with the quantum potential. | One time and one spatial coordinate; explicitly separate currents. Nonzero amplitude, hbar and mass for the Schrödinger equivalence; no arbitrary curved geometry or phase reconstruction. See [MADELUNG.md](MADELUNG.md). |
 | 026 | Real inner-product space, positive regularizer; absolute closure is strictly below one by Cauchy–Schwarz. | The vectors must actually represent the intended derivative/rate; that application is not proved. |
 | 033 | A nonzero perturbation's logarithmic norm-growth rate, an explicit exponential-orbit solution and its limit. A two-dimensional diagonal flow has unequal directional rates. | An arbitrary directional rate is not automatically the maximal exponent; general limit existence and maximization over directions are separate obligations. |
 | 034 | Finite real mass table, natural logarithm, zero-mass term zero; entropy nonnegative on [0,1], point-mass entropy zero. | No inference from entropy to cognition or robustness. |
@@ -49,8 +50,8 @@ cannot silently replace the historical catalogue's equations.
 | 054 | The plus-sign projector yields temporal force 2 for a unit rest vector/time gradient at beta=1. | A counterexample to orthogonal projection under (+---), not a silent sign repair. |
 | 056 | Rotation term is nonnegative; a real H exists iff the right side is nonnegative. | No sign selection or cosmological evolution theorem. |
 
-The 12 entries without new analytic work are:
-`009, 011, 013–014, 018–021, 039, 055, 077, 080`.
+The 8 entries without new analytic work are:
+`009, 011, 013–014, 039, 055, 077, 080`.
 ME-003 still has only its flat specialization. Full curved-space covariance,
 action variation, physical units, nonlinear/stochastic well-posedness and
 implementation or empirical identification remain open where required by the
