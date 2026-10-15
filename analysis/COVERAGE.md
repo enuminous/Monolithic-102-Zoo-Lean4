@@ -1,18 +1,22 @@
 # Real and complex catalogue models
 
 This separate Lean 4.28 / Mathlib package gives **15 of the 49 catalogue-only
-entries explicit analytic models**. The root Lean 4.19 package and its 53
-discrete/structural entries are unchanged. This is a new layer of coverage;
-it does not certify the full scientific interpretation of an entry.
+entries explicit analytic models** and adds one **partial flat-Minkowski
+specialization** of ME-003. The root Lean 4.19 package and its 53
+discrete/structural entries are unchanged. ME-003's general covariant
+formalization remains open; the specialization does not supply curved-spacetime
+assumptions. The package does not certify the full scientific interpretation
+of any entry.
 
 The canonical source SHA-256 and exact formulas are locked in `coverage.json`.
-The original per-equation obligations are retained there, including for the 34
-entries without an analytic model. `CatalogueAnalysis.lean` is the acceptance
+The original per-equation obligations are retained there, including for the 33
+entries without new analytic work. `CatalogueAnalysis.lean` is the acceptance
 target. Read its hypotheses before applying a theorem.
 
 | Entries | Fixed domain and mathematical result | Limits |
 |---|---|---|
 | 002, 004, 005 | Real C² scalar field on `Fin 4 → ℝ`, nonzero speed, signature (+---), actual Fréchet partial derivatives. Original and expanded solution predicates are equivalent. | Flat specialization; no curved metric, existence theorem, action derivation or physical source identification. The signs are preserved. |
+| 003 | Real C² scalar field in physical-time Cartesian coordinates; explicit inverse metric diag(1/c², −1, −1, −1), vanishing Christoffel symbols, and the full metric contraction. Theorem: this flat specialization equals the existing ME-004 operator. | Partial specialization only, with c ≠ 0. General curved-spacetime covariance remains open; no curved geometry is assumed or proved. |
 | 016, 017 | Real amplitude/phase, complex exponential; squared modulus equals amplitude squared. | No Schrödinger or Madelung dynamics follows. |
 | 026 | Real inner-product space, positive regularizer; absolute closure is strictly below one by Cauchy–Schwarz. | The vectors must actually represent the intended derivative/rate; that application is not proved. |
 | 033 | A nonzero perturbation's logarithmic norm-growth rate, an explicit exponential-orbit solution and its limit. A two-dimensional diagonal flow has unequal directional rates. | An arbitrary directional rate is not automatically the maximal exponent; general limit existence and maximization over directions are separate obligations. |
@@ -32,12 +36,13 @@ cannot silently replace the historical catalogue's equations.
 
 ## Remaining specification and derivation work
 
-The 34 entries without a new analytic model are:
+The 33 entries without new analytic work are:
 
-`003, 006–015, 018–021, 024, 036–037, 039–040, 051–056,
+`006–015, 018–021, 024, 036–037, 039–040, 051–056,
 066–068, 077, 080–081, 084, 087`.
 
-The ledger preserves each original obligation. In particular:
+ME-003 has a partial flat-space specialization; its complete covariant
+formalization remains open. The ledger preserves each original obligation. In particular:
 
 - Covariant tensors and action variations need a fixed Lorentzian geometry,
   field spaces, boundary conditions and a consistent sign/unit convention.
@@ -50,8 +55,11 @@ The ledger preserves each original obligation. In particular:
   table and exact designated null pairs. No Lean proof can select these meanings
   on behalf of the source.
 
-Analytic models do not erase unresolved application obligations. In particular, the flat ME-002 model is not a curved-space
-formalization. This report does not relabel all 15 as fully completed semantics.
+Analytic models do not erase unresolved application obligations. In particular,
+the flat ME-002 model is not a curved-space formalization, and the ME-003
+specialization does not complete its general covariant treatment. The 15
+analytic models and the partial ME-003 specialization are not complete physical
+or operator semantics.
 
 ## Verification
 
