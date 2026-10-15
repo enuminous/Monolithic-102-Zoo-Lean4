@@ -263,7 +263,7 @@
       "source_obligation": "Specify physical dimensions, coupling fields and covariance; derive observational consequences and recover accepted limits.",
       "definition": "MonolithicAnalysis.Force.combinedPotential",
       "theorem": "MonolithicAnalysis.Force.combined_potential_hasGradient",
-      "scope": "Explicit coordinate, deterministic, or counterexample result; see SPECIFICATIONS.md.",
+      "scope": "Actual Hilbert-space gradient of the specified potential; the Vorticity module also derives zero curl for C² Cartesian potentials with spatially constant coupling. Force is not identified with velocity.",
       "remaining_obligation": "Specify physical dimensions, coupling fields and covariance; derive observational consequences and recover accepted limits."
     },
     {
@@ -283,7 +283,7 @@
       "source_obligation": "Specify physical dimensions, coupling fields and covariance; derive observational consequences and recover accepted limits.",
       "definition": "MonolithicAnalysis.Force.scaledPotential",
       "theorem": "MonolithicAnalysis.Force.scaled_potential_hasGradient",
-      "scope": "Explicit coordinate, deterministic, or counterexample result; see SPECIFICATIONS.md.",
+      "scope": "Actual Hilbert-space gradient of the specified potential; the Vorticity module also derives zero curl for C² Cartesian potentials with spatially constant beta and mass. Nonzero mass is the application domain.",
       "remaining_obligation": "Specify physical dimensions, coupling fields and covariance; derive observational consequences and recover accepted limits."
     },
     {
@@ -299,8 +299,12 @@
     {
       "id": "ME-055",
       "formula": "Ω\\_U = ∇ × v\\_U",
-      "status": "open",
-      "source_obligation": "Specify physical dimensions, coupling fields and covariance; derive observational consequences and recover accepted limits."
+      "status": "analytic_model",
+      "source_obligation": "Specify physical dimensions, coupling fields and covariance; derive observational consequences and recover accepted limits.",
+      "definition": "MonolithicAnalysis.Vorticity.curl",
+      "theorem": "MonolithicAnalysis.Vorticity.divergence_curl",
+      "scope": "Oriented real Cartesian three-space; actual Frechet partial derivatives. C² gradients have zero curl, C² curls have zero divergence, and the product rule for scalar multiplication, constant-coupling force forms, rigid rotation and a variable-coupling counterexample are proved.",
+      "remaining_obligation": "The velocity field is an explicit mathematical input. Physical units, observational identification, curved-space covariance, dynamics and any relation to the scalar cosmological rotation parameter remain open."
     },
     {
       "id": "ME-056",

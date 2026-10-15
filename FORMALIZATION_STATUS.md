@@ -35,8 +35,12 @@ mistaken for a theorem.
 ## Analytic overlay
 
 The separate [analysis ledger](analysis/COVERAGE.md) tracks the 49 root catalogue
-entries with 19 analytic models, 22 partial specializations/counterexamples and
-8 entries without new analytic work. ME-018–021 now have the explicitly scoped
+entries with 20 analytic models, 22 partial specializations/counterexamples and
+7 entries without new analytic work. ME-018–021 now have the explicitly scoped
 [phase-current and Madelung results](analysis/MADELUNG.md). The root archive counts above describe
 its unchanged discrete layer. They do not supersede the newer overlay or claim
 all source proof obligations are complete.
+
+ME-055 now has a [Cartesian curl model](analysis/VORTICITY.md), including the
+zero-curl and divergence identities, the product rule for scalar multiplication and explicit
+rotation/coupling examples. Its physical source obligations remain open.

@@ -79,3 +79,26 @@ identity alone. Zeros of the amplitude, global phase reconstruction, general
 manifolds, PDE existence, boundary conditions and empirical interpretations
 remain outside this specification. These are standard mathematical relations,
 with no EFMW-specific novelty claim.
+
+## Three-dimensional curl target (ME-055)
+
+Fix real Cartesian three-space `Fin 3 -> Real` with the standard coordinate
+basis and orientation (x,y,z). Define every partial derivative through the
+actual Frechet derivative applied to the corresponding basis vector. Define
+the gradient, divergence, cross product and curl by their usual Cartesian
+components; the velocity field in ME-055 is an explicit input.
+
+The acceptance targets are curl of a C² scalar gradient equals zero, divergence
+of the curl of a C² vector field equals zero, linearity under the stated
+differentiability assumptions, and the product rule for scalar multiplication
+`curl(a*v) = grad(a) cross v + a*curl(v)`. Derive zero curl for the existing
+ME-051/053 force forms when their coefficients are spatial constants and their
+potentials are C². Check nonzero vorticity for rigid rotation and for a
+spatially varying coefficient multiplying a gradient. These are actual
+derivative statements, with Schwarz symmetry derived from C² regularity.
+
+This is a Cartesian mathematical realization, not a theory of universal
+rotation. No velocity field is identified with an observed universe, no curved
+geometry or physical units are supplied, and zero local curl is not asserted
+to imply a global potential on an arbitrary domain. The original ME-055 source
+obligations remain visible in the coverage ledger.
