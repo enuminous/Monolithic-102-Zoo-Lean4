@@ -35,8 +35,8 @@ mistaken for a theorem.
 ## Analytic overlay
 
 The separate [analysis ledger](analysis/COVERAGE.md) tracks the 49 root catalogue
-entries with 21 analytic models, 23 partial specializations/counterexamples and
-5 entries without new analytic work. ME-018–021 now have the explicitly scoped
+entries with 21 analytic models, 24 partial specializations/counterexamples and
+4 entries without new analytic work. ME-018–021 now have the explicitly scoped
 [phase-current and Madelung results](analysis/MADELUNG.md). The root archive counts above describe
 its unchanged discrete layer. They do not supersede the newer overlay or claim
 all source proof obligations are complete.
@@ -50,4 +50,11 @@ with viscous-stress identities, pointwise nonnegative viscous work and the
 continuity condition for conservative momentum. ME-080 has a three-dimensional
 analytic continuity model and an explicit classical expanding-flow solution.
 General fluid existence, relativistic geometry and empirical identification
-remain open; the untouched entries are ME-009, ME-011, ME-013, ME-014 and ME-039.
+remain open.
+
+ME-011 now has a [Hilbert state-space variation](analysis/RECURSIVE_LAGRANGIAN.md),
+including actual gradients, its Euler–Lagrange equation, conditional energy
+conservation, a separate Rayleigh model and counterexamples at degenerate
+inertia or omitted derivative terms. Full action-stationarity equivalence and
+joint memory/field dynamics remain open. The entries without analytic treatment
+are ME-009, ME-013, ME-014 and ME-039.

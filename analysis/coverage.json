@@ -87,8 +87,12 @@
     {
       "id": "ME-011",
       "formula": "L\\_rec = λφR(x,m,e) − (κ/2)||x−m||² − (η/2)||ẋ−ṁ||²",
-      "status": "open",
-      "source_obligation": "Define tensors/couplings, covariance, units and variational structure; derive field equations and conservation identities; test reduction to GR/QFT limits."
+      "status": "partial_specialization",
+      "source_obligation": "Define tensors/couplings, covariance, units and variational structure; derive field equations and conservation identities; test reduction to GR/QFT limits.",
+      "definition": "MonolithicAnalysis.RecursiveLagrangian.recursive",
+      "theorem": "MonolithicAnalysis.RecursiveLagrangian.euler_lagrange_eq",
+      "scope": "Real Hilbert state-space variation with prescribed memory and environment, actual position and velocity gradients, and the full phi*R product gradient. M=0 recovers the source term; an explicitly added ordinary kinetic term gives effective inertia M-eta. Actual first variation, Euler-Lagrange residual, static-memory autonomous canonical-energy conservation, a separate Rayleigh damping model and counterexamples are proved.",
+      "remaining_obligation": "Full action-stationarity equivalence with boundary conditions, joint memory/environment dynamics, physical units, covariance, gravitational or field equations, general existence/uniqueness and empirical identification remain open. Energy conservation is restricted to static memory and time-independent fields; the negative velocity-gap term is not itself a Rayleigh dissipation law."
     },
     {
       "id": "ME-012",

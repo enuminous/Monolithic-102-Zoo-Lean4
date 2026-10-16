@@ -85,5 +85,5 @@ explicit assumptions, without a novelty or empirical-validation claim.
 
 The [verification workflow](../.github/workflows/lean.yml) builds the module
 and applies the [strict declaration audit](Audit.lean) and its four rejection
-controls. The coverage checker verifies that all five project modules are
+controls. The coverage checker verifies that all analytic project modules are
 listed in both the build and audit, while preserving the canonical source hash.

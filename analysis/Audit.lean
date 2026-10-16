@@ -4,13 +4,14 @@ import SpecifiedModels
 import Madelung
 import Vorticity
 import Fluids
+import RecursiveLagrangian
 
 /-! Audit every safe declaration defined in the listed project modules. -/
 
 open Lean in
 run_cmd do
   let env ← getEnv
-  let modules : Array Name := #[`CatalogueAnalysis, `SpecifiedModels, `Madelung, `Vorticity, `Fluids]
+  let modules : Array Name := #[`CatalogueAnalysis, `SpecifiedModels, `Madelung, `Vorticity, `Fluids, `RecursiveLagrangian]
   let allowed : Array Name := #[``propext, ``Classical.choice, ``Quot.sound]
   let mut axiomState : CollectAxioms.State := {}
   let mut count := 0

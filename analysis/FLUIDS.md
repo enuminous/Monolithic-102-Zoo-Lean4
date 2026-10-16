@@ -121,7 +121,7 @@ operators and addresses variable velocity and viscous stress; it does not copy
 those transport proofs or reclassify them as full fluid dynamics.
 
 Run the [standard verification commands](COVERAGE.md#verification). The
-[workflow](../.github/workflows/lean.yml) builds all five analytic modules,
+[workflow](../.github/workflows/lean.yml) builds all analytic modules,
 checks the unchanged canonical formulas and module roster, audits every safe
 project declaration and tests rejection of public axioms, private axioms,
 placeholders and native proof oracles. Acceptance requires a successful build

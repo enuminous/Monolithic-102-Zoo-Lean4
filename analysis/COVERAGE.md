@@ -1,15 +1,16 @@
 # Real and complex catalogue models
 
 This Lean 4.28 / Mathlib package tracks the 49 originally catalogue-only
-entries: **21 explicit analytic models**, **23 partial specializations or
-counterexample results**, and **5 without new analytic work**. The separate
+entries: **21 explicit analytic models**, **24 partial specializations or
+counterexample results**, and **4 without new analytic work**. The separate
 root Lean 4.19 package and its 53 discrete/structural entries remain unchanged.
 These categories are not a count of validated physical theories or fully
 completed source obligations.
 
 The canonical source SHA-256 and exact formulas remain locked in `coverage.json`.
 Original obligations are retained. `CatalogueAnalysis.lean` and
-`SpecifiedModels.lean`, `Madelung.lean`, `Vorticity.lean` and `Fluids.lean` are
+`SpecifiedModels.lean`, `Madelung.lean`, `Vorticity.lean`, `Fluids.lean` and
+`RecursiveLagrangian.lean` are
 the acceptance targets. The authored choices in
 [SPECIFICATIONS.md](SPECIFICATIONS.md) resolve previously missing mathematical
 definitions without attributing those choices to the historical source.
@@ -47,6 +48,7 @@ cannot silently replace the historical catalogue's equations.
 | 084 | Explicit centered torus map from a product of unit circles; injectivity for phi>1. | Authored center (8,8,8), radii 8*phi and 8; no claim that this is the uniquely intended source meaning. |
 | 087 | Nonzero standard basis idempotents; product zero exactly at distinct indices; partition of unity. | Real coordinate algebra with zero divisors. |
 | 006–008, 010, 015, 040, 067–068, 081 | Tensor symmetry, scalar-stress/Lagrangian relation, exact Einstein-residual expansion and decoupling. | Coordinate algebra only; arbitrary tensor inputs are not derived curvature or constitutive laws. |
+| 011 | Actual position/velocity gradients, first variation, Euler–Lagrange equation, autonomous static-memory energy conservation and an explicitly separate Rayleigh damping model. Counterexamples cover variable phi, velocity-gap/friction confusion, negative energy, accelerating memory, time-dependent fields and degenerate inertia. | Real Hilbert state space with external memory/environment; no full integrated-action stationarity theorem, joint memory dynamics, covariance or general existence. See [RECURSIVE_LAGRANGIAN.md](RECURSIVE_LAGRANGIAN.md). |
 | 024 | Actual derivative of the quartic potential and its dissipation along the specified ODE. | Constant gaps/forcing, positive relaxation time, deterministic sector; no stochastic existence result. |
 | 036–037 | Homogeneous fixed points and positive growth above one. | Preserves the cubic sign; no unconditional damping or global PDE well-posedness is claimed. |
 | 051–053 | Actual Hilbert-space gradients of the stated potentials. ME-051/053 also have zero-curl results for C² Cartesian potentials with spatially constant coefficients. | Independent position/velocity coordinates; nonzero mass is the intended physical domain. Force and velocity are not identified. |
@@ -54,8 +56,8 @@ cannot silently replace the historical catalogue's equations.
 | 056 | Rotation term is nonnegative; a real H exists iff the right side is nonnegative. | No sign selection or cosmological evolution theorem. |
 | 077 | Actual divergence of trace-free Cartesian shear, viscosity product rule, incompressible limit, nonnegative pointwise viscous work, and conservative momentum identity under continuity. | Authored nonrelativistic specialization; relativistic geometry, constitutive identification, pressure closure, general fluid existence and integral energy laws remain open. See [FLUIDS.md](FLUIDS.md). |
 
-The 5 entries without new analytic work are:
-`009, 011, 013–014, 039`.
+The 4 entries without new analytic work are:
+`009, 013–014, 039`.
 ME-003 still has only its flat specialization. Full curved-space covariance,
 action variation, physical units, nonlinear/stochastic well-posedness and
 implementation or empirical identification remain open where required by the

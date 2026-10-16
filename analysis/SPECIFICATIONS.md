@@ -133,3 +133,34 @@ uniqueness, weak solutions, boundaries and integrated conservation or energy
 laws remain open. A pointwise constitutive inequality is not a stability
 theorem. These targets are standard mathematics; no empirical or novelty
 claim is part of acceptance.
+
+## Recursive Lagrangian target (ME-011)
+
+Fix a real Hilbert state space. At each time, position q and velocity v are
+independent arguments for variation; memory m, memory velocity w and the
+environment are external inputs. The supplied function R is the slice
+`q -> R(q,m,e)`. Both phi and R may depend on q, so the product-gradient term
+must include both `R*grad(phi)` and `phi*grad(R)`. Along a trajectory, memory
+velocity is the actual derivative of the prescribed memory path.
+
+Retain ME-011's signs and coefficients:
+`Lrec = lambda*phi(q)*R(q) - (kappa/2)*norm(q-m)^2 - (eta/2)*norm(v-w)^2`.
+Define an explicitly authored mechanical extension by adding
+`(M/2)*norm(v)^2`; setting M=0 recovers the original recursive term. Derive
+position and velocity gradients and the Euler-Lagrange residual from actual
+Mathlib derivatives. Never assume the desired equation of motion as a
+derivative rule. Constants M, lambda, kappa and eta are time independent.
+
+Acceptance targets: the exact momentum and Euler-Lagrange formula, inversion
+only when `M-eta` is nonzero, canonical energy and its conservation for static
+memory and time-independent fields, and counterexamples separating a negative
+velocity-gap term from friction or positive kinetic energy. Any Rayleigh
+dissipation function is a separate, explicitly added model. Its damping and
+energy decrease must not be attributed to the source Lagrangian alone.
+
+This is a partial state-space variational specialization. It does not vary
+memory or environment as dynamical fields, identify memory with a function of
+q during the position derivative, establish an action-stationarity equivalence
+under boundary conditions, or supply relativistic covariance, physical units,
+field equations for gravity or empirical validation. The continuum action
+in EFMW-Lagrangian remains a separate frozen specification.
