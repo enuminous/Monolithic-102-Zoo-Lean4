@@ -1,6 +1,6 @@
 name = "CatalogueAnalysis"
 version = "0.1.0"
-defaultTargets = ["CatalogueAnalysis", "SpecifiedModels", "Madelung", "Vorticity", "Fluids", "RecursiveLagrangian"]
+defaultTargets = ["CatalogueAnalysis", "SpecifiedModels", "Madelung", "Vorticity", "Fluids", "RecursiveLagrangian", "ScalarAction"]
 
 [[lean_lib]]
 name = "CatalogueAnalysis"
@@ -24,3 +24,6 @@ name = "Fluids"
 
 [[lean_lib]]
 name = "RecursiveLagrangian"
+
+[[lean_lib]]
+name = "ScalarAction"

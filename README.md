@@ -41,8 +41,8 @@ physical theory.**
 The compile-checked typed core represents 53 equations at a discrete or
 structural level. The remaining 49 are preserved in the canonical Lean catalog. A separate
 [real and complex analysis package](analysis/COVERAGE.md) now gives 21 entries
-explicit analytic models and 24 entries partial specializations or
-counterexample results. Four entries still have no new analytic treatment.
+explicit analytic models and 26 entries partial specializations or
+counterexample results. Two entries still have no new analytic treatment.
 The [authored specifications](analysis/SPECIFICATIONS.md) resolve the dyad,
 torus and null-pair constructions explicitly. Full source obligations and
 physical/operator interpretations remain distinct from these results.
@@ -57,6 +57,11 @@ equivalence, an exact expanding-flow solution and counterexamples.
 The [recursive Lagrangian proofs](analysis/RECURSIVE_LAGRANGIAN.md) derive
 ME-011's state-space variation and Euler–Lagrange equation, establish the
 autonomous energy law and distinguish its velocity-gap term from friction.
+The [scalar action proofs](analysis/SCALAR_ACTION.md) establish the equivalence
+between stationarity under compactly supported variations and the scalar field
+equation for ME-009/013's fixed-background quadratic sector. They also expose
+the source-sign condition needed to match ME-002; full gravitational and
+quantum-gravitational action variations remain open.
 
 ## Package map
 

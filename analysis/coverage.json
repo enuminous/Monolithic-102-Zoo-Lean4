@@ -71,8 +71,12 @@
     {
       "id": "ME-009",
       "formula": "S\\_EFMW = ∫ d⁴x √−g [(R − 2Λ)/(16πG) + L\\_matter + L\\_EM + L\\_φ + L\\_rec]",
-      "status": "open",
-      "source_obligation": "Define tensors/couplings, covariance, units and variational structure; derive field equations and conservation identities; test reduction to GR/QFT limits."
+      "status": "partial_specialization",
+      "source_obligation": "Define tensors/couplings, covariance, units and variational structure; derive field equations and conservation identities; test reduction to GR/QFT limits.",
+      "definition": "MonolithicAnalysis.ScalarAction.actionChange",
+      "theorem": "MonolithicAnalysis.ScalarAction.stationary_iff_residual_zero",
+      "scope": "Four-dimensional Cartesian (+---), c=1 scalar sector with quadratic V=m2*phi^2/2 and a prescribed continuous source J independent of phi. Actual integral of the density difference, exact first variation, compact-support integration by parts and stationarity under every smooth compact variation iff box(phi)-m2*phi+J=0 for C2 phi. Absolute-action derivative is proved for compactly supported phi. Other sectors are held fixed; ME-013 sets J=lambda*I. Source-sign and field-dependent-source counterexamples are retained.",
+      "remaining_obligation": "Full metric variation, curved-spacetime covariance and volume form, joint dynamics of matter/EM/memory/environment, general nonlinear potentials, physical units, boundaries other than compact variations, general PDE existence/uniqueness, quantization and empirical identification remain open. ME-009 uses an authored prescribed-source scalar slice of Lrec. This does not derive the complete EFMW or quantum-gravity action, and does not identify its positive source with ME-002 without the proved sign condition."
     },
     {
       "id": "ME-010",
@@ -81,8 +85,8 @@
       "source_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows.",
       "definition": "MonolithicAnalysis.TensorModels.scalarLagrangian",
       "theorem": "MonolithicAnalysis.TensorModels.stress_eq_gradient_plus_metric_lagrangian",
-      "scope": "Explicit coordinate, deterministic, or counterexample result; see SPECIFICATIONS.md.",
-      "remaining_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows."
+      "scope": "Coordinate scalar-stress/Lagrangian identity, plus an actual four-dimensional fixed-background action variation and stationary-action/PDE equivalence for the quadratic-potential prescribed-source specialization in ScalarAction.lean. See SCALAR_ACTION.md.",
+      "remaining_obligation": "Arbitrary potential, general curved metric and volume, full coupled variations and scientific interpretation remain open. The existing (+---) signs are preserved; the prescribed-source action is not automatically equivalent to ME-002."
     },
     {
       "id": "ME-011",
@@ -107,8 +111,12 @@
     {
       "id": "ME-013",
       "formula": "S\\_QG = ∫ d⁴x √−g [(R/(16πG)) − (1/2)∇\\_μφ∇^μφ − V(φ) + λφI + L\\_matter]",
-      "status": "open",
-      "source_obligation": "Define tensors/couplings, covariance, units and variational structure; derive field equations and conservation identities; test reduction to GR/QFT limits."
+      "status": "partial_specialization",
+      "source_obligation": "Define tensors/couplings, covariance, units and variational structure; derive field equations and conservation identities; test reduction to GR/QFT limits.",
+      "definition": "MonolithicAnalysis.ScalarAction.actionChange",
+      "theorem": "MonolithicAnalysis.ScalarAction.stationary_iff_residual_zero",
+      "scope": "Four-dimensional Cartesian (+---), c=1 scalar sector with quadratic V=m2*phi^2/2 and a prescribed continuous source J independent of phi. Actual integral of the density difference, exact first variation, compact-support integration by parts and stationarity under every smooth compact variation iff box(phi)-m2*phi+J=0 for C2 phi. Absolute-action derivative is proved for compactly supported phi. Other sectors are held fixed; ME-013 sets J=lambda*I. Source-sign and field-dependent-source counterexamples are retained.",
+      "remaining_obligation": "Full metric variation, curved-spacetime covariance and volume form, joint dynamics of matter/EM/memory/environment, general nonlinear potentials, physical units, boundaries other than compact variations, general PDE existence/uniqueness, quantization and empirical identification remain open. ME-009 uses an authored prescribed-source scalar slice of Lrec. This does not derive the complete EFMW or quantum-gravity action, and does not identify its positive source with ME-002 without the proved sign condition."
     },
     {
       "id": "ME-014",

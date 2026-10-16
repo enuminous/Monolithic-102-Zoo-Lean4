@@ -36,6 +36,14 @@ They do not establish empirical validity, novelty, consciousness, physical
 forces or a universal theory. The coverage ledger retains the original
 obligations and distinguishes models from partial coordinate specializations.
 
+- **ME-009/010/013 scalar action:** the frozen target and exact proved scope
+  are in [SCALAR_ACTION.md](SCALAR_ACTION.md). Use actual four-dimensional
+  Cartesian derivatives, (+---), c=1, quadratic potential, a prescribed source
+  independent of the varied scalar, and smooth compactly supported variations.
+  Derive stationarity iff the classical scalar equation; keep the full metric
+  and other-field variations open. Preserve the source-sign mismatch with
+  ME-002 and the counterexample for a field-dependent source.
+
 - **ME-084:** use a product of real unit circles, center (8,8,8), minor
   radius 8 and major radius 8*phi. Require phi>1 and prove injectivity. Other
   choices could also satisfy the historical descriptor; this one is explicit.
