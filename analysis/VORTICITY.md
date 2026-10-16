@@ -74,8 +74,8 @@ magnitude of this vector curl.
 ME-055 now has an **explicit analytic model** in [coverage.json](coverage.json).
 This class records a defined mathematical operator and checked properties;
 it does not close the retained physical source obligations. The 49-entry
-analytic ledger now contains 20 analytic models, 22 partial specializations
-and 7 entries without new analytic work.
+[analytic ledger](COVERAGE.md) records the current counts. The subsequent
+[fluid module](FLUIDS.md) reuses these Cartesian derivative operators.
 
 No theorem here identifies an observed universal velocity field, establishes
 universal rotation, supplies physical units or dynamics, extends the result to
@@ -85,5 +85,5 @@ explicit assumptions, without a novelty or empirical-validation claim.
 
 The [verification workflow](../.github/workflows/lean.yml) builds the module
 and applies the [strict declaration audit](Audit.lean) and its four rejection
-controls. The coverage checker verifies that all four project modules are
+controls. The coverage checker verifies that all five project modules are
 listed in both the build and audit, while preserving the canonical source hash.

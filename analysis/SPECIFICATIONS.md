@@ -102,3 +102,34 @@ rotation. No velocity field is identified with an observed universe, no curved
 geometry or physical units are supplied, and zero local curl is not asserted
 to imply a global potential on an arbitrary domain. The original ME-055 source
 obligations remain visible in the coverage ledger.
+
+## Cartesian fluid targets (ME-077, ME-080)
+
+Reuse ME-055's actual Cartesian Fréchet partials on real three-space. Time
+derivatives are ordinary Mathlib derivatives. Density, viscosity and pressure
+are real fields; velocity has three real components. Keep the historical
+equations and their signs unchanged.
+
+- **ME-077:** author a nonrelativistic specialization with unhalved trace-free
+  shear `sigma_ij = partial_j(u_i) + partial_i(u_j) - (2/3)*delta_ij*div(u)`
+  and no bulk viscosity. Derive the divergence of this tensor using C² mixed
+  partials, then the product rule for `div(eta*sigma)`. The source's `eta(t)`
+  is spatially constant at each time. A spatially varying viscosity is an
+  explicit extension requiring its derivative correction. Check nonnegative
+  pointwise viscous work for nonnegative viscosity, the incompressible limit,
+  and a strictly positive varying-viscosity counterexample to an unjustified
+  Laplacian replacement. Define the momentum residual with actual material
+  acceleration and derive conservative momentum transport using continuity.
+- **ME-080:** derive equivalence of conservative and material continuity,
+  including incompressible and nonzero constant-density special cases. Define
+  a classical solution predicate that includes differentiability. Check the
+  explicit three-dimensional expanding flow `u=a*x`, `rho=r*exp(-3*a*t)`,
+  and the counterexample of constant density in a flow with nonzero divergence.
+
+The [fluid proof catalogue](FLUIDS.md) records exact statements and exclusions.
+No relativistic geometry or proper-time identification is implied by the
+Cartesian acceleration. Full pressure closure, general nonlinear existence or
+uniqueness, weak solutions, boundaries and integrated conservation or energy
+laws remain open. A pointwise constitutive inequality is not a stability
+theorem. These targets are standard mathematics; no empirical or novelty
+claim is part of acceptance.

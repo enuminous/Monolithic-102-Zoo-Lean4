@@ -275,7 +275,7 @@ def main() -> None:
     lean_lines += [
         "]",
         "",
-        "theorem zooAudit_count : zooAudit.size = 102 := by native_decide",
+        "theorem zooAudit_count : zooAudit.size = 102 := by decide",
         "",
         "end Monolithic102",
         "",

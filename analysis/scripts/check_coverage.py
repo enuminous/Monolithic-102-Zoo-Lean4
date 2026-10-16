@@ -16,7 +16,7 @@ entries = coverage["entries"]
 assert [e["id"] for e in entries] == [e["id"] for e in old["records"] if e["lean_status"] == "canonical_catalog"]
 assert len(entries) == 49
 formulas = {e["id"]: e["formula"] for e in canonical["equations"]}
-modules = ["CatalogueAnalysis", "SpecifiedModels", "Madelung", "Vorticity"]
+modules = ["CatalogueAnalysis", "SpecifiedModels", "Madelung", "Vorticity", "Fluids"]
 assert sorted(p.stem for p in HERE.glob("*.lean") if p.name != "Audit.lean") == sorted(modules)
 package = tomllib.loads((HERE / "lakefile.toml").read_text())
 assert sorted(package["defaultTargets"]) == sorted(modules)
@@ -41,11 +41,11 @@ for e in entries:
         for kind in ["definition", "theorem"]:
             name = e[kind].split(".")[-1]
             assert re.search(r"\b(?:def|theorem) " + re.escape(name) + r"\b", source), e
-assert models == [f"ME-{i:03d}" for i in [2, 4, 5, 12, 16, 17, 26, 33, 34, 46, 55, 57, 59, 60, 61, 66, 84, 87, 92, 93]]
-assert partials == [f"ME-{i:03d}" for i in [3, 6, 7, 8, 10, 15, 18, 19, 20, 21, 24, 36, 37, 40, 51, 52, 53, 54, 56, 67, 68, 81]]
-assert open_entries == [f"ME-{i:03d}" for i in [9, 11, 13, 14, 39, 77, 80]]
+assert models == [f"ME-{i:03d}" for i in [2, 4, 5, 12, 16, 17, 26, 33, 34, 46, 55, 57, 59, 60, 61, 66, 80, 84, 87, 92, 93]]
+assert partials == [f"ME-{i:03d}" for i in [3, 6, 7, 8, 10, 15, 18, 19, 20, 21, 24, 36, 37, 40, 51, 52, 53, 54, 56, 67, 68, 77, 81]]
+assert open_entries == [f"ME-{i:03d}" for i in [9, 11, 13, 14, 39]]
 me003 = next(e for e in entries if e["id"] == "ME-003")
 assert me003["general_covariant_status"] == "open"
-print("Canonical source unchanged; 49 entries tracked, 20 analytic models, 22 partial specializations, 7 without new analytic work.")
-print("All four analytic modules are build targets and included in the declaration audit.")
+print("Canonical source unchanged; 49 entries tracked, 21 analytic models, 23 partial specializations, 5 without new analytic work.")
+print("All five analytic modules are build targets and included in the declaration audit.")
 print("ME-003 remains open for a complete covariant formalization; the flat theorem does not validate a physical interpretation.")

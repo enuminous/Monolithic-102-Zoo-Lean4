@@ -382,14 +382,22 @@
     {
       "id": "ME-077",
       "formula": "ρ(du^μ/dτ) = −∇^μP + ∇\\_ν[η(t)σ^μν] + f^μ\\_ext",
-      "status": "open",
-      "source_obligation": "Separate known fluid/relaxation mathematics from EFMW additions; specify relativistic fluid geometry, constitutive law, regularity and limit cases."
+      "status": "partial_specialization",
+      "source_obligation": "Separate known fluid/relaxation mathematics from EFMW additions; specify relativistic fluid geometry, constitutive law, regularity and limit cases.",
+      "definition": "MonolithicAnalysis.Fluids.momentumResidual",
+      "theorem": "MonolithicAnalysis.Fluids.momentum_residual_constant_viscosity",
+      "scope": "Authored nonrelativistic Cartesian three-space convention, unhalved trace-free shear and no bulk viscosity. Actual derivative proofs of the viscous force, variable-viscosity correction, incompressible limit, nonnegative pointwise viscous work and conservative momentum transport under continuity. Time-only viscosity is spatially constant, as in the source.",
+      "remaining_obligation": "Relativistic geometry, proper-time acceleration, covariant index conventions, physical constitutive identification, boundary energy balance, pressure closure and general nonlinear fluid existence or uniqueness remain open. This specialization is not asserted to be a derived relativistic limit."
     },
     {
       "id": "ME-080",
       "formula": "∂ρ/∂t + ∇·(ρu) = 0",
-      "status": "open",
-      "source_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows."
+      "status": "analytic_model",
+      "source_obligation": "Prove equivalence to the standard relation under explicit conventions; do not claim novelty unless an EFMW-specific consequence follows.",
+      "definition": "MonolithicAnalysis.Fluids.continuity",
+      "theorem": "MonolithicAnalysis.Fluids.continuity_iff_material",
+      "scope": "Real density and velocity on one time coordinate and Cartesian three-space. Actual product rule gives equivalence of conservative and material continuity, incompressible and nonzero constant-density cases. An explicit expanding flow has a classical positive density solution; constant density without incompressibility is a counterexample.",
+      "remaining_obligation": "General flow existence or uniqueness, weak solutions, boundaries and integral mass conservation are not proved here. No physical identification or EFMW-specific novelty is inferred. The spatially uniform expanding density is not a finite-total-mass solution on all of real three-space."
     },
     {
       "id": "ME-081",

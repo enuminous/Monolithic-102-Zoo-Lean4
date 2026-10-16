@@ -1,15 +1,16 @@
 # Real and complex catalogue models
 
 This Lean 4.28 / Mathlib package tracks the 49 originally catalogue-only
-entries: **20 explicit analytic models**, **22 partial specializations or
-counterexample results**, and **7 without new analytic work**. The separate
+entries: **21 explicit analytic models**, **23 partial specializations or
+counterexample results**, and **5 without new analytic work**. The separate
 root Lean 4.19 package and its 53 discrete/structural entries remain unchanged.
 These categories are not a count of validated physical theories or fully
 completed source obligations.
 
 The canonical source SHA-256 and exact formulas remain locked in `coverage.json`.
 Original obligations are retained. `CatalogueAnalysis.lean` and
-`SpecifiedModels.lean`, `Madelung.lean` and `Vorticity.lean` are the acceptance targets. The authored choices in
+`SpecifiedModels.lean`, `Madelung.lean`, `Vorticity.lean` and `Fluids.lean` are
+the acceptance targets. The authored choices in
 [SPECIFICATIONS.md](SPECIFICATIONS.md) resolve previously missing mathematical
 definitions without attributing those choices to the historical source.
 
@@ -28,6 +29,7 @@ definitions without attributing those choices to the historical source.
 | 059 | Nonempty finite state space, positive normalized probabilities and explicit divergence/reward. A minimizer exists; strict separation gives uniqueness, and a gap greater than twice uniform cost error preserves selection. | Infinite-state existence and physical collapse remain open. Constant cost disproves unconditional uniqueness; no tie rule is invented. |
 | 060 | A bounded operator on a complex Hilbert space; the displayed adjoint/inner-product denominator equals the norm of the output. A nonzero output normalizes to norm one. | Zero output is excluded from the unit-norm result. Selection or physical interpretation of the operator remains open. |
 | 061 | Finite complex amplitudes; squared-modulus weights are nonnegative and sum to one when an amplitude is nonzero. | The basis/operator interpretation and empirical Born-rule claim are not derived. |
+| 080 | Actual conservative/material continuity identity in Cartesian three-space, its incompressible and nonzero constant-density cases, and an explicit positive classical expanding-flow solution. | No arbitrary-flow existence or uniqueness, weak solutions, boundaries or integral mass conservation. The uniform density is not a finite-total-mass solution on all of space. See [FLUIDS.md](FLUIDS.md). |
 | 092 | Finite normalized nonnegative distributions with support(P) contained in support(Q). KL is nonnegative and zero exactly when P=Q, including zero-mass entries. | Q=0 with P>0 requires extended-real divergence and remains excluded. |
 | 093 | Finite normalized nonnegative joint distributions, including zero cells and marginals. Mutual information equals KL against the product of marginals, is nonnegative, and is zero exactly for independence. | This is finite probability mathematics, without an inference about cognition or empirical causality. |
 
@@ -50,9 +52,10 @@ cannot silently replace the historical catalogue's equations.
 | 051–053 | Actual Hilbert-space gradients of the stated potentials. ME-051/053 also have zero-curl results for C² Cartesian potentials with spatially constant coefficients. | Independent position/velocity coordinates; nonzero mass is the intended physical domain. Force and velocity are not identified. |
 | 054 | The plus-sign projector yields temporal force 2 for a unit rest vector/time gradient at beta=1. | A counterexample to orthogonal projection under (+---), not a silent sign repair. |
 | 056 | Rotation term is nonnegative; a real H exists iff the right side is nonnegative. | No sign selection or cosmological evolution theorem. |
+| 077 | Actual divergence of trace-free Cartesian shear, viscosity product rule, incompressible limit, nonnegative pointwise viscous work, and conservative momentum identity under continuity. | Authored nonrelativistic specialization; relativistic geometry, constitutive identification, pressure closure, general fluid existence and integral energy laws remain open. See [FLUIDS.md](FLUIDS.md). |
 
-The 7 entries without new analytic work are:
-`009, 011, 013–014, 039, 077, 080`.
+The 5 entries without new analytic work are:
+`009, 011, 013–014, 039`.
 ME-003 still has only its flat specialization. Full curved-space covariance,
 action variation, physical units, nonlinear/stochastic well-posedness and
 implementation or empirical identification remain open where required by the

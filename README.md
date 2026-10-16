@@ -40,9 +40,9 @@ physical theory.**
 
 The compile-checked typed core represents 53 equations at a discrete or
 structural level. The remaining 49 are preserved in the canonical Lean catalog. A separate
-[real and complex analysis package](analysis/COVERAGE.md) now gives 20 entries
-explicit analytic models and 22 entries partial specializations or
-counterexample results. Seven entries still have no new analytic treatment.
+[real and complex analysis package](analysis/COVERAGE.md) now gives 21 entries
+explicit analytic models and 23 entries partial specializations or
+counterexample results. Five entries still have no new analytic treatment.
 The [authored specifications](analysis/SPECIFICATIONS.md) resolve the dyad,
 torus and null-pair constructions explicitly. Full source obligations and
 physical/operator interpretations remain distinct from these results.
@@ -51,6 +51,9 @@ derivatives, flat current conservation and the Schrödinger equivalence under
 explicit assumptions for ME-018–021.
 The [Cartesian vorticity model](analysis/VORTICITY.md) supplies ME-055's actual
 curl operator, derivative identities and examples of spatially varying coupling.
+The [Cartesian fluid proofs](analysis/FLUIDS.md) add viscous-stress and momentum
+identities for ME-077's partial specialization, plus ME-080's continuity
+equivalence, an exact expanding-flow solution and counterexamples.
 
 ## Package map
 

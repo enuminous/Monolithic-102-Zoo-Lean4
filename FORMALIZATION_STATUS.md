@@ -35,8 +35,8 @@ mistaken for a theorem.
 ## Analytic overlay
 
 The separate [analysis ledger](analysis/COVERAGE.md) tracks the 49 root catalogue
-entries with 20 analytic models, 22 partial specializations/counterexamples and
-7 entries without new analytic work. ME-018–021 now have the explicitly scoped
+entries with 21 analytic models, 23 partial specializations/counterexamples and
+5 entries without new analytic work. ME-018–021 now have the explicitly scoped
 [phase-current and Madelung results](analysis/MADELUNG.md). The root archive counts above describe
 its unchanged discrete layer. They do not supersede the newer overlay or claim
 all source proof obligations are complete.
@@ -44,3 +44,10 @@ all source proof obligations are complete.
 ME-055 now has a [Cartesian curl model](analysis/VORTICITY.md), including the
 zero-curl and divergence identities, the product rule for scalar multiplication and explicit
 rotation/coupling examples. Its physical source obligations remain open.
+
+ME-077 now has a [partial Cartesian fluid specialization](analysis/FLUIDS.md)
+with viscous-stress identities, pointwise nonnegative viscous work and the
+continuity condition for conservative momentum. ME-080 has a three-dimensional
+analytic continuity model and an explicit classical expanding-flow solution.
+General fluid existence, relativistic geometry and empirical identification
+remain open; the untouched entries are ME-009, ME-011, ME-013, ME-014 and ME-039.
