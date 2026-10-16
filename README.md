@@ -41,8 +41,9 @@ physical theory.**
 The compile-checked typed core represents 53 equations at a discrete or
 structural level. The remaining 49 are preserved in the canonical Lean catalog. A separate
 [real and complex analysis package](analysis/COVERAGE.md) now gives 21 entries
-explicit analytic models and 26 entries partial specializations or
-counterexample results. Two entries still have no new analytic treatment.
+explicit analytic models and 28 entries partial specializations or
+counterexample results. None of those 49 remain catalogue-only. This does not
+mean that all 102 source obligations have been fully formalized.
 The [authored specifications](analysis/SPECIFICATIONS.md) resolve the dyad,
 torus and null-pair constructions explicitly. Full source obligations and
 physical/operator interpretations remain distinct from these results.
@@ -62,6 +63,12 @@ between stationarity under compactly supported variations and the scalar field
 equation for ME-009/013's fixed-background quadratic sector. They also expose
 the source-sign condition needed to match ME-002; full gravitational and
 quantum-gravitational action variations remain open.
+The [linearized gravity proofs](analysis/LINEARIZED_GRAVITY.md) give ME-014/039
+explicit differential operators, derive their contracted Bianchi identity,
+reduce the equation in Lorenz gauge and prove necessary source conservation.
+They also strengthen ME-015/040 with an actual scalar-stress divergence and
+exchange law. These are flat linearized specializations; full nonlinear
+geometry, quantum expectations and cognitive interpretations remain open.
 
 ## Package map
 

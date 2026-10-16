@@ -172,3 +172,28 @@ q during the position derivative, establish an action-stationarity equivalence
 under boundary conditions, or supply relativistic covariance, physical units,
 field equations for gravity or empirical validation. The continuum action
 in EFMW-Lagrangian remains a separate frozen specification.
+
+## Linearized curvature target (ME-014, ME-039; strengthens ME-015/040)
+
+Use real Cartesian four-space, c=1, the existing (+---) signature, a C3
+symmetric perturbation and actual Fréchet derivatives. Define the standard
+linearized Ricci and Einstein differential operators explicitly; deriving
+them by differentiating the full nonlinear metric geometry remains open.
+Derive the contracted Bianchi identity using C3 Schwarz commutation, and
+the trace-reversed wave equation under the explicitly assumed Lorenz gauge.
+Do not assume a gauge-fixing transformation exists.
+
+For nonzero constant coupling and C1 source fields, derive total source
+conservation for ME-014 and ME-039. Treat the expectation, thought and
+recursive tensors as supplied fields. Check nonexistence for a nonconserved
+source and the extra gradient term for a varying coupling. For ME-015/040,
+retain the scalar stress formula and quadratic potential, derive its actual
+divergence, and connect it to the preceding scalar-action stationarity theorem.
+The resulting exchange law requires balancing contributions from the other
+source sectors; separate conservation of each sector is not assumed.
+
+The frozen target, proof register and limitations are in
+[LINEARIZED_GRAVITY.md](LINEARIZED_GRAVITY.md). These are partial mathematical
+specializations, not a construction of quantum expectations, an identification
+of cognition with curvature, a nonlinear field equation or a general
+existence/uniqueness theorem.

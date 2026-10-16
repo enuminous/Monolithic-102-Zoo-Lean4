@@ -121,18 +121,22 @@
     {
       "id": "ME-014",
       "formula": "G\\_μν = 8πG[⟨T̂\\_μν⟩ + T^(φ)\\_μν + T^(rec)\\_μν]",
-      "status": "open",
-      "source_obligation": "Define tensors/couplings, covariance, units and variational structure; derive field equations and conservation identities; test reduction to GR/QFT limits."
+      "status": "partial_specialization",
+      "source_obligation": "Define tensors/couplings, covariance, units and variational structure; derive field equations and conservation identities; test reduction to GR/QFT limits.",
+      "definition": "MonolithicAnalysis.LinearizedGravity.Solves",
+      "theorem": "MonolithicAnalysis.LinearizedGravity.semiclassical_balance",
+      "scope": "Flat Cartesian (+---), c=1 linearized Ricci/Einstein differential operators with actual Frechet partials: C3 symmetry, trace reversal, contracted Bianchi identity, Lorenz-gauge wave reduction, and necessary total-source conservation for C1 sources and nonzero constant coupling. Nonconserved-source and varying-coupling counterexamples. See LINEARIZED_GRAVITY.md.",
+      "remaining_obligation": "Define tensors/couplings, covariance, units and variational structure; derive field equations and conservation identities; test reduction to GR/QFT limits. The operator is explicitly specified, not derived as the derivative of nonlinear Einstein geometry. General curved/nonlinear metric variation, gauge-fixing existence, general PDE existence/uniqueness, boundary conditions, and physical identification remain open. Quantum expectations and cognition are not constructed by this specialization."
     },
     {
       "id": "ME-015",
       "formula": "T^(φ)\\_μν = ∇\\_μφ∇\\_νφ − g\\_μν[(1/2)∇\\_αφ∇^αφ + V(φ)]",
       "status": "partial_specialization",
       "source_obligation": "Define tensors/couplings, covariance, units and variational structure; derive field equations and conservation identities; test reduction to GR/QFT limits.",
-      "definition": "MonolithicAnalysis.TensorModels.scalarStress",
-      "theorem": "MonolithicAnalysis.TensorModels.stress_symmetric",
-      "scope": "Explicit coordinate, deterministic, or counterexample result; see SPECIFICATIONS.md.",
-      "remaining_obligation": "Define tensors/couplings, covariance, units and variational structure; derive field equations and conservation identities; test reduction to GR/QFT limits."
+      "definition": "MonolithicAnalysis.LinearizedGravity.scalarStress",
+      "theorem": "MonolithicAnalysis.LinearizedGravity.scalar_stress_divergence",
+      "scope": "Exact bridge to the catalogue stress tensor with actual derivatives of a real C2 scalar, flat (+---), c=1 and V(phi)=m2*phi^2/2. Derived off-shell divergence (box(phi)-m2*phi)*partial(phi), stationary-source exchange -J*partial(phi), and necessary balancing exchange in ME-014/039. Earlier algebraic symmetry remains. See LINEARIZED_GRAVITY.md.",
+      "remaining_obligation": "Define tensors/couplings, covariance, units and variational structure; derive field equations and conservation identities; test reduction to GR/QFT limits. General curved geometry, metric variation, nonquadratic potentials and physical/cognitive identification remain open."
     },
     {
       "id": "ME-016",
@@ -247,18 +251,22 @@
     {
       "id": "ME-039",
       "formula": "G^(cog)\\_μν = χ(T^(thought)\\_μν + I^(rec)\\_μν)",
-      "status": "open",
-      "source_obligation": "Specify PDE domain, boundary conditions, function spaces, parameters and coupling semantics; establish well-posedness before interpretation."
+      "status": "partial_specialization",
+      "source_obligation": "Specify PDE domain, boundary conditions, function spaces, parameters and coupling semantics; establish well-posedness before interpretation.",
+      "definition": "MonolithicAnalysis.LinearizedGravity.Solves",
+      "theorem": "MonolithicAnalysis.LinearizedGravity.cognitive_balance",
+      "scope": "Flat Cartesian (+---), c=1 linearized Ricci/Einstein differential operators with actual Frechet partials: C3 symmetry, trace reversal, contracted Bianchi identity, Lorenz-gauge wave reduction, and necessary total-source conservation for C1 sources and nonzero constant coupling. Nonconserved-source and varying-coupling counterexamples. See LINEARIZED_GRAVITY.md.",
+      "remaining_obligation": "Specify PDE domain, boundary conditions, function spaces, parameters and coupling semantics; establish well-posedness before interpretation. The operator is explicitly specified, not derived as the derivative of nonlinear Einstein geometry. General curved/nonlinear metric variation, gauge-fixing existence, general PDE existence/uniqueness, boundary conditions, and physical identification remain open. Quantum expectations and cognition are not constructed by this specialization."
     },
     {
       "id": "ME-040",
       "formula": "T^(thought)\\_μν = ∂\\_μΨ ∂\\_νΨ − g\\_μν[(1/2)∂\\_αΨ ∂^αΨ + V(Ψ)]",
       "status": "partial_specialization",
       "source_obligation": "Specify PDE domain, boundary conditions, function spaces, parameters and coupling semantics; establish well-posedness before interpretation.",
-      "definition": "MonolithicAnalysis.TensorModels.scalarStress",
-      "theorem": "MonolithicAnalysis.TensorModels.stress_symmetric",
-      "scope": "Explicit coordinate, deterministic, or counterexample result; see SPECIFICATIONS.md.",
-      "remaining_obligation": "Specify PDE domain, boundary conditions, function spaces, parameters and coupling semantics; establish well-posedness before interpretation."
+      "definition": "MonolithicAnalysis.LinearizedGravity.scalarStress",
+      "theorem": "MonolithicAnalysis.LinearizedGravity.scalar_stress_divergence",
+      "scope": "Exact bridge to the catalogue stress tensor with actual derivatives of a real C2 scalar, flat (+---), c=1 and V(phi)=m2*phi^2/2. Derived off-shell divergence (box(phi)-m2*phi)*partial(phi), stationary-source exchange -J*partial(phi), and necessary balancing exchange in ME-014/039. Earlier algebraic symmetry remains. See LINEARIZED_GRAVITY.md.",
+      "remaining_obligation": "Specify PDE domain, boundary conditions, function spaces, parameters and coupling semantics; establish well-posedness before interpretation. General curved geometry, metric variation, nonquadratic potentials and physical/cognitive identification remain open."
     },
     {
       "id": "ME-046",
