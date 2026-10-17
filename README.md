@@ -52,6 +52,11 @@ derivatives, flat current conservation and the Schrödinger equivalence under
 explicit assumptions for ME-018–021.
 The [Cartesian vorticity model](analysis/VORTICITY.md) supplies ME-055's actual
 curl operator, derivative identities and examples of spatially varying coupling.
+The [ME-055/056 rotation and cosmology tranche](analysis/ROTATION_COSMOLOGY.md)
+adds 54 theorems connecting planar algebra, actual rotation trajectories and
+vorticity, then characterizing positive-scale cosmological branches, curvature
+degeneracy, and explicit vacuum scale-factor solutions. The scalar/vector
+normalization is explicit; a rotating-spacetime derivation remains open.
 The [Cartesian fluid proofs](analysis/FLUIDS.md) add viscous-stress and momentum
 identities for ME-077's partial specialization, plus ME-080's continuity
 equivalence, an exact expanding-flow solution and counterexamples.

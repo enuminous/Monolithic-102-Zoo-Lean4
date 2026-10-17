@@ -26,10 +26,14 @@ The acceptance tests are the exact Lean statements and the strict axiom audit.
   position holds velocity and the memory state fixed. Nonzero mass is the
   application domain of ME-053; Lean's total division is not a physical
   definition at zero mass.
-- **ME-056:** use real density/coupling parameters and a nonzero scale factor.
-  A real Hubble rate exists exactly when the specified right hand side is
-  nonnegative. Neither a branch sign for H nor a cosmological evolution is
-  supplied by an equation for H squared alone.
+- **ME-056:** use real density/coupling parameters and a positive scale factor.
+  The complete branch characterization, effective-curvature degeneracy, actual
+  scale-derivative predicate, and explicit vacuum solutions are specified in
+  [ROTATION_COSMOLOGY.md](ROTATION_COSMOLOGY.md). The bridge chooses the scalar
+  parameter as angular velocity, one half of the rigid vorticity magnitude.
+  This is an authored normalization, not a rotating-metric derivation. A
+  squared scalar constraint alone selects neither a rate sign nor a full
+  cosmological dynamics.
 
 All new results are standard mathematical consequences of these conventions.
 They do not establish empirical validity, novelty, consciousness, physical
@@ -197,3 +201,14 @@ The frozen target, proof register and limitations are in
 specializations, not a construction of quantum expectations, an identification
 of cognition with curvature, a nonlinear field equation or a general
 existence/uniqueness theorem.
+
+## ME-055/056 rotation and scalar evolution target
+
+[ROTATION_COSMOLOGY.md](ROTATION_COSMOLOGY.md) freezes the standard planar
+complex structure, fixed-axis extension, Euclidean sum-of-squares convention,
+actual derivatives and existing curl operator. A nonzero residual limit is
+explicitly assumed. The arbitrary-vector extension uses spatially constant
+angular velocity. ME-056 fixes positive scale and separately states the
+angular-velocity normalization; actual affine and exponential solutions belong
+to this stipulated scalar equation. No physical spacetime model or CMB
+interpretation is inferred from these mathematical results.

@@ -323,18 +323,18 @@
       "source_obligation": "Specify physical dimensions, coupling fields and covariance; derive observational consequences and recover accepted limits.",
       "definition": "MonolithicAnalysis.Vorticity.curl",
       "theorem": "MonolithicAnalysis.Vorticity.divergence_curl",
-      "scope": "Oriented real Cartesian three-space; actual Frechet partial derivatives. C² gradients have zero curl, C² curls have zero divergence, and the product rule for scalar multiplication, constant-coupling force forms, rigid rotation and a variable-coupling counterexample are proved.",
-      "remaining_obligation": "The velocity field is an explicit mathematical input. Physical units, observational identification, curved-space covariance, dynamics and any relation to the scalar cosmological rotation parameter remain open."
+      "scope": "Actual Cartesian curl and its C² identities; a linear planar complex structure, metric-preserving rotations, actual time derivatives yielding the existing rigidRotation field, arbitrary constant angular-velocity vectors, exact vorticity normalization, transverse-plane hinge, and conditional residual-curl convergence. See ROTATION_COSMOLOGY.md.",
+      "remaining_obligation": "Physical velocity-field identification, observational validation, a covariant rotating spacetime model and its dynamics remain open. Nonzero residual angular velocity is an input hypothesis. The ME-056 angular-velocity normalization is an explicitly authored model choice, not derived from cosmology."
     },
     {
       "id": "ME-056",
       "formula": "H² = (8πG/3)ρ + Λ/3 − k/a² + Ω\\_U²/a²",
       "status": "partial_specialization",
       "source_obligation": "Specify physical dimensions, coupling fields and covariance; derive observational consequences and recover accepted limits.",
-      "definition": "MonolithicAnalysis.Cosmology.rateSquared",
-      "theorem": "MonolithicAnalysis.Cosmology.real_rate_exists_iff",
-      "scope": "Explicit coordinate, deterministic, or counterexample result; see SPECIFICATIONS.md.",
-      "remaining_obligation": "Specify physical dimensions, coupling fields and covariance; derive observational consequences and recover accepted limits."
+      "definition": "MonolithicAnalysis.RotatingCosmology.Constraint",
+      "theorem": "MonolithicAnalysis.RotatingCosmology.evolution_iff",
+      "scope": "Positive-scale scalar Friedmann constraint with complete real-H branch characterization, sign symmetry, exact effective-curvature identifiability, ME-055 curl normalization under an explicit angular-velocity choice, actual derivative-based scale evolution, and affine/exponential vacuum solutions. See ROTATION_COSMOLOGY.md.",
+      "remaining_obligation": "Derive the retained equation and normalization from a specified rotating spacetime and matter model; fix physical units and observational observables. No general coupled evolution/existence theorem or independent rotational detection follows from the squared scalar constraint."
     },
     {
       "id": "ME-057",

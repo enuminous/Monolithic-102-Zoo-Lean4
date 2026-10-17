@@ -16,7 +16,7 @@ entries = coverage["entries"]
 assert [e["id"] for e in entries] == [e["id"] for e in old["records"] if e["lean_status"] == "canonical_catalog"]
 assert len(entries) == 49
 formulas = {e["id"]: e["formula"] for e in canonical["equations"]}
-modules = ["CatalogueAnalysis", "SpecifiedModels", "Madelung", "Vorticity", "Fluids", "RecursiveLagrangian", "ScalarAction", "LinearizedGravity"]
+modules = ["CatalogueAnalysis", "SpecifiedModels", "Madelung", "Vorticity", "Fluids", "RecursiveLagrangian", "ScalarAction", "LinearizedGravity", "RotationKinematics", "RotatingCosmology"]
 assert sorted(p.stem for p in HERE.glob("*.lean") if p.name != "Audit.lean") == sorted(modules)
 package = tomllib.loads((HERE / "lakefile.toml").read_text())
 assert sorted(package["defaultTargets"]) == sorted(modules)
@@ -47,5 +47,5 @@ assert open_entries == []
 me003 = next(e for e in entries if e["id"] == "ME-003")
 assert me003["general_covariant_status"] == "open"
 print("Canonical source unchanged; 49 entries tracked, 21 analytic models, 28 partial specializations, 0 without new analytic work.")
-print("All eight analytic modules are build targets and included in the declaration audit.")
+print("All ten analytic modules are build targets and included in the declaration audit.")
 print("ME-003 remains open for a complete covariant formalization; the flat theorem does not validate a physical interpretation.")

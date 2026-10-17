@@ -10,7 +10,8 @@ completed source obligations.
 The canonical source SHA-256 and exact formulas remain locked in `coverage.json`.
 Original obligations are retained. `CatalogueAnalysis.lean` and
 `SpecifiedModels.lean`, `Madelung.lean`, `Vorticity.lean`, `Fluids.lean` and
-`RecursiveLagrangian.lean`, `ScalarAction.lean` and `LinearizedGravity.lean` are
+`RecursiveLagrangian.lean`, `ScalarAction.lean`, `LinearizedGravity.lean`,
+`RotationKinematics.lean` and `RotatingCosmology.lean` are
 the acceptance targets. The authored choices in
 [SPECIFICATIONS.md](SPECIFICATIONS.md) resolve previously missing mathematical
 definitions without attributing those choices to the historical source.
@@ -25,7 +26,7 @@ definitions without attributing those choices to the historical source.
 | 033 | A nonzero perturbation's logarithmic norm-growth rate, an explicit exponential-orbit solution and its limit. A two-dimensional diagonal flow has unequal directional rates. | An arbitrary directional rate is not automatically the maximal exponent; general limit existence and maximization over directions are separate obligations. |
 | 034 | Finite real mass table, natural logarithm, zero-mass term zero; entropy nonnegative on [0,1], point-mass entropy zero. | No inference from entropy to cognition or robustness. |
 | 046 | Any real vector space and operator; exact expansion of the stated tiled operator. | No exceptional property of the golden ratio or arbitrary operator is assumed. |
-| 055 | Oriented Cartesian real three-space, actual Fréchet partials; curl of a C² gradient is zero, divergence of a C² curl is zero, and the product rule for scalar multiplication is proved. Rigid rotation and varying-coupling examples check the distinctions. | The velocity field is an explicit input; no physical identification, curved geometry, universal rotation or cosmological parameter identification. See [VORTICITY.md](VORTICITY.md). |
+| 055 | Actual Cartesian curl and its C² identities; planar complex structure and Euclidean rotations, actual trajectory derivatives yielding the existing rigid field, arbitrary constant angular-velocity vectors, vorticity normalization, and conditional residual-curl convergence. | Explicit model and supplied residual hypothesis; physical identification and curved geometry remain open. See [VORTICITY.md](VORTICITY.md) and [ROTATION_COSMOLOGY.md](ROTATION_COSMOLOGY.md). |
 | 057 | Four real density contributions; their sum is nonnegative when each is. | Identification of these terms and the cosmological equations remain open. |
 | 059 | Nonempty finite state space, positive normalized probabilities and explicit divergence/reward. A minimizer exists; strict separation gives uniqueness, and a gap greater than twice uniform cost error preserves selection. | Infinite-state existence and physical collapse remain open. Constant cost disproves unconditional uniqueness; no tie rule is invented. |
 | 060 | A bounded operator on a complex Hilbert space; the displayed adjoint/inner-product denominator equals the norm of the output. A nonzero output normalizes to norm one. | Zero output is excluded from the unit-norm result. Selection or physical interpretation of the operator remains open. |
@@ -56,7 +57,7 @@ cannot silently replace the historical catalogue's equations.
 | 036–037 | Homogeneous fixed points and positive growth above one. | Preserves the cubic sign; no unconditional damping or global PDE well-posedness is claimed. |
 | 051–053 | Actual Hilbert-space gradients of the stated potentials. ME-051/053 also have zero-curl results for C² Cartesian potentials with spatially constant coefficients. | Independent position/velocity coordinates; nonzero mass is the intended physical domain. Force and velocity are not identified. |
 | 054 | The plus-sign projector yields temporal force 2 for a unit rest vector/time gradient at beta=1. | A counterexample to orthogonal projection under (+---), not a silent sign repair. |
-| 056 | Rotation term is nonnegative; a real H exists iff the right side is nonnegative. | No sign selection or cosmological evolution theorem. |
+| 056 | Positive-scale constraint, complete real-rate branches, sign symmetry, exact effective-curvature identifiability, explicit ME-055 normalization, actual scale-derivative equation, and affine/exponential vacuum solutions. | Authored scalar/vector normalization; no rotating-metric derivation, general coupled evolution/existence, or observational rotation detection. See [ROTATION_COSMOLOGY.md](ROTATION_COSMOLOGY.md). |
 | 077 | Actual divergence of trace-free Cartesian shear, viscosity product rule, incompressible limit, nonnegative pointwise viscous work, and conservative momentum identity under continuity. | Authored nonrelativistic specialization; relativistic geometry, constitutive identification, pressure closure, general fluid existence and integral energy laws remain open. See [FLUIDS.md](FLUIDS.md). |
 
 All 49 formerly catalogue-only entries now have explicit analytic models or

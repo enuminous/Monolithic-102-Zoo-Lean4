@@ -87,3 +87,15 @@ The [verification workflow](../.github/workflows/lean.yml) builds the module
 and applies the [strict declaration audit](Audit.lean) and its four rejection
 controls. The coverage checker verifies that all analytic project modules are
 listed in both the build and audit, while preserving the canonical source hash.
+
+## Algebraic rotation and the ME-056 bridge
+
+[RotationKinematics.lean](RotationKinematics.lean) adds the standard linear
+planar complex structure, norm-preserving rotations, and an actual trajectory
+derivative equal to this module's `rigidRotation`. It also proves the curl of
+arbitrary constant angular-velocity fields and conditional residual limits.
+[RotatingCosmology.lean](RotatingCosmology.lean) checks the exact quarter-factor
+normalization when the scalar ME-056 parameter is chosen as angular velocity,
+and proves branch, identifiability, and explicit scalar-evolution results.
+The choice remains separate from a physical identification. See the
+[54-theorem catalogue and limits](ROTATION_COSMOLOGY.md).
