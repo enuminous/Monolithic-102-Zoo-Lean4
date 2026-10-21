@@ -1,5 +1,8 @@
 # Monolithic 102 — ZOO Audit + Lean 4
 
+> **Review boundary (2026-10-21):** The published ME-003 result is a **flat Cartesian specialization**, not a general curved-spacetime proof. Begin at the [independent review guide](https://github.com/enuminous/EFMW_Post156_Zoo_Audit/blob/main/REVIEW_START_HERE.md) and [claims register](https://github.com/enuminous/EFMW_Post156_Zoo_Audit/blob/main/CLAIMS_EVIDENCE_REGISTER.md). Do not interpret coverage counts as physical validation or infer an independently checked build from this documentation.
+
+
 <!-- ENUMINOUS-NETWORK:START -->
 **eNuminous network:** [All repositories](https://enuminous.github.io/EFMW/repositories.html) · [EFMW](https://enuminous.github.io/EFMW/) · [102 equations](https://github.com/enuminous/Monolithic_102_EFMW) · [165 triplets](https://enuminous.github.io/FieldSpace/) · [Zoo](https://enuminous.github.io/Tortoise/) · [Lean](https://enuminous.github.io/Aristotle-102-Monolithic-Lean/) · [Engine](https://enuminous.github.io/Archimedes-Engine/) · [Papers](https://enuminous.github.io/medium/papers-essays-index.html) · [Audit](https://github.com/enuminous/EFMW_Post156_Zoo_Audit/blob/main/portfolio/INTERLOCK_AUDIT.md)
 
