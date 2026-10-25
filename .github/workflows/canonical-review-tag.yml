@@ -1,0 +1,37 @@
+name: Publish fixed canonical review tag
+
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/canonical-review-tag.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tag:
+    if: github.repository == 'enuminous/Monolithic-102-Zoo-Lean4' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    env:
+      REVIEW_TAG: efmw-review-2026-10-25
+      REVIEW_SHA: 01f51acb0b0e564105dcf7f14cc55998d41b91ce
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Create the fixed tag or verify its existing target; never move it
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin "$REVIEW_SHA"
+          test "$(git rev-parse 'FETCH_HEAD^{commit}')" = "$REVIEW_SHA"
+          if git ls-remote --exit-code --tags origin "refs/tags/$REVIEW_TAG" >/dev/null; then
+            git fetch --no-tags origin "refs/tags/$REVIEW_TAG"
+            test "$(git rev-parse 'FETCH_HEAD^{commit}')" = "$REVIEW_SHA"
+          else
+            git tag "$REVIEW_TAG" "$REVIEW_SHA"
+            git push origin "refs/tags/$REVIEW_TAG"
+          fi
+          echo "Verified $REVIEW_TAG at $REVIEW_SHA; no existing tag is moved." >> "$GITHUB_STEP_SUMMARY"
